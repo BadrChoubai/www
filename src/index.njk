@@ -1,0 +1,34 @@
+---
+layout: layouts/default.njk
+title: Badr Choubai - Boulder, US
+date: git Last Modified
+---
+<header>
+	<hgroup>
+		<h1>Badr Choubai</h1>
+		<p>Solving problems, nothing in particular.</p>
+	</hgroup>
+	<nav role="navigation">
+		<ul>
+			<li>
+				<a href="https://www.github.com/BadrChoubai">GitHub</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/badr-choubai/">LinkedIn</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<main id="content">
+	<section>
+		<article>
+			<h2>Posts</h2>
+			<ul class="posts">
+				{%- for post in collections.published -%}
+					{% post post.data %}
+				{%- endfor -%}
+			</ul>
+		</article>
+	</section>
+</main>
