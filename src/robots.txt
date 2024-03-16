@@ -4,4 +4,4 @@ Allow: /
 User-agent: GPTBot
 Disallow: /
 
-Host: https://badrchoubai.dev/
+Host: https://www.badrchoubai.dev/
