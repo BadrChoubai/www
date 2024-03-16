@@ -1,8 +1,6 @@
-# www
+# [(www).badrchoubai.dev](https://www.badrchoubai.dev)
 
 This is my personal website:
 
 - Built using eleventy [11ty](https://11ty.dev)
-- Hosted using [Clouflare Pages](https://pages.cloudflare.com/)
-
-lorem ipsum dolor site amet
+- Hosted using [Cloudflare Pages](https://pages.cloudflare.com/)
