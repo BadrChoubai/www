@@ -9,14 +9,14 @@
 	gap: 18px;
 }
 
-h1 {
+.post__article h1 {
 	padding-top: 1rem;
 	font-size: 3.5rem;
-	line-height: 4rem;
+	line-height: 3.6rem;
 }
 
-h2 a {
-	color: inherit;
+.post__article h2 {
+	line-height: 3.3rem;
 }
 
 blockquote {
