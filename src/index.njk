@@ -3,13 +3,13 @@ layout: layouts/default.njk
 title: Badr Choubai - Boulder, US
 date: git Last Modified
 ---
-	<section>
-		<article>
-			<h1>Posts</h1>
-			<ul class="posts">
-				{%- for post in collections.published -%}
-					{% post post.data %}
-				{%- endfor -%}
-			</ul>
-		</article>
-	</section>
+<section>
+	<article>
+		<h1>Posts</h1>
+		<ul class="posts">
+			{%- for post in collections.published -%}
+				{% post post.data %}
+			{%- endfor -%}
+		</ul>
+	</article>
+</section>
