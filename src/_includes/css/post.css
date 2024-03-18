@@ -1,8 +1,3 @@
-:root {
-	--color-accent: rgba(247, 114, 69);
-	--color-accent--shadow: rgba(247, 114, 69, 0.5);
-}
-
 .post__article {
 	display: flex;
 	flex-direction: column;
@@ -19,9 +14,13 @@
 	line-height: 3.3rem;
 }
 
+.post__article ul {
+	gap: 18px;
+}
+
 blockquote {
 	padding: 18px;
 	font-size: 1.5rem;
 	box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
-	border-left: solid 8px var(--color-accent);
+	border-left: solid 8px var(--app-accent-color);
 }
