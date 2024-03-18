@@ -23,7 +23,6 @@
 blockquote {
 	border-left: solid 8px var(--app-accent-color);
 	box-shadow: var(--app-box-shadow);
-	font-size: 1.8rem;
 	padding: 18px;
 	width: 80vw;
 	margin: 1rem auto;
