@@ -13,7 +13,7 @@
 	--app-accent-color: rgba(247, 114, 69);
 	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
 	--app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
-	--app-font-size: calc(24px + 0.33vw);
+	--app-font-size: calc(18px + 0.33vw);
 }
 
 /* semantic color variables for this project */
