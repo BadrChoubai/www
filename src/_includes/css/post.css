@@ -5,13 +5,15 @@
 }
 
 .post__article h1 {
-	padding-top: 1rem;
-	font-size: 3.5rem;
-	line-height: 3.6rem;
+	font-weight: bold;
 }
 
-.post__article h2 {
-	line-height: 3.3rem;
+.post__article h1,
+.post__article h2,
+.post__article h3,
+.post__article h4 {
+	line-height: 4.5rem;
+	padding-top: 1rem;
 }
 
 .post__article ul {
