@@ -14,9 +14,16 @@ module.exports = function (eleventyConfig) {
 	// Universal Shortcodes (Adds to Liquid, Nunjucks, JavaScript, Handlebars)
 	eleventyConfig.addShortcode("post", function (postData) {
 		return `
-		<li class="post">
-			<a href="${postData.url}">${postData.title}</a>
-		</li>`;
+			<li class="post">
+				<a href="${postData.url}">${postData.title}</a>
+			</li>`;
+	});
+	eleventyConfig.addPairedShortcode("table", (content) => {
+		return `
+				<div class="table__container">
+					${content}
+				</div>
+			`;
 	});
 
 	return {

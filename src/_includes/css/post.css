@@ -21,8 +21,43 @@
 }
 
 blockquote {
-	padding: 18px;
-	font-size: 1.5rem;
-	box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
 	border-left: solid 8px var(--app-accent-color);
+	box-shadow: var(--app-box-shadow);
+	font-size: 1.8rem;
+	padding: 18px;
+	width: 80vw;
+	margin: 1rem auto;
+}
+
+.table-container {
+	overflow-x: auto;
+	max-width: 100%;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	padding: 18px;
+	box-shadow: var(--app-box-shadow);
+}
+
+table	thead,
+table tr:nth-child(even) {
+	background: var(--color-background--contrast);
+}
+
+th {
+	font-weight: bold;
+}
+
+th,
+td {
+	padding: 4px 12px;
+}
+
+table,
+th,
+td {
+	border: 1px solid black;
+	border-collapse: collapse;
 }
