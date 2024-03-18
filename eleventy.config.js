@@ -18,13 +18,6 @@ module.exports = function (eleventyConfig) {
 				<a href="${postData.url}">${postData.title}</a>
 			</li>`;
 	});
-	eleventyConfig.addPairedShortcode("table", (content) => {
-		return `
-				<div class="table__container">
-					${content}
-				</div>
-			`;
-	});
 
 	return {
 		dir: {
