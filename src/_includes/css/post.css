@@ -27,9 +27,13 @@ blockquote {
 	width: 80vw;
 }
 
+blockquote {
+	line-height: 1.4em;
+}
+
 blockquote p {
 	font-family: serif;
-	font-size: 2rem;
+	margin-bottom: 1rem;
 }
 
 blockquote footer cite {
