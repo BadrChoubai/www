@@ -19,10 +19,10 @@ module.exports = function (eleventyConfig) {
 			</li>`;
 	});
 
-	eleventyConfig.addShortcode("quotation", function (quote, author, work) {
+	eleventyConfig.addPairedShortcode("quote", function (children, author, work) {
 		return `
 		<blockquote>
-			"${quote}"
+			"${children}"
 			<footer>
 				<cite>- ${author} &mdash; ${work}</cite>
 			</footer>
