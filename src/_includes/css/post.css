@@ -21,11 +21,14 @@
 }
 
 blockquote {
-	border-left: solid 8px var(--app-accent-color);
+	border-left: solid 9px var(--app-accent-color);
 	box-shadow: var(--app-box-shadow);
 	padding: 18px;
 	width: 80vw;
-	margin: 1rem auto;
+}
+
+blockquote footer cite {
+	font-style: italic;
 }
 
 .table-container {

@@ -19,6 +19,17 @@ module.exports = function (eleventyConfig) {
 			</li>`;
 	});
 
+	eleventyConfig.addShortcode("quotation", function (quote, author, work) {
+		return `
+		<blockquote>
+			"${quote}"
+			<footer>
+				<cite>- ${author} &mdash; ${work}</cite>
+			</footer>
+		</blockquote>
+		`
+	});
+
 	return {
 		dir: {
 			input: "src",
