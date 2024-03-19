@@ -29,11 +29,12 @@ blockquote {
 
 blockquote p {
 	font-family: serif;
-	font-size: 2.2rem;
+	font-size: 2rem;
 }
 
 blockquote footer cite {
 	font-style: italic;
+	font-size: 1.8rem;
 }
 
 .table-container {
