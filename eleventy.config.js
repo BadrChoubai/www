@@ -22,7 +22,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPairedShortcode("quote", function (children, author, work) {
 		return `
 		<blockquote>
-			"${children}"
+			${children}
 			<footer>
 				<cite>- ${author} &mdash; ${work}</cite>
 			</footer>
