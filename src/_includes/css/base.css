@@ -2,12 +2,12 @@
 	--system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-	--bg-dark: #2c292d;
-	--bg-dark--contrast: #829191;
+	--bg-dark: #000000;
+	--bg-dark--contrast: #2c292d;
 	--text-dark: #ffffff;
 
-	--bg-light: #fefefe;
-	--bg-light--contrast: #eeee;
+	--bg-light: #ffff;
+	--bg-light--contrast: #fefefe;
 	--text-light: #121314;
 
 	--app-accent-color: rgba(247, 114, 69);
@@ -95,12 +95,12 @@ section {
 	margin-top: 1rem;
 }
 
-nav > ul li a {
+nav .link {
 	position: relative;
 	text-decoration: none;
 }
 
-nav > ul li a:after {
+nav .link:after {
 	content: "";
 	position: absolute;
 	z-index: -1;
@@ -112,10 +112,10 @@ nav > ul li a:after {
 	background-color: var(--app-accent-color--shadow);
 }
 
-nav > ul li a:hover:after {
+nav .link:hover:after {
 	top: 0;
 }
 
-ul li a {
-	text-decoration: underline;
+.posts__list {
+	padding: 0 2rem;
 }
