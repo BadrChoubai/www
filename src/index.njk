@@ -6,10 +6,10 @@ date: git Last Modified
 <section>
 	<article>
 		<h1>Posts</h1>
-		<ul class="posts">
+		<div class="posts__list">
 			{%- for post in collections.published -%}
 				{% post post.data %}
 			{%- endfor -%}
-		</ul>
+		</div>
 	</article>
 </section>

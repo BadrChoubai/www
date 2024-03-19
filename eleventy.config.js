@@ -12,6 +12,12 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(syntaxHighlight);
 
 	// Universal Shortcodes (Adds to Liquid, Nunjucks, JavaScript, Handlebars)
+	eleventyConfig.addPairedShortcode("link", function (content, to) {
+		return `
+		<a class="link" href="${to}">${content}</a>
+		`
+	})
+
 	eleventyConfig.addShortcode("post", function (postData) {
 		return `
 			<li class="post">
@@ -24,7 +30,7 @@ module.exports = function (eleventyConfig) {
 		<blockquote>
 			${children}
 			<footer>
-				<cite>- ${author} &mdash; ${work}</cite>
+				<cite>&mdash; ${author}, ${work}</cite>
 			</footer>
 		</blockquote>
 		`

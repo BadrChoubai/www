@@ -20,15 +20,33 @@
 	gap: 18px;
 }
 
-blockquote {
-	border-left: solid 9px var(--app-accent-color);
-	box-shadow: var(--app-box-shadow);
-	padding: 18px;
-	width: 80vw;
+a {
+	position: relative;
+	text-decoration: none;
+}
+
+a:after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 66%;
+	left: -0.1em;
+	right: -0.1em;
+	bottom: 0;
+	transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
+	background-color: var(--app-accent-color--shadow);
+}
+
+a:hover:after {
+	top: 0;
 }
 
 blockquote {
+	background: var(--color-background--contrast);
+	border-left: solid 9px var(--app-accent-color);
+	box-shadow: var(--app-box-shadow);
 	line-height: 1.4em;
+	padding: 18px;
 }
 
 blockquote p {
@@ -38,37 +56,4 @@ blockquote p {
 
 blockquote footer cite {
 	font-style: italic;
-}
-
-.table-container {
-	overflow-x: auto;
-	max-width: 100%;
-}
-
-table {
-	width: 100%;
-	border-collapse: collapse;
-	padding: 18px;
-	box-shadow: var(--app-box-shadow);
-}
-
-table	thead,
-table tr:nth-child(even) {
-	background: var(--color-background--contrast);
-}
-
-th {
-	font-weight: bold;
-}
-
-th,
-td {
-	padding: 4px 12px;
-}
-
-table,
-th,
-td {
-	border: 1px solid black;
-	border-collapse: collapse;
 }
