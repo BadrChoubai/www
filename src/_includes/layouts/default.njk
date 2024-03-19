@@ -17,6 +17,30 @@
 	{% endif %}
 </head>
 <body>
-{{ content | safe }}
+<header>
+	<hgroup>
+		<h1>Badr Choubai</h1>
+		<p>Solving problems, nothing in particular.</p>
+	</hgroup>
+	<nav role="navigation">
+		<ul>
+			<li>
+				<a href="/">All Posts</a>
+			</li>
+			<li>
+				<a href="/blog/2024-03-17-uses">Uses</a>
+			</li>
+			<li>
+				<a href="https://www.github.com/BadrChoubai">GitHub</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/badr-choubai/">LinkedIn</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+<main id="content">
+	{{ content | safe }}
+</main>
 </body>
 </html>

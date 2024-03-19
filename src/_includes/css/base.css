@@ -2,25 +2,32 @@
 	--system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-	--background-color-theme-dark: #1d1d1d;
-	--color-theme-dark: #fff;
+	--bg-dark: #2c292d;
+	--bg-dark--contrast: #829191;
+	--text-dark: #ffffff;
 
-	--background-color-theme-light: #ffff;
-	--color-theme-light: #121314;
+	--bg-light: #fefefe;
+	--bg-light--contrast: #eeee;
+	--text-light: #121314;
 
-	--color-accent--shadow: rgba(247, 114, 69, 0.5);
+	--app-accent-color: rgba(247, 114, 69);
+	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
+	--app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
+	--app-font-size: calc(18px + 0.33vw);
 }
 
 /* semantic color variables for this project */
 :root {
-	--color-background: var(--background-color-theme-light);
-	--color-text: var(--color-theme-light);
+	--color-background--contrast: var(--bg-light--contrast);
+	--color-background: var(--bg-light);
+	--color-text: var(--text-light);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color-background: var(--background-color-theme-dark);
-		--color-text: var(--color-theme-dark);
+		--color-background--contrast: var(--bg-dark--contrast);
+		--color-background: var(--bg-dark);
+		--color-text: var(--text-dark);
 	}
 }
 
@@ -41,19 +48,47 @@ body {
 		background-color 0.5s;
 	line-height: 1.6;
 	font-family: var(--system-ui);
-	font-size: 18px;
-	padding: 5vh;
+	font-size: var(--app-font-size);
+	padding: 5vw;
+
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
+a {
+	color: inherit;
+}
+
+h1 {
+	font-size: 2.25em;
+}
+
+header h1 {
+	line-height: 4.5rem;
+	display: inline-block;
+	white-space: nowrap;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
 nav > ul {
 	list-style-type: none;
 	display: flex;
-	margin: 0;
+	margin-top: 1rem;
 	padding: 0;
 	gap: 18px;
+	flex-wrap: wrap;
 }
 
 section {
@@ -61,14 +96,8 @@ section {
 }
 
 nav > ul li a {
-	text-decoration: none;
-	color: var(--color-text);
 	position: relative;
-}
-
-ul li a {
-	color: var(--color-text);
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 nav > ul li a:after {
@@ -80,9 +109,13 @@ nav > ul li a:after {
 	right: -0.1em;
 	bottom: 0;
 	transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-	background-color: var(--color-accent--shadow);
+	background-color: var(--app-accent-color--shadow);
 }
 
 nav > ul li a:hover:after {
 	top: 0;
+}
+
+ul li a {
+	text-decoration: underline;
 }
