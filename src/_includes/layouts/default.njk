@@ -18,10 +18,7 @@
 </head>
 <body>
 <header>
-	<hgroup>
-		<h1>Badr Choubai</h1>
-		<p>Solving problems, nothing in particular.</p>
-	</hgroup>
+	<h1>Badr Choubai</h1>
 	<nav role="navigation">
 		<ul>
 			{% link "/" %}
@@ -39,5 +36,20 @@
 <main id="content">
 	{{ content | safe }}
 </main>
+<footer>
+	<nav role="navigation">
+		<ul>
+			{% link "/" %}
+				All Posts
+			{% endlink %}
+			{% link "https://www.github.com/BadrChoubai" %}
+				GitHub
+			{% endlink %}
+			{% link "https://www.linkedin.com/in/badr-choubai/" %}
+				LinkedIn
+			{% endlink %}
+		</ul>
+	</nav>
+</footer>
 </body>
 </html>

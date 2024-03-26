@@ -60,14 +60,17 @@ a {
 	color: inherit;
 }
 
-h1 {
-	font-size: 2.25em;
+header, footer {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 1rem 0;
 }
 
-header h1 {
-	line-height: 4.5rem;
-	display: inline-block;
-	white-space: nowrap;
+
+h1 {
+	font-size: 2.25em;
 }
 
 h2 {
@@ -85,13 +88,15 @@ h4 {
 nav > ul {
 	list-style-type: none;
 	display: flex;
-	margin-top: 1rem;
 	padding: 0;
 	gap: 18px;
 	flex-wrap: wrap;
 }
 
 section {
+	border-top: dashed 2px var(--app-accent-color);
+	border-bottom: dashed 2px var(--app-accent-color);
+	padding: 1rem 0;
 	margin-top: 1rem;
 }
 
