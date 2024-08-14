@@ -29,9 +29,6 @@ module.exports = function (eleventyConfig) {
 		return `
 		<blockquote>
 			${children}
-			<footer>
-				<cite>&mdash; ${author}, ${work}</cite>
-			</footer>
 		</blockquote>
 		`
 	});
