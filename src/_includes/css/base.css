@@ -12,8 +12,8 @@
 
 	--app-accent-color: rgba(247, 114, 69);
 	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
-	--app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
-	--app-font-size: calc(18px + 0.33vw);
+	--app-box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.1);
+	--app-font-size: calc(10px + 0.33vw);
 }
 
 /* semantic color variables for this project */
@@ -47,7 +47,7 @@ body {
 		color 0.5s,
 		background-color 0.5s;
 	line-height: 1.6;
-	font-family: var(--system-ui);
+	font-family: var(--system-ui), sans-serif;
 	font-size: var(--app-font-size);
 	padding: 5vw;
 
@@ -60,67 +60,24 @@ a {
 	color: inherit;
 }
 
-header, footer {
-	align-items: center;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	padding: 1rem 0;
-}
-
-
 h1 {
-	font-size: 2.25em;
+	font-size: 4em;
 }
 
-h2 {
-	font-size: 2em;
+p {
+	font-size: 1.6em;
 }
 
-h3 {
-	font-size: 1.75em;
-}
-
-h4 {
-	font-size: 1.5em;
-}
-
-nav > ul {
-	list-style-type: none;
-	display: flex;
-	padding: 0;
-	gap: 18px;
-	flex-wrap: wrap;
-}
-
-section {
-	border-top: dashed 2px var(--app-accent-color);
-	border-bottom: dashed 2px var(--app-accent-color);
-	padding: 1rem 0;
+hr {
 	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 
-nav .link {
-	position: relative;
-	text-decoration: none;
-}
-
-nav .link:after {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	top: 66%;
-	left: -0.1em;
-	right: -0.1em;
-	bottom: 0;
-	transition: top 200ms cubic-bezier(0, 0.8, 0.13, 1);
-	background-color: var(--app-accent-color--shadow);
-}
-
-nav .link:hover:after {
-	top: 0;
-}
-
-.posts__list {
-	padding: 0 2rem;
+blockquote {
+	background: var(--color-background--contrast);
+	border-left: solid 9px var(--app-accent-color);
+	box-shadow: var(--app-box-shadow);
+	line-height: 1.4em;
+	padding: 12px;
+	margin-bottom: 1rem;
 }
