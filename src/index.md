@@ -21,7 +21,6 @@ APIs and web management systems, with excellent communication and DevOps skills.
 - Cloud Technologies: Azure, Cloudflare, Terraform
 
 ---
-[![](https://badgers.space/badge/linkedin/in%2fBadrChoubai/blue?icon=feather-linkedin&label=)](https://www.linkedin.com/in/BadrChoubai)
-[![](https://badgers.space/badge/github/BadrChoubai/gray?icon=feather-github&label=)](https://www.github.com/BadrChoubai)
-[![](https://badgers.space/badge/laptop/Framework%20Laptop%2013/orange?icon=cssgg-laptop&label=)](https://frame.work/)
 
+[LinkedIn](https://www.linkedin.com/in/BadrChoubai)
+[GitHub](https://www.github.com/BadrChoubai)
