@@ -1,18 +1,100 @@
 <!doctype html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-	<meta name="description" content="Badr Choubai's place on the internet">
-	<title>{{ title }}</title>
-	<style>
-		{% include "css/base.css" %}
-	</style>
-</head>
-<body>
-<main id="content">
-	{{ content | safe }}
-</main>
-</body>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<meta name="description" content="Badr Choubai's place on the internet">
+		<title>{{ title }}</title>
+		<style>
+			:root {
+				--system-ui: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+					"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+				--bg-dark: #000000;
+				--bg-dark--contrast: #2c292d;
+				--text-dark: #ffffff;
+
+				--bg-light: #ffff;
+				--bg-light--contrast: #fefefe;
+				--text-light: #121314;
+
+				--app-accent-color: rgba(247, 114, 69);
+				--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
+				--app-box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.1);
+				--app-font-size: calc(10px + 0.33vw);
+			}
+
+			/* semantic color variables for this project */
+			:root {
+				--color-background--contrast: var(--bg-light--contrast);
+				--color-background: var(--bg-light);
+				--color-text: var(--text-light);
+			}
+
+			@media (prefers-color-scheme: dark) {
+				:root {
+					--color-background--contrast: var(--bg-dark--contrast);
+					--color-background: var(--bg-dark);
+					--color-text: var(--text-dark);
+				}
+			}
+
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				font-weight: normal;
+			}
+
+			body {
+				color: var(--color-text);
+				background-color: var(--color-background);
+				min-height: 100vh;
+				transition:
+					color 0.5s,
+					background-color 0.5s;
+				line-height: 1.6;
+				font-family: var(--system-ui), sans-serif;
+				font-size: var(--app-font-size);
+				padding: 5vw;
+
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			a {
+				color: inherit;
+			}
+
+			h1 {
+				font-size: 4em;
+			}
+
+			p {
+				font-size: 1.6em;
+			}
+
+			hr {
+				margin-top: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			blockquote {
+				background: var(--color-background--contrast);
+				border-left: solid 9px var(--app-accent-color);
+				box-shadow: var(--app-box-shadow);
+				line-height: 1.4em;
+				padding: 12px;
+				margin-bottom: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<main id="content">
+			{{ content | safe }}
+		</main>
+	</body>
 </html>
