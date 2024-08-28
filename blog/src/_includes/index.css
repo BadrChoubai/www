@@ -1,0 +1,258 @@
+:root {
+	--app-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--app-line-height: 1.5;
+	--app-font-weight: 400;
+	--app-font-size: 100%;
+	--app-spacing: 1rem;
+	--app-typography-spacing-vertical: 1rem;
+	--app-text-underline-offset: 0.1rem;
+
+	--app-block-spacing-vertical: var(--app-spacing);
+	--app-block-spacing-horizontal: var(--app-spacing);
+
+	--bg-dark: #000000;
+	--bg-dark--contrast: #2c292d;
+	--text-dark: #ffffff;
+
+	--bg-light: #fefefe;
+	--bg-light--contrast: #fefdfb;
+	--text-light: #121314;
+
+	--app-accent-color: rgba(247, 114, 69);
+	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
+	--app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
+	--app-box-shadow--hover: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 576px) {
+	:root {
+		--app-font-size: 106.25%;
+	}
+}
+@media (min-width: 768px) {
+	:root {
+		--app-font-size: 112.5%;
+	}
+}
+@media (min-width: 1024px) {
+	:root {
+		--app-font-size: 118.75%;
+	}
+}
+@media (min-width: 1280px) {
+	:root {
+		--app-font-size: 125%;
+	}
+}
+@media (min-width: 1536px) {
+	:root {
+		--app-font-size: 131.25%;
+	}
+}
+
+/* color variables preferred theme */
+:root {
+	--color-background--contrast: var(--bg-light--contrast);
+	--color-background: var(--bg-light);
+	--color-text: var(--text-light);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-background--contrast: var(--bg-dark--contrast);
+		--color-background: var(--bg-dark);
+		--color-text: var(--text-dark);
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+}
+
+::before,
+::after {
+	text-decoration: inherit;
+	vertical-align: inherit;
+}
+
+:where(:root) {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	background-color: var(--color-background);
+	color: var(--color-text);
+	font-weight: var(--app-font-weight);
+	font-size: var(--app-font-size);
+	line-height: var(--app-line-height);
+	font-family: var(--app-font-family), sans-serif;
+	text-underline-offset: var(--app-text-underline-offset);
+	text-rendering: optimizeLegibility;
+	overflow-wrap: break-word;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+}
+
+body {
+	color: var(--color-text);
+	background-color: var(--color-background);
+	width: 100%;
+	margin: 0;
+	transition:
+		color 0.5s,
+		background-color 0.5s;
+
+	font-family: var(--app-font-family), sans-serif;
+	font-size: var(--app-font-size);
+
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+main {
+	display: block;
+}
+
+body > header,
+body > main,
+body > footer {
+	padding-block: var(--app-block-spacing-vertical);
+}
+
+.container,
+.container-fluid {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: var(--app-spacing);
+	padding-left: var(--app-spacing);
+}
+
+@media (min-width: 576px) {
+	.container {
+		max-width: 510px;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+@media (min-width: 768px) {
+	.container {
+		max-width: 700px;
+	}
+}
+@media (min-width: 1024px) {
+	.container {
+		max-width: 950px;
+	}
+}
+@media (min-width: 1280px) {
+	.container {
+		max-width: 1200px;
+	}
+}
+@media (min-width: 1536px) {
+	.container {
+		max-width: 1450px;
+	}
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	--app-font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-top: 0;
+	margin-bottom: var(--app-typography-spacing-vertical);
+	font-weight: var(--app-font-weight);
+	font-size: var(--app-font-size);
+	line-height: var(--app-line-height);
+	font-family: var(--app-font-family), sans-serif;
+}
+
+:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
+	margin-top: var(--app-typography-spacing-top);
+}
+
+h1 {
+	--app-font-size: 2rem;
+	--app-line-height: 1.125;
+	--app-typography-spacing-top: 3rem;
+}
+
+h2 {
+	--app-font-size: 1.75rem;
+	--app-line-height: 1.15;
+	--app-typography-spacing-top: 2.625rem;
+}
+
+h3 {
+	--app-font-size: 1.5rem;
+	--app-line-height: 1.175;
+	--app-typography-spacing-top: 2.25rem;
+}
+
+h4 {
+	--app-font-size: 1.25rem;
+	--app-line-height: 1.2;
+	--app-typography-spacing-top: 1.874rem;
+}
+
+h5 {
+	--app-font-size: 1.125rem;
+	--app-line-height: 1.225;
+	--app-typography-spacing-top: 1.6875rem;
+}
+
+h6 {
+	--app-font-size: 1rem;
+	--app-line-height: 1.25;
+	--app-typography-spacing-top: 1.5rem;
+}
+
+p {
+	margin-bottom: var(--app-typography-spacing-vertical);
+}
+
+a {
+	color: var(--color-text);
+}
+
+hr {
+	margin: 2rem 0;
+}
+
+.posts-list {
+	display: grid;
+	gap: 2.4rem;
+	grid-template-columns: repeat(auto-fill,minmax(26rem,1fr));
+}
+
+.post-card {
+	background: var(--color-background--contrast);
+	border-bottom: solid 3px var(--app-accent-color);
+	box-shadow: var(--app-box-shadow);
+	opacity: 0.95;
+	padding: 3rem;
+	transition: 0.2s;
+}
+
+.post-card:hover {
+	box-shadow: var(--app-box-shadow--hover);
+	opacity: 1;
+}

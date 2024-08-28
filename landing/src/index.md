@@ -1,5 +1,5 @@
 ---
-layout: layouts/default.njk
+layout: layouts/base.njk
 ---
 
 # Badr Choubai 🇲🇦
