@@ -5,7 +5,7 @@
 	"description": "my blog",
 	"main": "index.js",
 	"scripts": {
-		"generate-post": "python3 generate.py",
+		"generate-post": "./poster",
 		"build": "npx @11ty/eleventy",
 		"lint": "npx prettier --write .",
 		"serve": "npx @11ty/eleventy --serve"
