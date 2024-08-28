@@ -27,7 +27,7 @@ layout: layouts/base.njk
 
 <section>
 	<h2>Posts</h2>
-	<div class="posts-list">
+	<div class="container--grid">
 		{%- for post in collections.published -%}
 			{% postCard post.data %}
 		{%- endfor -%}
