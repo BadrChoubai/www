@@ -1,15 +1,19 @@
 :root {
+	/* Font Base Values */
 	--app-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
 	--app-font-size: 100%;
-	--app-spacing: 1rem;
-	--app-typography-spacing-vertical: 1rem;
 	--app-text-underline-offset: 0.1rem;
 
+	/* Spacing */
+	--app-spacing: 1rem;
+	--app-typography-spacing-vertical: var(--app-spacing);
 	--app-block-spacing-vertical: var(--app-spacing);
 	--app-block-spacing-horizontal: var(--app-spacing);
+	--app-grid-column-gap: var(--app-spacing);
+	--app-grid-row-gap: var(--app-spacing);
 
 	--bg-dark: #000000;
 	--bg-dark--contrast: #2c292d;
@@ -51,13 +55,14 @@
 	}
 }
 
-/* color variables preferred theme */
+/* prefers-color-scheme: light */
 :root {
 	--color-background--contrast: var(--bg-light--contrast);
 	--color-background: var(--bg-light);
 	--color-text: var(--text-light);
 }
 
+/* prefers-color-scheme: dark */
 @media (prefers-color-scheme: dark) {
 	:root {
 		--color-background--contrast: var(--bg-dark--contrast);
@@ -252,10 +257,19 @@ blockquote footer {
 	color: var(--color-text);
 }
 
-.posts-list {
+.container--grid {
+	grid-column-gap: var(--app-grid-column-gap);
+	grid-row-gap: var(--app-grid-row-gap);
 	display: grid;
-	gap: 2.4rem;
-	grid-template-columns: repeat(auto-fill,minmax(26rem,1fr));
+	grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+	.container--grid {
+		grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+	}
+}
+.container--grid > * {
+	min-width: 0;
 }
 
 .post-card {
