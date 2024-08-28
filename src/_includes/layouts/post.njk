@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+css: post.css
+---
+
+<section class="post">
+	<header>
+		<a style="font-size: 2rem;" href="/">Back to All Posts</a>
+	</header>
+	<hr/>
+	<article class="post__article">
+		<h1>{{ title }}</h1>
+
+		{{ content | safe }}
+
+	</article>
+</section>
