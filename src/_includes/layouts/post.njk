@@ -4,7 +4,7 @@ css: post.css
 ---
 
 <section class="post">
-	<header>
+	<header class="post__header">
 		<a style="font-size: 2rem;" href="/">Back to All Posts</a>
 	</header>
 	<hr/>
@@ -14,4 +14,16 @@ css: post.css
 		{{ content | safe }}
 
 	</article>
+	<hr/>
+	<footer class="post__footer">
+		<a style="font-size: 2rem;" href="/">Back to All Posts</a>
+		<ul>
+			<li>
+				<a href="https://www.github.com/BadrChoubai">GitHub</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/BadrChoubai">LinkedIn</a>
+			</li>
+		</ul>
+	</footer>
 </section>

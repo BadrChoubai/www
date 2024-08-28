@@ -2,10 +2,10 @@
 date: 2024-03-18
 title: Typography Test Page
 url: /blog/2024-03-18-typography-test
-premise: An example page to display typography and preview adjustments to styles
+premise: An example page to display typography and preview adjustments to styles located in index.css
 ---
 
-This page is meant to test styles in [`post.css`](https://github.com/BadrChoubai/www/blob/main/src/_includes/css/post.css), while my blog is under development
+This page is meant to test styles from `index.css`
 
 # h1
 ## h2
@@ -25,16 +25,14 @@ func main() {
 }
 ```
 
-```python
-# hello.py
-def main():
-	print "Hello, World!"
-```
+## Blockquotes
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+> # Blockquote Heading
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+>
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

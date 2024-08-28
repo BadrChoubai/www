@@ -1,3 +1,9 @@
+/**
+	One style-sheet to rule them all, as I truly hate writing CSS. Most of this
+	is inspired by: https://github.com/picocss/pico, but I didn't feel like
+	adopting the framework in its' entirety.
+	**/
+
 :root {
 	/* Font Base Values */
 	--app-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
@@ -15,6 +21,7 @@
 	--app-grid-column-gap: var(--app-spacing);
 	--app-grid-row-gap: var(--app-spacing);
 
+	/* Colors */
 	--bg-dark: #000000;
 	--bg-dark--contrast: #2c292d;
 	--text-dark: #ffffff;
@@ -29,6 +36,7 @@
 	--app-box-shadow--hover: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.2);
 }
 
+/* Screen Sizes */
 @media (min-width: 576px) {
 	:root {
 		--app-font-size: 106.25%;
@@ -99,7 +107,6 @@
 	text-rendering: optimizeLegibility;
 	overflow-wrap: break-word;
 	-moz-tab-size: 4;
-	-o-tab-size: 4;
 	tab-size: 4;
 }
 
@@ -284,4 +291,31 @@ blockquote footer {
 .post-card:hover {
 	box-shadow: var(--app-box-shadow--hover);
 	opacity: 1;
+}
+
+.post__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: var(--app-spacing);
+}
+
+.post__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: var(--app-spacing);
+}
+
+.post__footer > ul {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+
+	gap: var(--app-spacing);
+}
+
+.post__footer > ul li {
+	font-size: var(--app-font-size);
 }
