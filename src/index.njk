@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+---
+
+<section>
+	<h1>Badr Choubai 🇲🇦</h1>
+	{% quote %} Solving problems, nothing in particular. {% endquote %}
+
+	<p>
+		Accomplished software engineer with expertise in C#/.NET, Go, and JavaScript, and a strong background in cloud
+		technologies, containerization, and database management. Proven track record in developing and maintaining integration
+		APIs and web management systems, with excellent communication and DevOps skills.
+	</p>
+</section>
+
+<section>
+	<h2>Technical Proficiency</h2>
+	<ul>
+		<li>Languages: C#/.NET, Go, JavaScript</li>
+		<li>Version Control: Git, Azure DevOps, GitHub</li>
+		<li>Containerization: Docker/Kubernetes</li>
+		<li>Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server, SQLite</li>
+		<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
+	</ul>
+</section>
+
+
+<section>
+	<h2>Posts</h2>
+	<div class="posts-list">
+		{%- for post in collections.published -%}
+			{% postCard post.data %}
+		{%- endfor -%}
+	</div>
+</section>

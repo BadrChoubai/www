@@ -237,6 +237,21 @@ hr {
 	margin: 2rem 0;
 }
 
+blockquote {
+	display: block;
+	margin: var(--app-typography-spacing-vertical) 0;
+	padding: var(--app-spacing);
+	border-right: none;
+	background-color: var(--color-background--contrast);
+	border-left: 0.25rem solid var(--app-accent-color);
+	border-inline-start: 0.25rem solid var(--app-accent-color);
+	border-inline-end: none;
+}
+blockquote footer {
+	margin-top: calc(var(--app-typography-spacing-vertical) * 0.5);
+	color: var(--color-text);
+}
+
 .posts-list {
 	display: grid;
 	gap: 2.4rem;
