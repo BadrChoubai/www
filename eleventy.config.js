@@ -27,13 +27,26 @@ module.exports = function (eleventyConfig) {
 			`;
 	});
 
-	eleventyConfig.addPairedShortcode("quote", function (children) {
-		return `
+	eleventyConfig.addPairedShortcode(
+		"quote",
+		function (children, author, source) {
+			let hasAuthor = (author && author.length > 0)
+			let hasSource = (source && source.length > 0)
+
+			const footer = (hasAuthor && hasSource) ? `
+			<footer>
+				<cite>${author}, ${source}</cite>
+			</footer>
+			` : ``;
+
+			return `
 		<blockquote>
 			${children}
+			${footer}
 		</blockquote>
 		`;
-	});
+		},
+	);
 
 	return {
 		dir: {
