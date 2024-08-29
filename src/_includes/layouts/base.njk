@@ -7,12 +7,16 @@
 		<meta name="description" content="Badr Choubai's place on the internet">
 		<title>{{ title }}</title>
 
-    {% set css %} {% include "index.css" %} {% endset %}
+    {% set css %}
+    	{% include "index.css" %}
+    	{% if css == "prism" %}
+				{% include "okaida.css" %}
+			{% endif %}
+    {% endset %}
     <style>
     	{{ css | safe }}
     </style>
 
-		<link href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css" rel="stylesheet" />
 	</head>
 	<body>
 		<main class="container">

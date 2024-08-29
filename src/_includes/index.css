@@ -197,7 +197,8 @@ h6 {
 	font-family: var(--app-font-family), sans-serif;
 }
 
-:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
+:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul)
+	~ :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: var(--app-typography-spacing-top);
 }
 
