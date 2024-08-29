@@ -7,6 +7,8 @@ module.exports = function (eleventyConfig) {
 			.filter((post) => !post.data.draft);
 	});
 
+	eleventyConfig.addPassthroughCopy("favicon.ico")
+
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 
 	// Universal Shortcodes (Adds to Liquid, Nunjucks, JavaScript, Handlebars)
