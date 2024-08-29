@@ -7,16 +7,9 @@ module.exports = function (eleventyConfig) {
 			.filter((post) => !post.data.draft);
 	});
 
-	eleventyConfig.addPassthroughCopy("favicon.ico")
+	eleventyConfig.addPassthroughCopy("favicon.ico");
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
-
-	// Universal Shortcodes (Adds to Liquid, Nunjucks, JavaScript, Handlebars)
-	eleventyConfig.addPairedShortcode("link", function (content, to) {
-		return `
-		<a class="link" href="${to}">${content}</a>
-		`;
-	});
 
 	eleventyConfig.addShortcode("postCard", function (postData) {
 		return `
@@ -32,14 +25,17 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPairedShortcode(
 		"quote",
 		function (children, author, source) {
-			let hasAuthor = (author && author.length > 0)
-			let hasSource = (source && source.length > 0)
+			let hasAuthor = author && author.length > 0;
+			let hasSource = source && source.length > 0;
 
-			const footer = (hasAuthor && hasSource) ? `
+			const footer =
+				hasAuthor && hasSource
+					? `
 			<footer>
 				<cite>${author}, ${source}</cite>
 			</footer>
-			` : ``;
+			`
+					: ``;
 
 			return `
 		<blockquote>
