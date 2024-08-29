@@ -24,7 +24,7 @@ layout: layouts/base.njk
 	</ul>
 </section>
 
-
+{%- if collections.published.length !== 0 -%}
 <section>
 	<h2>Posts</h2>
 	<div class="container--grid">
@@ -33,3 +33,9 @@ layout: layouts/base.njk
 		{%- endfor -%}
 	</div>
 </section>
+{%- else -%}
+<section>
+	<h2>Posts</h2>
+	<p>No posts to display...</p>
+</section>
+{%- endif -%}
