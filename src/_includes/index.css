@@ -265,6 +265,18 @@ blockquote footer {
 	color: var(--color-text);
 }
 
+hgroup {
+	margin-bottom: var(--app-typography-spacing-vertical);
+}
+hgroup > * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+hgroup > *:not(:first-child):last-child {
+	--app-font-weight: unset;
+	font-size: 1rem;
+}
+
 .container--grid {
 	grid-column-gap: var(--app-grid-column-gap);
 	grid-row-gap: var(--app-grid-row-gap);
