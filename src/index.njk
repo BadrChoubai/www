@@ -3,7 +3,7 @@ layout: layouts/base.njk
 ---
 
 <section>
-	<h1>Badr Choubai 🇲🇦</h1>
+	<h1>Badr Choubai</h1>
 	{% quote %} Solving problems, nothing in particular. {% endquote %}
 
 	<p>
@@ -15,27 +15,27 @@ layout: layouts/base.njk
 
 <section>
 	<h2>Technical Proficiency</h2>
-	<ul>
-		<li>Languages: C#/.NET, Go, JavaScript</li>
-		<li>Version Control: Git, Azure DevOps, GitHub</li>
-		<li>Containerization: Docker/Kubernetes</li>
-		<li>Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server, SQLite</li>
-		<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
-	</ul>
+		<ul>
+			<li>Languages: C#/.NET, Go, JavaScript</li>
+			<li>Version Control: Git, Azure DevOps, GitHub</li>
+			<li>Containerization: Docker/Kubernetes</li>
+			<li>Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server, SQLite</li>
+			<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
+		</ul>
 </section>
 
-{%- if collections.published.length !== 0 -%}
 <section>
-	<h2>Posts</h2>
-	<div class="container--grid">
-		{%- for post in collections.published -%}
-			{% postCard post.data %}
-		{%- endfor -%}
-	</div>
+	<hgroup>
+		<h2>Posts</h2>
+		<p>Thoughts inspired by work, life, and learning.</p>
+	</hgroup>
+	{% if collections.published.length !== 0 %}
+		<div class="container--grid">
+			{% for post in collections.published %}
+				{% postCard post.data %}
+			{% endfor %}
+		</div>
+	{% else %}
+		<p>No posts to display...</p>
+	{% endif %}
 </section>
-{%- else -%}
-<section>
-	<h2>Posts</h2>
-	<p>No posts to display...</p>
-</section>
-{%- endif -%}
