@@ -26,14 +26,14 @@
 	--bg-dark--contrast: #2c292d;
 	--text-dark: #ffffff;
 
-	--bg-light: #fefefe;
+	--bg-light: #f5f5f3;
 	--bg-light--contrast: #fefdfb;
-	--text-light: #121314;
+	--text-light: #0a171c;
 
 	--app-accent-color: rgba(247, 114, 69);
 	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
 	--app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
-	--app-box-shadow--hover: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.2);
+	--app-box-shadow--hover: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
 }
 
 /* Screen Sizes */
@@ -295,7 +295,6 @@ hgroup > *:not(:first-child):last-child {
 .post-card {
 	background: var(--color-background--contrast);
 	border-bottom: solid 3px var(--app-accent-color);
-	box-shadow: var(--app-box-shadow);
 	opacity: 0.95;
 	padding: 3rem;
 	transition: 0.2s;
