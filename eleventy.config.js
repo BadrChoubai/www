@@ -4,7 +4,8 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addCollection("published", (collection) => {
 		return collection
 			.getFilteredByTags("posts")
-			.filter((post) => !post.data.draft);
+			.filter((post) => !post.data.draft)
+			.sort((o, n) => n.date - o.date);
 	});
 
 	eleventyConfig.addPassthroughCopy("favicon.ico");
@@ -14,10 +15,12 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode("postCard", function (postData) {
 		return `
 			<article class="container post-card">
-					<h2>
+				<hgroup>
+					<h3>
 						<a href="${postData.url}">${postData.title}</a>
-					</h2>
-					<p>${postData.premise || "No premise given."}</p>
+					</h3>
+					<p>${postData.date.toLocaleDateString("en-US")}</p>
+				</hgroup>
 			</article>
 			`;
 	});

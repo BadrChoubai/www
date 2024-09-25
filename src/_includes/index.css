@@ -7,7 +7,7 @@
 :root {
 	/* Font Base Values */
 	--app-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
 	--app-font-size: 100%;
@@ -32,8 +32,6 @@
 
 	--app-accent-color: rgba(247, 114, 69);
 	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
-	--app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
-	--app-box-shadow--hover: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
 }
 
 /* Screen Sizes */
@@ -42,41 +40,34 @@
 		--app-font-size: 106.25%;
 	}
 }
+
 @media (min-width: 768px) {
 	:root {
 		--app-font-size: 112.5%;
 	}
 }
+
 @media (min-width: 1024px) {
 	:root {
 		--app-font-size: 118.75%;
 	}
 }
+
 @media (min-width: 1280px) {
 	:root {
 		--app-font-size: 125%;
 	}
 }
+
 @media (min-width: 1536px) {
 	:root {
 		--app-font-size: 131.25%;
 	}
 }
 
-/* prefers-color-scheme: light */
 :root {
-	--color-background--contrast: var(--bg-light--contrast);
-	--color-background: var(--bg-light);
-	--color-text: var(--text-light);
-}
-
-/* prefers-color-scheme: dark */
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-background--contrast: var(--bg-dark--contrast);
-		--color-background: var(--bg-dark);
-		--color-text: var(--text-dark);
-	}
+	color-scheme: light dark;
+	--color-background--contrast: light-dark(var(--bg-light--contrast), var(--bg-dark--contrast));
 }
 
 *,
@@ -111,13 +102,13 @@
 }
 
 body {
-	color: var(--color-text);
-	background-color: var(--color-background);
+	color: light-dark(var(--text-light), var(--text-dark));
+	background-color: light-dark(var(--bg-light), var(--bg-dark));
+
 	width: 100%;
 	margin: 0;
-	transition:
-		color 0.5s,
-		background-color 0.5s;
+	transition: color 0.5s,
+	background-color 0.5s;
 
 	font-family: var(--app-font-family), sans-serif;
 	font-size: var(--app-font-size);
@@ -153,21 +144,25 @@ body > footer {
 		padding-left: 0;
 	}
 }
+
 @media (min-width: 768px) {
 	.container {
 		max-width: 700px;
 	}
 }
+
 @media (min-width: 1024px) {
 	.container {
 		max-width: 950px;
 	}
 }
+
 @media (min-width: 1280px) {
 	.container {
 		max-width: 1200px;
 	}
 }
+
 @media (min-width: 1536px) {
 	.container {
 		max-width: 1450px;
@@ -198,7 +193,7 @@ h6 {
 }
 
 :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul)
-	~ :is(h1, h2, h3, h4, h5, h6) {
+~ :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: var(--app-typography-spacing-top);
 }
 
@@ -260,6 +255,7 @@ blockquote {
 	border-inline-start: 0.25rem solid var(--app-accent-color);
 	border-inline-end: none;
 }
+
 blockquote footer {
 	margin-top: calc(var(--app-typography-spacing-vertical) * 0.5);
 	color: var(--color-text);
@@ -268,10 +264,12 @@ blockquote footer {
 hgroup {
 	margin-bottom: var(--app-typography-spacing-vertical);
 }
+
 hgroup > * {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+
 hgroup > *:not(:first-child):last-child {
 	--app-font-weight: unset;
 	font-size: 1rem;
@@ -283,26 +281,26 @@ hgroup > *:not(:first-child):last-child {
 	display: grid;
 	grid-template-columns: 1fr;
 }
+
 @media (min-width: 768px) {
 	.container--grid {
 		grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
 	}
 }
+
 .container--grid > * {
 	min-width: 0;
 }
 
 .post-card {
-	background: var(--color-background--contrast);
+	background-color: var(--color-background--contrast);
 	border-bottom: solid 3px var(--app-accent-color);
-	opacity: 0.95;
 	padding: 3rem;
-	transition: 0.2s;
+	transition: border-bottom 0.2s;
 }
 
 .post-card:hover {
-	box-shadow: var(--app-box-shadow--hover);
-	opacity: 1;
+	border-bottom: solid 6px var(--app-accent-color);
 }
 
 .post__header {
