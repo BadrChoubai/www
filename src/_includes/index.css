@@ -7,7 +7,7 @@
 :root {
 	/* Font Base Values */
 	--app-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
 	--app-font-size: 100%;
@@ -67,7 +67,10 @@
 
 :root {
 	color-scheme: light dark;
-	--color-background--contrast: light-dark(var(--bg-light--contrast), var(--bg-dark--contrast));
+	--color-background--contrast: light-dark(
+		var(--bg-light--contrast),
+		var(--bg-dark--contrast)
+	);
 }
 
 *,
@@ -107,8 +110,9 @@ body {
 
 	width: 100%;
 	margin: 0;
-	transition: color 0.5s,
-	background-color 0.5s;
+	transition:
+		color 0.5s,
+		background-color 0.5s;
 
 	font-family: var(--app-font-family), sans-serif;
 	font-size: var(--app-font-size);
@@ -169,6 +173,21 @@ body > footer {
 	}
 }
 
+address,
+blockquote,
+dl,
+ol,
+p,
+pre,
+table,
+ul {
+	margin-top: 0;
+	margin-bottom: var(--app-typography-spacing-vertical);
+	color: inherit;
+	font-style: normal;
+	font-weight: var(--app-font-weight);
+}
+
 h1,
 h2,
 h3,
@@ -193,7 +212,7 @@ h6 {
 }
 
 :where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul)
-~ :is(h1, h2, h3, h4, h5, h6) {
+	~ :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: var(--app-typography-spacing-top);
 }
 
@@ -271,8 +290,20 @@ hgroup > * {
 }
 
 hgroup > *:not(:first-child):last-child {
-	--app-font-weight: unset;
-	font-size: 1rem;
+	--pico-font-weight: unset;
+	margin-top: var(--app-typography-spacing-vertical);
+}
+
+:where(ol, ul) li {
+	margin-bottom: calc(var(--app-typography-spacing-vertical) * 0.25);
+}
+
+:where(dl, ol, ul) :where(dl, ol, ul) {
+	margin: calc(var(--app-typography-spacing-vertical) * 0.25) 0 0;
+}
+
+ul li {
+	list-style: square;
 }
 
 .container--grid {
