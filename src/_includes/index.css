@@ -1,8 +1,10 @@
 /**
 	One style-sheet to rule them all, as I truly hate writing CSS. Most of this
-	is inspired by: https://github.com/picocss/pico, but I didn't feel like
+	is inspired by: https://github.com/appcss/app, but I didn't feel like
 	adopting the framework in its' entirety.
 	**/
+
+@charset "UTF-8";
 
 :root {
 	/* Font Base Values */
@@ -110,9 +112,7 @@ body {
 
 	width: 100%;
 	margin: 0;
-	transition:
-		color 0.5s,
-		background-color 0.5s;
+	transition: color 0.5s, background-color 0.5s;
 
 	font-family: var(--app-font-family), sans-serif;
 	font-size: var(--app-font-size);
@@ -130,6 +130,10 @@ body > header,
 body > main,
 body > footer {
 	padding-block: var(--app-block-spacing-vertical);
+}
+
+section {
+	margin-bottom: var(--app-block-spacing-vertical);
 }
 
 .container,
@@ -260,10 +264,6 @@ a {
 	color: var(--color-text);
 }
 
-hr {
-	margin: 2rem 0;
-}
-
 blockquote {
 	display: block;
 	margin: var(--app-typography-spacing-vertical) 0;
@@ -281,16 +281,17 @@ blockquote footer {
 }
 
 hgroup {
-	margin-bottom: var(--app-typography-spacing-vertical);
+  margin-bottom: var(--app-typography-spacing-vertical);
 }
 
 hgroup > * {
-	margin: var(--app-typography-spacing-vertical) 0 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 hgroup > *:not(:first-child):last-child {
-	--pico-font-weight: unset;
-	margin-top: var(--app-typography-spacing-vertical);
+  --app-font-weight: unset;
+  font-size: 1rem;
 }
 
 :where(ol, ul) li {
@@ -303,6 +304,39 @@ hgroup > *:not(:first-child):last-child {
 
 ul li {
 	list-style: square;
+}
+
+article {
+	margin-bottom: var(--app-block-spacing-vertical);
+	padding: var(--app-block-spacing-vertical) var(--app-block-spacing-horizontal);
+	border-radius: var(--app-border-radius);
+	background: var(--app-card-background-color);
+	box-shadow: var(--app-card-box-shadow);
+}
+
+article > header,
+article > footer {
+	margin-right: calc(var(--app-block-spacing-horizontal) * -1);
+	margin-left: calc(var(--app-block-spacing-horizontal) * -1);
+	padding: calc(var(--app-block-spacing-vertical) * 0.66)
+		var(--app-block-spacing-horizontal);
+	background-color: var(--app-card-sectioning-background-color);
+}
+
+article > header {
+	margin-top: calc(var(--app-block-spacing-vertical) * -1);
+	margin-bottom: var(--app-block-spacing-vertical);
+	border-bottom: var(--app-border-width) solid var(--app-card-border-color);
+	border-top-right-radius: var(--app-border-radius);
+	border-top-left-radius: var(--app-border-radius);
+}
+
+article > footer {
+	margin-top: var(--app-block-spacing-vertical);
+	margin-bottom: calc(var(--app-block-spacing-vertical) * -1);
+	border-top: var(--app-border-width) solid var(--app-card-border-color);
+	border-bottom-right-radius: var(--app-border-radius);
+	border-bottom-left-radius: var(--app-border-radius);
 }
 
 .container--grid {
@@ -331,31 +365,4 @@ ul li {
 
 .post-card:hover {
 	border-bottom: solid 6px var(--app-accent-color);
-}
-
-.post__header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: var(--app-spacing);
-}
-
-.post__footer {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-top: var(--app-spacing);
-}
-
-.post__footer > ul {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	list-style: none;
-
-	gap: var(--app-spacing);
-}
-
-.post__footer > ul li {
-	font-size: var(--app-font-size);
 }
