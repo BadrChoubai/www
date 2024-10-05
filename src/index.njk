@@ -3,39 +3,64 @@ layout: layouts/base.njk
 ---
 
 <section>
-	<h1>Badr Choubai</h1>
-	{% quote %} Solving problems, nothing in particular. {% endquote %}
-
-	<p>
-		Accomplished software engineer with expertise in C#/.NET, Go, and JavaScript, and a strong background in cloud
-		technologies, containerization, and database management. Proven track record in developing and maintaining integration
-		APIs and web management systems, with excellent communication and DevOps skills.
-	</p>
+	<header>
+		<hgroup>
+			<h1>Badr Choubai</h1>
+			<div>
+				<p>
+					I enjoy learning about technology because so much of the world depends on it. Writing code allows me
+					to understand how some of it works, and I love learning about topics in computing, engineering,
+					and science. When I'm not writing code, you can find me having a coffee, reading a book, running or
+					hiking, listening to music, spending time with friends, or attending meetups.
+				</p>
+			</div>
+		</hgroup>
+	</header>
+	<hr />
+	<div class="container--grid">
+		<div>
+			<h2>Background</h2>
+			<p>
+				I have expertise in C#/.NET, Go, and JavaScript, and a strong background
+				in cloud technologies, containerization, and database management. Proven
+				track record in developing and maintaining integration APIs and web
+				management systems, with excellent communication and DevOps skills.
+			</p>
+			<ul style="display: flex; gap: var(--app-spacing); padding-left: 0">
+				<li style="list-style: none;">
+					<a href="https://www.github.com/badrchoubai">My GitHub</a>
+				</li>
+				<li style="list-style: none;">
+					<a href="https://www.linkedin.com/in/badrchoubai">My LinkedIn</a>
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2>Technical Proficiency</h2>
+			<ul>
+				<li>Languages: C#/.NET, Go, JavaScript</li>
+				<li>Version Control: Git, Azure DevOps, GitHub</li>
+				<li>Containerization: Docker/Kubernetes</li>
+				<li>
+					Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server,
+					SQLite
+				</li>
+				<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
+			</ul>
+		</div>
+	</div>
 </section>
-
-<section>
-	<h2>Technical Proficiency</h2>
-		<ul>
-			<li>Languages: C#/.NET, Go, JavaScript</li>
-			<li>Version Control: Git, Azure DevOps, GitHub</li>
-			<li>Containerization: Docker/Kubernetes</li>
-			<li>Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server, SQLite</li>
-			<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
-		</ul>
-</section>
-
 <section>
 	<hgroup>
 		<h2>Posts</h2>
 		<p>Thoughts inspired by work, life, and learning.</p>
 	</hgroup>
 	{% if collections.published.length !== 0 %}
-		<div class="container--grid">
-			{% for post in collections.published %}
-				{% postCard post.data %}
-			{% endfor %}
-		</div>
+	<div class="container--grid">
+		{% for post in collections.published %} {% postCard post.data %} {% endfor
+		%}
+	</div>
 	{% else %}
-		<p>No posts to display...</p>
+	<p>No posts to display...</p>
 	{% endif %}
 </section>
