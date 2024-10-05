@@ -285,8 +285,7 @@ hgroup {
 }
 
 hgroup > * {
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: var(--app-typography-spacing-vertical) 0 0;
 }
 
 hgroup > *:not(:first-child):last-child {
