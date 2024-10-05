@@ -3,30 +3,20 @@ layout: layouts/base.njk
 css: post.css
 ---
 
-<section class="post">
-	<header class="post__header">
-		<a style="font-size: 2rem;" href="/">Back to All Posts</a>
-	</header>
-	<hr/>
-	<article>
+<article>
+	<header>
 		<hgroup>
-		<h1>{{ title }}</h1>
-		<p>{{ premise }}</p>
+			<h1>{{ title }}</h1>
+			<p>{{ premise }}</p>
 		</hgroup>
-
+		<a href="/">Back to All Posts</a>
+	</header>
+	<hr>
+	<section>
 		{{ content | safe }}
-
-	</article>
-	<hr/>
-	<footer class="post__footer">
-		<a style="font-size: 2rem;" href="/">Back to All Posts</a>
-		<ul>
-			<li>
-				<a href="https://www.github.com/BadrChoubai">GitHub</a>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/BadrChoubai">LinkedIn</a>
-			</li>
-		</ul>
+	</section>
+	<hr>
+	<footer>
+		<a href="/">Back to All Posts</a>
 	</footer>
-</section>
+</article>
