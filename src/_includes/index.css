@@ -301,7 +301,6 @@ hgroup > * {
 
 hgroup > *:not(:first-child):last-child {
   --app-font-weight: unset;
-  font-size: var(--app-font-size);
 }
 
 :where(ol, ul) li {
