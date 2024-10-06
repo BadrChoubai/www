@@ -14,13 +14,16 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addShortcode("postCard", function (postData) {
 		return `
-			<article class="container post-card">
+			<article class="post-card">
 				<hgroup>
 					<h3>
 						<a href="${postData.url}">${postData.title}</a>
 					</h3>
 					<p>${postData.date.toLocaleDateString("en-US")}</p>
 				</hgroup>
+				<p style="font-size: 1rem;">
+					${postData.premise}
+				<p>
 			</article>
 			`;
 	});
@@ -41,7 +44,7 @@ module.exports = function (eleventyConfig) {
 					: ``;
 
 			return `
-		<blockquote>
+		<blockquote class="post-blockquote">
 			${children}
 			${footer}
 		</blockquote>

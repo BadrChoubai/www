@@ -3,18 +3,12 @@ layout: layouts/base.njk
 css: post.css
 ---
 
-<article>
-	<header>
-		<hgroup>
-			<h1>{{ title }}</h1>
-			<p>{{ premise }}</p>
-		</hgroup>
-		<a href="/#all-posts">Back to All Posts</a>
-	</header>
-	<hr>
-	<section>
-		{{ content | safe }}
-	</section>
+<article class="post">
+	<hgroup>
+		<h1>{{ title }}</h1>
+		<p>{{ premise }}</p>
+	</hgroup>
+	{{ content | safe }}
 	<hr>
 	<footer>
 		<a href="/#all-posts">Back to All Posts</a>

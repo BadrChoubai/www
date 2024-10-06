@@ -17,12 +17,36 @@ layout: layouts/base.njk
 	<section>
 		<div class="container--grid">
 			<div>
-				<h2>Background</h2>
+				<header>
+					<hgroup>
+						<h2>Technical Proficiency</h2>
+						<p>What I know.</p>
+					</hgroup>
+				</header>
+				<ul>
+					<li>Languages: C#/.NET, Go, JavaScript</li>
+					<li>Version Control: Git, Azure DevOps, GitHub</li>
+					<li>Containerization: Docker, Kubernetes</li>
+					<li>
+						Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server,
+						SQLite
+					</li>
+					<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
+					<li>Software Testing: Unit, Integration, Contract, and End-to-End Testing</li>
+				</ul>
+			</div>
+			<div>
+				<header>
+					<hgroup>
+						<h2>Background</h2>
+						<p>What I do.</p>
+					</hgroup>
+				</header>
 				<p>
-					I have expertise in C#/.NET, Go, and JavaScript, and a strong background
-					in cloud technologies, containerization, and database management. Proven
+					I have expertise in C#/.NET, Go, and JavaScript, paired with a strong background
+					in cloud technologies, containerization, and database management. A proven
 					track record in developing and maintaining integration APIs and web
-					management systems, with excellent communication and DevOps skills.
+					management systems, with excellent written and verbal communication skills.
 				</p>
 				<ul style="display: flex; gap: var(--app-spacing); padding-left: 0">
 					<li style="list-style: none;">
@@ -33,26 +57,12 @@ layout: layouts/base.njk
 					</li>
 				</ul>
 			</div>
-			<div>
-				<h2>Technical Proficiency</h2>
-				<ul>
-					<li>Languages: C#/.NET, Go, JavaScript</li>
-					<li>Version Control: Git, Azure DevOps, GitHub</li>
-					<li>Containerization: Docker/Kubernetes</li>
-					<li>
-						Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server,
-						SQLite
-					</li>
-					<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
-				</ul>
-			</div>
 		</div>
 	</section>
 
 	<section id="all-posts">
 		<hgroup>
-			<h2>Posts</h2>
-			<p>Thoughts inspired by work, life, and learning.</p>
+			<h2>Writings</h2>
 		</hgroup>
 		{% if collections.published.length !== 0 %}
 		<div class="container--grid">
