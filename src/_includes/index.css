@@ -48,7 +48,6 @@
 	--app-accent-color: rgba(247, 114, 69);
 	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
 	--app-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698), 0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024), 0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03), 0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036), 0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302), 0.5rem 1rem 6rem rgba(129, 145, 181, 0.06), 0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
-	--app-card-box-shadow: var(--pico-box-shadow);
 }
 
 /* Screen Sizes */
@@ -325,8 +324,7 @@ article {
 	margin-bottom: var(--app-block-spacing-vertical);
 	padding: var(--app-block-spacing-vertical) var(--app-block-spacing-horizontal);
 	border-radius: var(--app-border-radius);
-	background: var(--app-card-background-color);
-	box-shadow: var(--app-card-box-shadow);
+	background: var(--app-background-color);
 }
 
 article > header,
@@ -335,13 +333,11 @@ article > footer {
 	margin-left: calc(var(--app-block-spacing-horizontal) * -1);
 	padding: calc(var(--app-block-spacing-vertical) * 0.66)
 		var(--app-block-spacing-horizontal);
-	background-color: var(--app-card-sectioning-background-color);
 }
 
 article > header {
 	margin-top: calc(var(--app-block-spacing-vertical) * -1);
 	margin-bottom: var(--app-block-spacing-vertical);
-	border-bottom: var(--app-border-width) solid var(--app-card-border-color);
 	border-top-right-radius: var(--app-border-radius);
 	border-top-left-radius: var(--app-border-radius);
 }
@@ -349,7 +345,6 @@ article > header {
 article > footer {
 	margin-top: var(--app-block-spacing-vertical);
 	margin-bottom: calc(var(--app-block-spacing-vertical) * -1);
-	border-top: var(--app-border-width) solid var(--app-card-border-color);
 	border-bottom-right-radius: var(--app-border-radius);
 	border-bottom-left-radius: var(--app-border-radius);
 }
