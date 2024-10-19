@@ -1,17 +1,17 @@
+@charset "UTF-8";
+
 /**
 	One style-sheet to rule them all, as I truly hate writing CSS. Most of this
 	is inspired by: https://github.com/appcss/app, but I didn't feel like
 	adopting the framework in its' entirety.
 	**/
 
-@charset "UTF-8";
-
 /* inter-latin-wght-normal */
 @font-face {
 	font-family: "Inter Variable";
 	font-style: normal;
 	font-display: swap;
-	font-weight: 100 700 900;
+	font-weight: 100 900;
 	src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2)
 		format("woff2-variations");
 	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
@@ -35,25 +35,17 @@
 	--app-block-spacing-horizontal: var(--app-spacing);
 	--app-grid-column-gap: var(--app-spacing);
 	--app-grid-row-gap: var(--app-spacing);
+	--app-border-radius: 0.25rem;
 
 	/* Colors */
-	--bg-dark: #000000;
-	--bg-dark--contrast: #2c292d;
-	--text-dark: #ffffff;
+	--app-background-color--light: #efc05e;
+	--app-background-color--dark: #111111;
 
-	--bg-light: #ffffff;
-	--bg-light--contrast: #fefdfb;
-	--text-light: #000000;
+	--app-text-color--light: #111111;
+	--app-text-color--dark: #f3f3f4;
 
-	--app-accent-color: rgba(247, 114, 69);
-	--app-accent-color--shadow: rgba(247, 114, 69, 0.5);
-	--app-box-shadow: 0.0145rem 0.029rem 0.174rem rgba(129, 145, 181, 0.01698),
-		0.0335rem 0.067rem 0.402rem rgba(129, 145, 181, 0.024),
-		0.0625rem 0.125rem 0.75rem rgba(129, 145, 181, 0.03),
-		0.1125rem 0.225rem 1.35rem rgba(129, 145, 181, 0.036),
-		0.2085rem 0.417rem 2.502rem rgba(129, 145, 181, 0.04302),
-		0.5rem 1rem 6rem rgba(129, 145, 181, 0.06),
-		0 0 0 0.0625rem rgba(129, 145, 181, 0.015);
+	--app-accent-color--light: #111111;
+	--app-accent-color--dark: rgba(247, 114, 69);
 }
 
 /* Screen Sizes */
@@ -89,9 +81,19 @@
 
 :root {
 	color-scheme: light dark;
-	--color-background--contrast: light-dark(
-		var(--bg-light--contrast),
-		var(--bg-dark--contrast)
+	--app-background-color: light-dark(
+		var(--app-background-color--light),
+		var(--app-background-color--dark)
+	);
+
+	--app-accent-color: light-dark(
+		var(--app-accent-color--light),
+		var(--app-accent-color--dark)
+	);
+
+	--app-color: light-dark(
+		var(--app-text-color--light),
+		var(--app-text-color--dark)
 	);
 }
 
@@ -113,8 +115,8 @@
 	-webkit-text-size-adjust: 100%;
 	-moz-text-size-adjust: 100%;
 	text-size-adjust: 100%;
-	background-color: light-dark(var(--bg-light), var(--bg-dark));
-	color: light-dark(var(--text-light), var(--text-dark));
+	background-color: var(--app-background-color);
+	color: var(--app-color);
 	font-weight: var(--app-font-weight);
 	font-size: var(--app-font-size);
 	line-height: var(--app-line-height);
@@ -289,11 +291,9 @@ blockquote {
 	margin: var(--app-typography-spacing-vertical) 0;
 	padding: var(--app-spacing);
 	border-right: none;
-	background-color: var(--color-background--contrast);
 	border-left: 0.25rem solid var(--app-accent-color);
 	border-inline-start: 0.25rem solid var(--app-accent-color);
 	border-inline-end: none;
-	box-shadow: var(--app-box-shadow);
 }
 
 blockquote footer {
@@ -368,6 +368,11 @@ article > footer {
 	}
 }
 
+hr {
+	margin: var(--app-typography-spacing-vertical) 0;
+	color: var(--app-accent-color);
+}
+
 .accent {
 	background: var(--app-accent-color);
 	height: var(--app-block-spacing-vertical);
@@ -378,11 +383,5 @@ article > footer {
 }
 
 .post-card {
-	background-color: var(--color-background--contrast);
-	border-bottom: solid 3px var(--app-accent-color);
-	transition: border-bottom 0.2s;
-}
-
-.post-card:hover {
-	border-bottom: solid 6px var(--app-accent-color);
+	border: solid 2px var(--app-accent-color);
 }
