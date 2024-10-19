@@ -22,7 +22,7 @@ deployments where multiple commands might be required to achieve the desired con
 - **Immediate Action**: Users issue commands that lead to immediate changes in the cluster state.
 - **Less Automation**: Requires manual intervention for updates and maintenance.
 - **State Management**: Harder to maintain a consistent view of the desired vs. actual state of resources, leading to
-	potential discrepancies.
+  potential discrepancies.
 
 ### Example:
 
@@ -34,7 +34,6 @@ kubectl create deployment my-app --image=my-image
 
 This command directly creates a deployment for `my-app` using the specified image. Each action must be explicitly
 invoked, which can become tedious and error-prone as the number of resources grows.
-
 
 [Hands-On Project: Getting Started with Kubernetes](https://github.com/BadrChoubai/docker-kubernetes-course/blob/main/Kubernetes/projects/01-first-deployment/README.md)
 
@@ -49,11 +48,11 @@ improved automation capabilities.
 ### Key Characteristics:
 
 - **Desired State Definition**: Users describe what they want the cluster to look like (e.g., deployments, services,
-	etc.) in a declarative format.
+  etc.) in a declarative format.
 - **Automation and Reconciliation**: Kubernetes continuously monitors the cluster and reconciles the current state with
-	the desired state defined in the configuration files.
+  the desired state defined in the configuration files.
 - **Version Control**: Configuration files can be stored in version control systems, making it easier to track changes
-	over time and roll back to previous configurations if needed.
+  over time and roll back to previous configurations if needed.
 
 ### Example:
 
@@ -80,11 +79,11 @@ spec:
           image: my-image
 ```
 
- The command to apply the configuration is:
+The command to apply the configuration is:
 
- ```shell
- kubectl apply -f config.yaml
- ```
+```shell
+kubectl apply -f config.yaml
+```
 
 In this example, Kubernetes will ensure that three replicas of `my-app` are running with the specified container image.
 If the configuration is updated in `config.yaml`, running the `kubectl apply` command again will update the deployment
