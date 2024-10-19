@@ -8,12 +8,21 @@
 		"generate-post": "./poster",
 		"build": "npx @11ty/eleventy",
 		"lint": "npx prettier --write .",
-		"serve": "npx @11ty/eleventy --serve"
+		"serve": "npx @11ty/eleventy --serve",
+		"prepare": "husky install"
 	},
 	"keywords": [],
 	"license": "ISC",
 	"dependencies": {
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0"
+	},
+	"devDependencies": {
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
+		"prettier": "3.3.3"
+	},
+	"lint-staged": {
+		"*.{js,css,md}": "prettier --write"
 	}
 }
