@@ -369,8 +369,11 @@ article > footer {
 }
 
 hr {
+	height: 0;
 	margin: var(--app-typography-spacing-vertical) 0;
-	color: var(--app-accent-color);
+	border: 0;
+	border-top: 1px solid var(--app-accent-color);
+	color: inherit;
 }
 
 .accent {
