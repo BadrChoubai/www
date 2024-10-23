@@ -1,4 +1,5 @@
 const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
+const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addCollection("published", (collection) => {
@@ -11,6 +12,23 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
+	eleventyConfig.addPlugin(feedPlugin, {
+		type: "atom", // or "rss", "json"
+		outputPath: "/feed.xml",
+		collection: {
+			name: "posts", // iterate over `collections.posts`
+			limit: 10, // 0 means no limit
+		},
+		metadata: {
+			language: "en",
+			title: "Badr Choubai",
+			subtitle: "Badr Choubai's personal blog",
+			base: "https://badrchoubai.dev/",
+			author: {
+				name: "Badr Choubai",
+			},
+		},
+	});
 
 	eleventyConfig.addShortcode("postCard", function (postData) {
 		return `
@@ -27,30 +45,6 @@ module.exports = function (eleventyConfig) {
 			</article>
 			`;
 	});
-
-	eleventyConfig.addPairedShortcode(
-		"quote",
-		function (children, author, source) {
-			let hasAuthor = author && author.length > 0;
-			let hasSource = source && source.length > 0;
-
-			const footer =
-				hasAuthor && hasSource
-					? `
-			<footer>
-				<cite>${author}, ${source}</cite>
-			</footer>
-			`
-					: ``;
-
-			return `
-		<blockquote class="post-blockquote">
-			${children}
-			${footer}
-		</blockquote>
-		`;
-		},
-	);
 
 	return {
 		dir: {
