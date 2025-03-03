@@ -14,18 +14,18 @@
 	font-weight: 100 900;
 	src: url(https://cdn.jsdelivr.net/fontsource/fonts/inter:vf@latest/latin-wght-normal.woff2)
 		format("woff2-variations");
-	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-		U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191,
-		U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+		U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF,
+		U+FFFD;
 }
 
 :root {
 	/* Font Base Values */
-	--app-font-family: "Inter Variable", system-ui, "Segoe UI", Roboto, Helvetica,
-		Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--app-font-family: "Inter Variable", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
-	--app-font-size: 100%;
+	--app-font-size: 12px;
 	--app-text-underline-offset: 0.1rem;
 
 	/* Spacing */
@@ -97,20 +97,11 @@
 		var(--app-background-color--dark)
 	);
 
-	--app-accent-color: light-dark(
-		var(--app-accent-color--light),
-		var(--app-accent-color--dark)
-	);
+	--app-accent-color: light-dark(var(--app-accent-color--light), var(--app-accent-color--dark));
 
-	--app-color: light-dark(
-		var(--app-text-color--light),
-		var(--app-text-color--dark)
-	);
+	--app-color: light-dark(var(--app-text-color--light), var(--app-text-color--dark));
 
-	--app-link-color: light-dark(
-		var(--app-link-color--light),
-		var(--app-link-color--dark)
-	);
+	--app-link-color: light-dark(var(--app-link-color--light), var(--app-link-color--dark));
 }
 
 *,
@@ -144,6 +135,10 @@
 	tab-size: 4;
 }
 
+html {
+	font-size: var(--app-font-size);
+}
+
 body {
 	width: 100%;
 	margin: 0;
@@ -152,7 +147,7 @@ body {
 		background-color var(--app-transition);
 
 	font-family: var(--app-font-family), sans-serif;
-	font-size: var(--app-font-size);
+	font-size: inherit;
 
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
@@ -367,8 +362,7 @@ article > header,
 article > footer {
 	margin-right: calc(var(--app-block-spacing-horizontal) * -1);
 	margin-left: calc(var(--app-block-spacing-horizontal) * -1);
-	padding: calc(var(--app-block-spacing-vertical) * 0.66)
-		var(--app-block-spacing-horizontal);
+	padding: calc(var(--app-block-spacing-vertical) * 0.66) var(--app-block-spacing-horizontal);
 }
 
 article > header {
