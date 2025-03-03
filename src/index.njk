@@ -67,7 +67,7 @@ layout: layouts/base.njk
 		</hgroup>
 		{% if collections.published.length !== 0 %}
 		<div class="container--grid">
-			{% for post in collections.published %} {% postCard post.data %} {% endfor
+			{% for post in collections.published %} {% postCard post %} {% endfor
 			%}
 		</div>
 		{% else %}
