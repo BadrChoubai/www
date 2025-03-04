@@ -90,6 +90,7 @@
 	}
 }
 
+/*noinspection CssInvalidFunction*/
 :root {
 	color-scheme: light dark;
 	--app-background-color: light-dark(
@@ -224,7 +225,10 @@ ul {
 	font-weight: var(--app-font-weight);
 }
 
-h1,
+h1 {
+	--app-font-weight: 900;
+}
+
 h2,
 h3,
 h4,
@@ -305,11 +309,6 @@ blockquote {
 	border-left: 0.25rem solid var(--app-accent-color);
 	border-inline-start: 0.25rem solid var(--app-accent-color);
 	border-inline-end: none;
-}
-
-blockquote footer {
-	margin-top: calc(var(--app-typography-spacing-vertical) * 0.5);
-	color: var(--app-color);
 }
 
 hgroup {

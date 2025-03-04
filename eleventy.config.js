@@ -10,11 +10,12 @@ module.exports = function (eleventyConfig) {
 	});
 
 	eleventyConfig.addPassthroughCopy("favicon.ico");
+	eleventyConfig.addPassthroughCopy("resume.pdf");
 
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom", // or "rss", "json"
-		outputPath: "/feed.xml",
+		outputPath: "/feed.rss",
 		collection: {
 			name: "posts", // iterate over `collections.posts`
 			limit: 10, // 0 means no limit
@@ -50,7 +51,6 @@ module.exports = function (eleventyConfig) {
 		dir: {
 			input: "src",
 		},
-		templateFormats: ["njk", "md"],
 		markdownTemplateEngine: "njk",
 		htmlTemplateEngine: "njk",
 	};

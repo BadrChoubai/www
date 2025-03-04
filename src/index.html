@@ -1,0 +1,83 @@
+---
+title: "Home"
+layout: layouts/base.njk
+---
+
+<article>
+	<header>
+		<h1 style="font-weight: 900">Badr Choubai</h1>
+		<blockquote>
+			If you always do what you’ve always done. You’ll always get what you’ve always gotten.
+		</blockquote>
+		<p>
+			I enjoy learning about technology because so much of the world depends on it. Writing code
+			allows me to understand how some of it works, and I love learning about topics in computing,
+			engineering, and science. When I'm not writing code, you can find me having a coffee, reading
+			a book, running or hiking, listening to music, spending time with friends, or attending
+			meetups.
+		</p>
+	</header>
+
+	<section>
+		<div class="container--grid">
+			<div>
+				<header>
+					<hgroup>
+						<h2>Technical Proficiency</h2>
+						<p>What I know.</p>
+					</hgroup>
+				</header>
+				<ul>
+					<li>Languages: C#/.NET, Go, JavaScript</li>
+					<li>Version Control: Git, Azure DevOps, GitHub</li>
+					<li>Containerization: Docker, Kubernetes</li>
+					<li>Database Technologies: Azure CosmosDB, MongoDB, Microsoft SQL Server, SQLite</li>
+					<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
+					<li>Software Testing: Unit, Integration, Contract, and End-to-End Testing</li>
+				</ul>
+			</div>
+			<div>
+				<header>
+					<hgroup>
+						<h2>Background</h2>
+						<p>What I do.</p>
+					</hgroup>
+				</header>
+				<p>
+					I have expertise in C#/.NET, Go, and TypeScript, paired with a strong background in cloud
+					technologies, containerization, and database management. A proven track record in
+					developing and maintaining integration APIs and web management systems, with excellent
+					written and verbal communication skills.
+				</p>
+				<ul style="display: flex; gap: var(--app-spacing); padding-left: 0">
+					<li style="list-style: none">
+						<a href="/resume.pdf">Resumé</a>
+					</li>
+					<li style="list-style: none">
+						<a href="https://www.github.com/badrchoubai">GitHub</a>
+					</li>
+					<li style="list-style: none">
+						<a href="https://www.linkedin.com/in/badrchoubai">LinkedIn</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section id="all-posts">
+		<header style="display: flex; align-items: center; justify-content: space-between">
+			<hgroup>
+				<h2>Posts</h2>
+			</hgroup>
+			<a href="/feed.rss">Subscribe</a>
+		</header>
+
+		{% if collections.published.length !== 0 %}
+		<div class="container--grid">
+			{% for post in collections.published %} {% postCard post %} {% endfor %}
+		</div>
+		{% else %}
+		<p>No posts to display...</p>
+		{% endif %}
+	</section>
+</article>
