@@ -314,8 +314,9 @@ blockquote {
 }
 
 blockquote p {
-	line-height: var(--app-line-height);
+	color: var(--app-color-contrast);
 	font-family: "Times New Roman", sans-serif;
+	line-height: var(--app-line-height);
 	margin: 0;
 }
 
