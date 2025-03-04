@@ -1,11 +1,3 @@
-@charset "UTF-8";
-
-/**
-	One style-sheet to rule them all, as I truly hate writing CSS. Most of this
-	is inspired by: https://github.com/appcss/app, but I didn't feel like
-	adopting the framework in its' entirety.
-	**/
-
 /* inter-latin-wght-normal */
 @font-face {
 	font-family: "Inter Variable";
@@ -43,14 +35,17 @@
 	--app-background-color--light: #efc05e;
 	--app-background-color--dark: #111111;
 
-	--app-text-color--light: #111111;
+	--app-background-color-contrast--light: #805a3b;
+	--app-background-color-contrast--dark: #272822;
+
+	--app-text-color--light: #000000;
 	--app-text-color--dark: #f3f3f4;
 
-	--app-accent-color--light: #111111;
-	--app-accent-color--dark: rgba(247, 114, 69);
+	--app-text-color-contrast--light: #f4ecd8;
+	--app-text-color-contrast--dark: #f3f3f4;
 
-	--app-link-color--light: #800080;
-	--app-link-color--dark: rgba(247, 114, 69);
+	--app-accent-color--light: #143642;
+	--app-accent-color--dark: #f77245;
 
 	--app-code-background-color: var(--app-color);
 	--app-code-color: var(--app-background-color);
@@ -98,11 +93,18 @@
 		var(--app-background-color--dark)
 	);
 
-	--app-accent-color: light-dark(var(--app-accent-color--light), var(--app-accent-color--dark));
+	--app-background-color-contrast: light-dark(
+		var(--app-background-color-contrast--light),
+		var(--app-background-color-contrast--dark)
+	);
 
 	--app-color: light-dark(var(--app-text-color--light), var(--app-text-color--dark));
+	--app-color-contrast: light-dark(
+		var(--app-text-color-contrast--light),
+		var(--app-text-color-contrast--dark)
+	);
 
-	--app-link-color: light-dark(var(--app-link-color--light), var(--app-link-color--dark));
+	--app-accent-color: light-dark(var(--app-accent-color--light), var(--app-accent-color--dark));
 }
 
 *,
@@ -301,7 +303,7 @@ a {
 }
 
 blockquote {
-	font-family: "Helvetica Neue", serif;
+	background: var(--app-background-color-contrast);
 	display: block;
 	margin: var(--app-typography-spacing-vertical) 0;
 	padding: var(--app-spacing);
@@ -309,6 +311,12 @@ blockquote {
 	border-left: 0.25rem solid var(--app-accent-color);
 	border-inline-start: 0.25rem solid var(--app-accent-color);
 	border-inline-end: none;
+}
+
+blockquote p {
+	line-height: var(--app-line-height);
+	font-family: "Times New Roman", sans-serif;
+	margin: 0;
 }
 
 hgroup {
@@ -330,20 +338,6 @@ hgroup > *:not(:first-child):last-child {
 
 :where(dl, ol, ul) :where(dl, ol, ul) {
 	margin: calc(var(--app-typography-spacing-vertical) * 0.25) 0 0;
-}
-
-blockquote {
-	display: block;
-	margin: var(--app-typography-spacing-vertical) 0;
-	padding: var(--app-spacing);
-	border-right: none;
-	border-left: 0.25rem solid var(--app-accent-color);
-	border-inline-start: 0.25rem solid var(--app-accent-color);
-	border-inline-end: none;
-}
-
-blockquote footer {
-	margin-top: calc(var(--app-typography-spacing-vertical) * 0.5);
 }
 
 ul li {
@@ -462,7 +456,7 @@ kbd {
 }
 
 .post a:not(footer > a) {
-	color: var(--app-link-color);
+	color: var(--app-accent-color);
 }
 
 @media (prefers-color-scheme: dark) {
