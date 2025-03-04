@@ -33,16 +33,31 @@ module.exports = function (eleventyConfig) {
 
 	eleventyConfig.addShortcode("postCard", function (post) {
 		return `
-			<article class="post-card">
+			<article class="card">
+				<header>
+					<hgroup>
+							<h3><a href="${post.data.url}">${post.data.title}</a></h3>
+							<p>${post.data.dateString}</p>
+					</hgroup>
+				</header>
+					<p>${post.data.premise}</p>
+			</article>
+			`;
+	});
+
+	eleventyConfig.addShortcode("projectCard", function (project) {
+		return `
+			<article class="card">
+			<header>
 				<hgroup>
-					<h3>
-						<a href="${post.data.url}">${post.data.title}</a>
-					</h3>
-					<p>${post.data.dateString}</p>
+					<h2>
+						<a target="_blank" href="${project.url}">${project.name}</a>
+					</h2>
 				</hgroup>
-				<p style="font-size: 1rem;">
-					${post.data.premise}
-				<p>
+			</header>
+			<p>
+				${project.description}
+			</p>
 			</article>
 			`;
 	});

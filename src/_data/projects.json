@@ -1,0 +1,17 @@
+[
+	{
+		"name": "CS-Resources",
+		"description": "A curated list of learning resources covering a range of topics, including programming fundamentals, system design, databases, and opportunities to engage with local tech communities.",
+		"url": "https://github.com/BadrChoubai/CS-Resources"
+	},
+	{
+		"name": "Services",
+		"description": "This repository contains source code for multiple API projects written in different programming languages. They serve me as a single source of truth to showcase patterns I've learned with a particular language or related tooling.",
+		"url": "https://github.com/BadrChoubai/Services"
+	},
+	{
+		"name": "www",
+		"description": "The source code for this website.",
+		"url": "https://github.com/BadrChoubai/www"
+	}
+]

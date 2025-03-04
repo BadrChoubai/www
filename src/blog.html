@@ -1,0 +1,32 @@
+---
+title: "Blog"
+layout: layouts/base.njk
+---
+
+<article>
+	<section id="all-posts">
+		<header style="display: flex; align-items: center; justify-content: space-between">
+			<hgroup>
+				<h1>All Posts</h1>
+			</hgroup>
+			<nav>
+				<ul style="display: flex; gap: var(--app-spacing); padding-left: 0">
+					<li style="list-style: none;">
+			<a href="/">Home</a>
+					</li>
+					<li style="list-style: none;">
+			<a href="/feed.rss">Subscribe to RSS Feed</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		{% if collections.published.length !== 0 %}
+		<div class="container">
+			{% for post in collections.published %} {% postCard post %} {% endfor %}
+		</div>
+		{% else %}
+		<p>No posts to display...</p>
+		{% endif %}
+	</section>
+</article>
