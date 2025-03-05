@@ -16,6 +16,8 @@
 	--app-grid-row-gap: var(--app-spacing);
 	--app-border-radius: 0.25rem;
 
+	--app-nav-element-spacing-vertical: 1rem;
+	--app-nav-element-spacing-horizontal: 0.5rem;
 	--app-transition: 0.2s ease-in-out;
 
 	/* Colors */
@@ -356,6 +358,40 @@ article > footer {
 	margin-bottom: calc(var(--app-block-spacing-vertical) * -1);
 	border-bottom-right-radius: var(--app-border-radius);
 	border-bottom-left-radius: var(--app-border-radius);
+}
+
+nav,
+nav ul {
+	display: flex;
+}
+
+nav {
+	justify-content: space-between;
+	overflow: visible;
+}
+
+nav ol,
+nav ul {
+	align-items: center;
+	margin-bottom: 0;
+	padding: 0;
+	list-style: none;
+}
+
+nav ol:first-of-type,
+nav ul:first-of-type {
+	margin-left: calc(var(--app-nav-element-spacing-horizontal) * -1);
+}
+
+nav ol:last-of-type,
+nav ul:last-of-type {
+	margin-right: calc(var(--app-nav-element-spacing-horizontal) * -1);
+}
+
+nav li {
+	display: inline-block;
+	margin: 0;
+	padding: var(--app-nav-element-spacing-vertical) var(--app-nav-element-spacing-horizontal);
 }
 
 .container--grid {
