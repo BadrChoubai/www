@@ -7,7 +7,7 @@ layout: layouts/base.njk
 	<header>
 		<h1 style="font-weight: 900">Badr Choubai</h1>
 		<blockquote>
-			<p>If you always do what you’ve always done. You’ll always get what you’ve always gotten.</p>
+			<p>If you always do what you’ve always done, you’ll always get what you’ve always got.</p>
 		</blockquote>
 		<p>
 			I enjoy learning about technology because so much of the world depends on it. Writing code
@@ -47,15 +47,9 @@ layout: layouts/base.njk
 					I have expertise in C#, Go, and TypeScript, paired with a strong foundation in cloud
 					technologies, containerization, and database management.
 				</p>
-				<ul style="display: flex; gap: var(--app-spacing); padding-left: 0">
+				<ul style="padding-left: 0">
 					<li style="list-style: none">
 						<a href="/resume.pdf">Résumé</a>
-					</li>
-					<li style="list-style: none">
-						<a href="https://www.github.com/badrchoubai">GitHub</a>
-					</li>
-					<li style="list-style: none">
-						<a href="https://www.linkedin.com/in/badrchoubai">LinkedIn</a>
 					</li>
 				</ul>
 			</div>
@@ -67,7 +61,13 @@ layout: layouts/base.njk
 			<hgroup>
 				<h2>Projects</h2>
 			</hgroup>
-			<a target="_blank" href="https://www.github.com/BadrChoubai">View on GitHub</a>
+			<nav>
+				<ul>
+					<li>
+						<a target="_blank" href="https://www.github.com/BadrChoubai">View on GitHub</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
 
 		{% if projects.length !== 0 %}
@@ -85,9 +85,9 @@ layout: layouts/base.njk
 				<h2>Recent Posts</h2>
 			</hgroup>
 			<nav>
-				<ul style="display: flex; gap: var(--app-spacing); padding-left: 0">
-					<li style="list-style: none;">
-			<a href="/blog">All Posts</a>
+				<ul>
+					<li>
+						<a href="/blog">All Posts</a>
 					</li>
 				</ul>
 			</nav>
