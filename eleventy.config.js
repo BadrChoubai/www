@@ -9,6 +9,7 @@ module.exports = function (eleventyConfig) {
 			.sort((o, n) => n.date - o.date);
 	});
 
+	eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "assets/fonts" });
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 	eleventyConfig.addPassthroughCopy("resume.pdf");
 

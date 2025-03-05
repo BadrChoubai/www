@@ -1,6 +1,6 @@
 :root {
 	/* Font Base Values */
-	--app-font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+	--app-font-family: "Inter Variable", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
@@ -300,7 +300,7 @@ blockquote {
 blockquote p {
 	font-size: var(--app-font-size);
 	color: var(--app-color-contrast);
-	font-family: "Times New Roman", sans-serif;
+	font-family: "Alegreya Variable", "Times New Roman", sans-serif;
 	line-height: var(--app-line-height);
 	margin: 0;
 }
