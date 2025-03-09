@@ -21,20 +21,17 @@
 	--app-transition: 0.2s ease-in-out;
 
 	/* Colors */
-	--app-background-color--light: #efc05e;
-	--app-background-color--dark: #111111;
+	--app-background-color--light: #fefaf9;
+	--app-background-color--dark: #221f22;
 
-	--app-background-color-contrast--light: #805a3b;
-	--app-background-color-contrast--dark: #272822;
+	--app-background-color-contrast--light: #ede7e5;
+	--app-background-color-contrast--dark: #2d2a2e;
 
-	--app-text-color--light: #000000;
-	--app-text-color--dark: #f3f3f4;
+	--app-text-color--light: #29242a;
+	--app-text-color--dark: #fcfcfa;
 
-	--app-text-color-contrast--light: #f4ecd8;
-	--app-text-color-contrast--dark: #f3f3f4;
-
-	--app-accent-color--light: #143642;
-	--app-accent-color--dark: #f77245;
+	--app-accent-color--light: #1c8ca8;
+	--app-accent-color--dark: #fc9867;
 
 	--app-code-background-color: var(--app-color);
 	--app-code-color: var(--app-background-color);
@@ -88,10 +85,6 @@
 	);
 
 	--app-color: light-dark(var(--app-text-color--light), var(--app-text-color--dark));
-	--app-color-contrast: light-dark(
-		var(--app-text-color-contrast--light),
-		var(--app-text-color-contrast--dark)
-	);
 
 	--app-accent-color: light-dark(var(--app-accent-color--light), var(--app-accent-color--dark));
 }
@@ -302,7 +295,7 @@ blockquote {
 
 blockquote p {
 	font-size: var(--app-font-size);
-	color: var(--app-color-contrast);
+	color: var(--app-color);
 	font-family: "Alegreya Variable", "Times New Roman", sans-serif;
 	line-height: var(--app-line-height);
 	margin: 0;
@@ -319,6 +312,10 @@ hgroup > * {
 
 hgroup > *:not(:first-child):last-child {
 	--app-font-weight: unset;
+}
+
+hgroup > p {
+	color: light-dark(#e14775, #ffd866);
 }
 
 :where(ol, ul) li {
