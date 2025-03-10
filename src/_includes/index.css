@@ -24,7 +24,7 @@
 	--app-background-color--light: #fefaf9;
 	--app-background-color--dark: #221f22;
 
-	--app-background-color-contrast--light: #ede7e5;
+	--app-background-color-contrast--light: #faf4f2;
 	--app-background-color-contrast--dark: #2d2a2e;
 
 	--app-text-color--light: #29242a;
@@ -473,6 +473,10 @@ kbd {
 	background-color: var(--app-code-kbd-background-color);
 	color: var(--app-code-kbd-color);
 	vertical-align: baseline;
+}
+
+.post {
+	background: var(--app-background-color-contrast);
 }
 
 .post a:not(footer > a) {
