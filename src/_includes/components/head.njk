@@ -1,0 +1,22 @@
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+<meta name="description" content="Badr Choubai's place on the internet">
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ede7e5" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#221f22" />
+
+{%- set css -%}
+{% include './font-face.css' %}
+{% include 'index.css' %}
+{% include './prism-theme.css' %}
+{%- endset -%}
+
+<style>
+	{{ css | cssmin | safe }}
+</style>
+
+<title>{{ "Badr Choubai - " + title }}</title>
+

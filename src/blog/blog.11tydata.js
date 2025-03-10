@@ -1,6 +1,6 @@
-const { DateTime } = require("luxon");
+import { DateTime } from "luxon";
 
-module.exports = {
+export default {
 	tags: ["posts"],
 	layout: "layouts/post.njk",
 	css: "prism",

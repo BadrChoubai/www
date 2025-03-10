@@ -1,7 +1,8 @@
-const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
-const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
+import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import minificationLocalPlugin from "./config/minification.js";
 
-module.exports = function (eleventyConfig) {
+export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("published", (collection) => {
 		return collection
 			.getFilteredByTags("posts")
@@ -9,10 +10,17 @@ module.exports = function (eleventyConfig) {
 			.sort((o, n) => n.date - o.date);
 	});
 
-	eleventyConfig.addPassthroughCopy({ "src/assets/fonts": "assets/fonts" });
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 	eleventyConfig.addPassthroughCopy("resume.pdf");
 
+	eleventyConfig.addPassthroughCopy({
+		"node_modules/@fontsource-variable/alegreya/files/alegreya-latin-wght-normal.woff2":
+			"fonts/Alegreya.woff2",
+		"node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2":
+			"fonts/Inter.woff2",
+	});
+
+	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 	eleventyConfig.addPlugin(feedPlugin, {
 		type: "atom", // or "rss", "json"
@@ -62,12 +70,12 @@ module.exports = function (eleventyConfig) {
 			</article>
 			`;
 	});
+}
 
-	return {
-		dir: {
-			input: "src",
-		},
-		markdownTemplateEngine: "njk",
-		htmlTemplateEngine: "njk",
-	};
+export const config = {
+	dir: {
+		input: "src",
+	},
+	markdownTemplateEngine: "njk",
+	htmlTemplateEngine: "njk",
 };
