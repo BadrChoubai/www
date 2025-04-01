@@ -511,8 +511,8 @@ kbd {
 .card .keyword {
 	background: var(--app-accent-color--darker);
 	padding: calc(var(--app-block-spacing-vertical) * 0.3);
-	font-size: 75%;
-	font-family: ubuntu, sans-serif;
+	font-size: 90%;
+	font-family: "Ubuntu Mono", monospace;
 	font-weight: var(--app-font-weight);
 	white-space: nowrap;
 }
