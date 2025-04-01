@@ -1,5 +1,11 @@
 [
 	{
+		"name": "www",
+		"keyword": "Web Development",
+		"description": "The source code for this website.",
+		"url": "https://github.com/BadrChoubai/www"
+	},
+	{
 		"name": "CS-Resources",
 		"keyword": "Continuous Learning",
 		"description": "A curated list of learning resources covering a range of topics, including programming fundamentals, system design, databases, and opportunities to engage with local tech communities.",
@@ -12,9 +18,9 @@
 		"url": "https://github.com/BadrChoubai/Services"
 	},
 	{
-		"name": "www",
-		"keyword": "Web Development",
-		"description": "The source code for this website.",
-		"url": "https://github.com/BadrChoubai/www"
+		"name": "buddy.config",
+		"keyword": "Systems Administration",
+		"description": "The setup script I use to easily commission myself a computer to write code with.",
+		"url": "https://github.com/BadrChoubai/buddy.config"
 	}
 ]

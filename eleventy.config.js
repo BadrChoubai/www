@@ -18,6 +18,8 @@ export default async function (eleventyConfig) {
 			"fonts/Alegreya.woff2",
 		"node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2":
 			"fonts/Inter.woff2",
+		"node_modules/@fontsource/material-icons/files/material-icons-latin-400-normal.woff2":
+			"fonts/MaterialIcons.woff2",
 	});
 
 	eleventyConfig.addPlugin(minificationLocalPlugin);
@@ -62,6 +64,7 @@ export default async function (eleventyConfig) {
 				<hgroup>
 					<h2>
 						<a target="_blank" href="${project.url}">${project.name}</a>
+						<span class="icon">open_in_new</span>
 					</h2>
 				</hgroup>
 			</header>

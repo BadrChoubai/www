@@ -19,7 +19,7 @@ layout: layouts/main.njk
 	</header>
 
 	<section>
-		<div class="container--grid">
+		<div class="grid">
 			<div>
 				<header>
 					<hgroup>
@@ -71,9 +71,7 @@ layout: layouts/main.njk
 		</header>
 
 		{% if projects.length !== 0 %}
-		<div class="container--grid">
-			{% for project in projects %} {% projectCard project %} {% endfor %}
-		</div>
+		<div class="grid">{% for project in projects %} {% projectCard project %} {% endfor %}</div>
 		{% else %}
 		<p>No projects to display...</p>
 		{% endif %}
@@ -94,7 +92,7 @@ layout: layouts/main.njk
 		</header>
 
 		{% if collections.published.length !== 0 %}
-		<div class="container--grid">
+		<div class="grid">
 			{% for post in collections.published.slice(0, 3) %} {% postCard post %} {% endfor %}
 		</div>
 		{% else %}

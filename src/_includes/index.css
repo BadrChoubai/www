@@ -2,6 +2,7 @@
 	/* Font Base Values */
 	--app-font-family: "Inter Variable", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
 		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--app-icon-font: "Material Icons", sans-serif;
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
 	--app-font-size: 12px;
@@ -41,6 +42,11 @@
 
 	--app-code-kbd-background-color: var(--app-color);
 	--app-code-kbd-color: var(--app-background-color);
+}
+
+.icon {
+	font-size: 50%;
+	font-family: var(--app-icon-font), sans-serif;
 }
 
 /* Screen Sizes */
@@ -163,6 +169,18 @@ section {
 	margin-left: auto;
 	padding-right: var(--app-spacing);
 	padding-left: var(--app-spacing);
+}
+
+.grid {
+	grid-column-gap: var(--app-grid-column-gap);
+	grid-row-gap: var(--app-grid-row-gap);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-auto-rows: auto;
+}
+
+.grid > * {
+	min-width: 0;
 }
 
 @media (min-width: 576px) {
@@ -394,23 +412,6 @@ nav li {
 	display: inline-block;
 	margin: 0;
 	padding: var(--app-nav-element-spacing-vertical) var(--app-nav-element-spacing-horizontal);
-}
-
-.container--grid {
-	grid-column-gap: var(--app-grid-column-gap);
-	grid-row-gap: var(--app-grid-row-gap);
-	display: grid;
-	grid-template-columns: 1fr;
-}
-
-.container--grid > * {
-	min-width: 0;
-}
-
-@media (min-width: 768px) {
-	.container--grid {
-		grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
-	}
 }
 
 hr {
