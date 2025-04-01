@@ -49,7 +49,8 @@ export default async function (eleventyConfig) {
 							<p>${post.data.dateString}</p>
 					</hgroup>
 				</header>
-					<p>${post.data.premise}</p>
+				<p>${post.data.premise}</p>
+				<span class="keyword">${post.data.keyword}</span>
 			</article>
 			`;
 	});
@@ -67,6 +68,7 @@ export default async function (eleventyConfig) {
 			<p>
 				${project.description}
 			</p>
+			<span class="keyword">${project.keyword}</span>
 			</article>
 			`;
 	});

@@ -33,6 +33,9 @@
 	--app-accent-color--light: #1c8ca8;
 	--app-accent-color--dark: #fc9867;
 
+	--app--accent-color__lighter: rgba(28, 140, 168, 0.5);
+	--app-accent-color__darker: rgba(252, 152, 103, 0.5);
+
 	--app-code-background-color: var(--app-color);
 	--app-code-color: var(--app-background-color);
 
@@ -87,6 +90,10 @@
 	--app-color: light-dark(var(--app-text-color--light), var(--app-text-color--dark));
 
 	--app-accent-color: light-dark(var(--app-accent-color--light), var(--app-accent-color--dark));
+	--app-accent-color--darker: light-dark(
+		var(--app--accent-color__lighter),
+		var(--app-accent-color__darker)
+	);
 }
 
 *,
@@ -328,6 +335,7 @@ hgroup > p {
 
 ul li {
 	list-style: disc;
+	padding: 0;
 }
 
 article {
@@ -486,12 +494,27 @@ kbd {
 .card {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 	align-items: flex-start;
+}
+
+.card p {
+	flex-grow: 1;
+	align-self: stretch; /* Ensures the text aligns properly */
 }
 
 .card header {
 	padding-bottom: 0;
 	margin-bottom: 0;
+}
+
+.card .keyword {
+	background: var(--app-accent-color--darker);
+	padding: calc(var(--app-block-spacing-vertical) * 0.3);
+	font-size: 75%;
+	font-family: ubuntu, sans-serif;
+	font-weight: var(--app-font-weight);
+	white-space: nowrap;
 }
 
 @media (prefers-color-scheme: dark) {
