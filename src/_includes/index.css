@@ -24,7 +24,7 @@
 	--app-background-color--light: #fefaf9;
 	--app-background-color--dark: #221f22;
 
-	--app-background-color-contrast--light: #faf4f2;
+	--app-background-color-contrast--light: #ede7e5;
 	--app-background-color-contrast--dark: #2d2a2e;
 
 	--app-text-color--light: #29242a;
@@ -90,10 +90,6 @@
 	--app-color: light-dark(var(--app-text-color--light), var(--app-text-color--dark));
 
 	--app-accent-color: light-dark(var(--app-accent-color--light), var(--app-accent-color--dark));
-	--app-accent-color--darker: light-dark(
-		var(--app--accent-color__lighter),
-		var(--app-accent-color__darker)
-	);
 }
 
 *,
@@ -496,6 +492,7 @@ kbd {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
+	background: var(--app-background-color-contrast);
 }
 
 .card p {
@@ -509,7 +506,8 @@ kbd {
 }
 
 .card .keyword {
-	background: var(--app-accent-color--darker);
+	background: var(--app-background-color);
+	color: light-dark(rgb(225, 71, 117), rgb(255, 216, 102));
 	padding: calc(var(--app-block-spacing-vertical) * 0.3);
 	font-size: 90%;
 	font-family: "Ubuntu Mono", monospace;
@@ -519,14 +517,12 @@ kbd {
 
 @media (prefers-color-scheme: dark) {
 	.card {
-		background-color: var(--app-background-color);
 		border: 2px solid var(--app-accent-color); /* For the orange border */
 	}
 }
 
 @media (prefers-color-scheme: light) {
 	.card {
-		background-color: var(--app-background-color);
 		border: 2px solid var(--app-accent-color); /* Black border for light mode */
 	}
 }
