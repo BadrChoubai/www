@@ -22,20 +22,13 @@
 	--app-transition: 0.2s ease-in-out;
 
 	/* Colors */
-	--app-background-color--light: #fefaf9;
-	--app-background-color--dark: #221f22;
+	--app-background-color: #221f22;
 
-	--app-background-color-contrast--light: #ede7e5;
-	--app-background-color-contrast--dark: #2d2a2e;
+	--app-background-color-contrast: #2d2a2e;
 
-	--app-text-color--light: #29242a;
-	--app-text-color--dark: #fcfcfa;
+	--app-color: #fcfcfa;
 
-	--app-accent-color--light: #1c8ca8;
-	--app-accent-color--dark: #fc9867;
-
-	--app--accent-color__lighter: rgba(28, 140, 168, 0.5);
-	--app-accent-color__darker: rgba(252, 152, 103, 0.5);
+	--app-accent-color: #fc9867;
 
 	--app-code-background-color: var(--app-color);
 	--app-code-color: var(--app-background-color);
@@ -78,24 +71,6 @@
 	:root {
 		--app-font-size: 131.25%;
 	}
-}
-
-/*noinspection CssInvalidFunction*/
-:root {
-	color-scheme: light dark;
-	--app-background-color: light-dark(
-		var(--app-background-color--light),
-		var(--app-background-color--dark)
-	);
-
-	--app-background-color-contrast: light-dark(
-		var(--app-background-color-contrast--light),
-		var(--app-background-color-contrast--dark)
-	);
-
-	--app-color: light-dark(var(--app-text-color--light), var(--app-text-color--dark));
-
-	--app-accent-color: light-dark(var(--app-accent-color--light), var(--app-accent-color--dark));
 }
 
 *,
@@ -339,7 +314,7 @@ hgroup > *:not(:first-child):last-child {
 }
 
 hgroup > p {
-	color: light-dark(#e14775, #ffd866);
+	color: #ffd866;
 }
 
 :where(ol, ul) li {
@@ -405,7 +380,7 @@ article.card {
 
 .card .keyword {
 	background: var(--app-background-color);
-	color: light-dark(rgb(225, 71, 117), rgb(255, 216, 102));
+	color: rgb(255, 216, 102);
 	padding: calc(var(--app-block-spacing-vertical) * 0.3);
 	font-family: "Ubuntu Mono", monospace;
 	font-weight: var(--app-font-weight);
