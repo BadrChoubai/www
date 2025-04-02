@@ -1,7 +1,8 @@
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import minificationLocalPlugin from "./config/minification.js";
-import { DateTime } from "luxon";
+
+import { keywordList } from "./shortcodes/keywords.js";
 
 export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("published", (collection) => {
@@ -43,6 +44,13 @@ export default async function (eleventyConfig) {
 		},
 	});
 
+	eleventyConfig.addShortcode("emoji", function (emoji, alt = "") {
+		return (
+			`<span aria-hidden="true" class="emoji">${emoji}</span>` +
+			(alt ? `<span class="sr-only">${alt}</span>` : "")
+		);
+	});
+
 	eleventyConfig.addShortcode("postCard", function (post) {
 		return `
 			<article class="card">
@@ -61,18 +69,18 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addShortcode("projectCard", function (project) {
 		return `
 			<article class="card">
-			<header>
-				<hgroup>
-					<h2>
-						<a target="_blank" href="${project.url}">${project.name}</a>
-						<span class="icon">open_in_new</span>
-					</h2>
-				</hgroup>
-			</header>
-			<p>
-				${project.description}
-			</p>
-			<span class="keyword">${project.keyword}</span>
+				<header>
+					<hgroup>
+						<h2>
+							<a target="_blank" href="${project.url}">${project.name}</a>
+							<span class="icon">open_in_new</span>
+						</h2>
+					</hgroup>
+				</header>
+				<p>
+					${project.description}
+				</p>
+				${keywordList(project.keywords)}
 			</article>
 			`;
 	});

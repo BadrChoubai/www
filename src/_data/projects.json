@@ -1,25 +1,25 @@
 [
 	{
 		"name": "www",
-		"keyword": "Web Development",
+		"keywords": ["Web Development", "JavaScript"],
 		"description": "The source code for this website.",
 		"url": "https://github.com/BadrChoubai/www"
 	},
 	{
 		"name": "CS-Resources",
-		"keyword": "Continuous Learning",
+		"keywords": ["Continuous Learning"],
 		"description": "A curated list of learning resources covering a range of topics, including programming fundamentals, system design, databases, and opportunities to engage with local tech communities.",
 		"url": "https://github.com/BadrChoubai/CS-Resources"
 	},
 	{
 		"name": "Services",
-		"keyword": "API Development",
+		"keywords": ["API Development", "Docker"],
 		"description": "This repository contains source code for multiple API projects written in different programming languages. They serve me as a single source of truth to showcase patterns I've learned with a particular language or related tooling.",
 		"url": "https://github.com/BadrChoubai/Services"
 	},
 	{
 		"name": "buddy.config",
-		"keyword": "Systems Administration",
+		"keywords": ["Systems Administration"],
 		"description": "The setup script I use to easily commission myself a computer to write code with.",
 		"url": "https://github.com/BadrChoubai/buddy.config"
 	}

@@ -42,6 +42,10 @@
 	font-family: var(--app-icon-font), sans-serif;
 }
 
+.emoji {
+	line-height: 1;
+}
+
 /* Screen Sizes */
 @media (min-width: 576px) {
 	:root {
@@ -171,7 +175,7 @@ section {
 	}
 
 	.grid {
-		grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 	}
 }
 
@@ -366,8 +370,18 @@ article.card {
 		flex-grow: 1;
 	}
 
-	span {
-		align-self: end;
+	span.keyword {
+		align-self: start;
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+		gap: calc(var(--app-spacing) * 0.5);
+		padding-left: 0;
+	}
+	li {
+		list-style-type: none;
 	}
 }
 
