@@ -3,24 +3,41 @@ title: "Blog"
 layout: layouts/main.njk
 ---
 
-<article>
-	<section id="all-posts">
-		<header style="display: flex; align-items: center; justify-content: space-between">
-			<hgroup>
-				<h1 style="font-weight: 900">Blog</h1>
-			</hgroup>
-			<nav>
-				<ul>
-					<li>
-						<a href="/">Home</a>
-					</li>
-					<li>
-						<a href="/feed.rss">Subscribe to RSS Feed</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+<article class="grid">
+	<section>
+				<header>
+					<hgroup>
+						<h2>Blog Posts</h2>
+						<p>What I Think.</p>
+					</hgroup>
+				</header>
+	<p>
+		I enjoy learning about technology because so much of the world depends on it. Writing code
+		allows me to understand how some of it works, and I love learning about topics in computing,
+		engineering, and science. When I'm not writing code, you can find me having a coffee, reading a
+		book, running or hiking, listening to music, spending time with friends, or attending meetups.
+	</p>
+	<p>
+		Eventually, I will start to build the habit of writing here more frequently.
+	</p>
+	</section>
+<section>
+	<blockquote>
+		"If you always do what you’ve always done, you’ll always get what you’ve always got."
+		<footer>
+			<cite>&mdash; Henry Ford</cite>
+	  </footer>
+	</blockquote>
+</section>
+</article>
 
+<hr />
+
+<article>
+	<header>
+	<h3>All Posts</h3>
+	</header>
+	<section id="all-posts">
 		{% if collections.published.length !== 0 %}
 		<div class="container">
 			{% for post in collections.published %} {% postCard post %} {% endfor %}

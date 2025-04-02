@@ -3,36 +3,20 @@ title: "Home"
 layout: layouts/main.njk
 ---
 
-<article>
-	<header>
-		<h1 style="font-weight: 900">Badr Choubai</h1>
-		<blockquote>
-			<p>If you always do what you’ve always done, you’ll always get what you’ve always got.</p>
-		</blockquote>
-		<p>
-			I enjoy learning about technology because so much of the world depends on it. Writing code
-			allows me to understand how some of it works, and I love learning about topics in computing,
-			engineering, and science. When I'm not writing code, you can find me having a coffee, reading
-			a book, running or hiking, listening to music, spending time with friends, or attending
-			meetups.
-		</p>
-	</header>
-
+<article class="grid">
 	<section>
-		<article class="grid">
-			<div>
 				<header>
 					<hgroup>
 						<h2>Technical Proficiency</h2>
 						<p>What I know.</p>
 					</hgroup>
 				</header>
-					<p>
-							I have expertise in C#, Go, and TypeScript, paired with a strong foundation in cloud
-							technologies, containerization, and database management.
-					</p>
-			</div>
-			<div>
+				<p>
+					I have expertise in C#, Go, and TypeScript, paired with a strong foundation in cloud
+					technologies, containerization, and database management.
+				</p>
+	</section>
+			<section>
 				<ul>
 					<li>Programming Languages: C#, Go, and TypeScript</li>
 					<li>Version Control: Git, Azure DevOps, GitHub</li>
@@ -41,9 +25,8 @@ layout: layouts/main.njk
 					<li>Cloud Technologies: Azure, Cloudflare, Terraform</li>
 					<li>Software Testing: Unit, Integration, Contract, and End-to-End Testing</li>
 				</ul>
-			</div>
-		</article>
-	</section>
+			<section>
+</article>
 
 	<section id="all-projects">
 		<header style="display: flex; align-items: center; justify-content: space-between">
@@ -63,29 +46,6 @@ layout: layouts/main.njk
 		<div class="grid">{% for project in projects %} {% projectCard project %} {% endfor %}</div>
 		{% else %}
 		<p>No projects to display...</p>
-		{% endif %}
-	</section>
-
-	<section id="all-posts">
-		<header style="display: flex; align-items: center; justify-content: space-between">
-			<hgroup>
-				<h2>Recent Posts</h2>
-			</hgroup>
-			<nav>
-				<ul>
-					<li>
-						<a href="/blog">All Posts</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-
-		{% if collections.published.length !== 0 %}
-		<div class="grid">
-			{% for post in collections.published.slice(0, 3) %} {% postCard post %} {% endfor %}
-		</div>
-		{% else %}
-		<p>No posts to display...</p>
 		{% endif %}
 	</section>
 </article>

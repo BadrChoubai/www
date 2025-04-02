@@ -284,20 +284,13 @@ a {
 blockquote {
 	background: var(--app-background-color-contrast);
 	display: block;
+	font-family: "Alegreya Variable", "Times New Roman", sans-serif;
 	margin: var(--app-typography-spacing-vertical) 0;
 	padding: var(--app-spacing);
 	border-right: none;
 	border-left: 0.25rem solid var(--app-accent-color);
 	border-inline-start: 0.25rem solid var(--app-accent-color);
 	border-inline-end: none;
-}
-
-blockquote p {
-	font-size: var(--app-font-size);
-	color: var(--app-color);
-	font-family: "Alegreya Variable", "Times New Roman", sans-serif;
-	line-height: var(--app-line-height);
-	margin: 0;
 }
 
 hgroup {

@@ -4,25 +4,23 @@ css: post.css
 ---
 
 <article class="post">
-	<hgroup>
-		<a href="/blog">Back to all posts</a>
-		<h1>{{ title }}</h1>
-		<p>{{ premise }}</p>
-	</hgroup>
+    <header>
+        <hgroup>
+            <h1>{{ title }}</h1>
+            <p>{{ premise }}</p>
+        </hgroup>
+    </header>
 	<hr>
 	{{ content | safe }}
 	<hr>
 	<footer style="display:flex; align-items: center; justify-content: space-between">
-	<nav>
-		<ul>
-			<li>
-				<a href="/blog">Blog</a>
-			</li>
-			<li>
-				<a href="/">Home</a>
-			</li>
-		</ul>
-	</nav>
+    <nav>
+        <ul>
+            <li>
+                <a href="/blog">Back to all posts</a>
+            </li>
+        </ul>
+    </nav>
 	<span style="opacity: 50%;">
 		Code snippets are
 		<a href="https://opensource.org/license/MIT">MIT Licensed</a>

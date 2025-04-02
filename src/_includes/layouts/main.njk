@@ -2,6 +2,8 @@
 layout: layouts/base.njk
 ---
 
+{% include "components/header.njk" %}
 <main class="container">
     {{ content | safe }}
 </main>
+{% include "components/footer.njk" %}

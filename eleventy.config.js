@@ -1,6 +1,7 @@
 import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import minificationLocalPlugin from "./config/minification.js";
+import { DateTime } from "luxon";
 
 export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("published", (collection) => {
