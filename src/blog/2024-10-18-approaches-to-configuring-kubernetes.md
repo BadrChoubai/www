@@ -1,6 +1,6 @@
 ---
 title: Approaches to Configuring Kubernetes
-premise: Exploring the imperative and declarative approaches to configuring k8s.
+summary: Exploring the imperative and declarative approaches to configuring k8s.
 draft: false
 date: 2024-10-18
 url: /blog/2024-10-18-approaches-to-configuring-kubernetes
