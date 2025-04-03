@@ -35,7 +35,7 @@ layout: layouts/main.njk
 		</header>
 
 		{% if projects.length !== 0 %}
-		<div class="grid">{% for project in projects %} {% projectCard project %} {% endfor %}</div>
+		<div class="grid">{% for project in projects %} {% card project %} {% endfor %}</div>
 		{% else %}
 		<p>No projects to display...</p>
 		{% endif %}

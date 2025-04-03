@@ -2,7 +2,9 @@ import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import minificationLocalPlugin from "./config/minification.js";
 
-import { keywordList } from "./shortcodes/keywords.js";
+import { keywordList } from "./src/shortcodes/keywords.js";
+import { card } from "./src/shortcodes/card.js";
+import { emoji } from "./src/shortcodes/emoji.js";
 
 export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("published", (collection) => {
@@ -14,7 +16,6 @@ export default async function (eleventyConfig) {
 
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 	eleventyConfig.addPassthroughCopy("resume.pdf");
-
 	eleventyConfig.addPassthroughCopy({
 		"node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2":
 			"fonts/Inter.woff2",
@@ -42,46 +43,9 @@ export default async function (eleventyConfig) {
 		},
 	});
 
-	eleventyConfig.addShortcode("emoji", function (emoji, alt = "") {
-		return (
-			`<span aria-hidden="true" class="emoji">${emoji}</span>` +
-			(alt ? `<span class="sr-only">${alt}</span>` : "")
-		);
-	});
-
-	eleventyConfig.addShortcode("postCard", function (post) {
-		return `
-			<article class="card">
-				<header>
-					<hgroup>
-							<h3><a href="${post.data.url}">${post.data.title}</a></h3>
-							<p>${post.data.dateString}</p>
-					</hgroup>
-				</header>
-				<p>${post.data.premise}</p>
-				${keywordList(post.data.keywords)}
-			</article>
-			`;
-	});
-
-	eleventyConfig.addShortcode("projectCard", function (project) {
-		return `
-			<article class="card">
-				<header>
-					<hgroup>
-						<h2>
-							<a rel="noopener noreferrer" target="_blank" href="${project.url}">${project.name}</a>
-							<span class="icon">open_in_new</span>
-						</h2>
-					</hgroup>
-				</header>
-				<p>
-					${project.description}
-				</p>
-				${keywordList(project.keywords)}
-			</article>
-			`;
-	});
+	eleventyConfig.addShortcode("emoji", emoji);
+	eleventyConfig.addShortcode("keywords", keywordList);
+	eleventyConfig.addShortcode("card", card);
 }
 
 export const config = {

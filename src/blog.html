@@ -32,7 +32,7 @@ layout: layouts/main.njk
 	<section id="all-posts">
 		{% if collections.published.length !== 0 %}
 		<div class="container">
-			{% for post in collections.published %} {% postCard post %} {% endfor %}
+			{% for post in collections.published %} {% card post.data %} {% endfor %}
 		</div>
 		{% else %}
 		<p>No posts to display...</p>
