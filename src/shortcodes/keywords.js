@@ -1,24 +1,10 @@
 /**
- * @name keywords
- * @param keywords {any[]} - An array of keywords to be returned in a `<ul>` element.
- * @returns {string[]} An HTML Unordered List
- */
-export const keywordList = (keywords) => {
-	return `
-	<ul>
-		${keywordListItems(keywords).join("")}
-	</ul>
-	`;
-};
-
-/**
  * Generates a list of HTML `<li>` elements for a given array of keywords.
- *
- * @name keywordListItem
- * @param {string[]} keywordList - An array of keywords to be wrapped in `<li>` elements.
- * @returns {string[]} An array of HTML string representations of list items.
+ * @param {string[]} keywords - An array of keywords.
+ * @returns {string} HTML list items as a single string.
  */
-const keywordListItems = (keywordList) =>
-	keywordList.map((keyword) => {
-		return `<li class="keyword">${keyword}</li>`;
-	});
+const keywordListItems = (keywords) =>
+	keywords.map((keyword) => `<li class="keyword">${keyword}</li>`).join("");
+
+// Creates an unordered list `<ul>` from an array of keywords.
+export const keywords = (keywords) => `<ul>${keywordListItems(keywords)}</ul>`;

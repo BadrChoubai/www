@@ -1,6 +1,6 @@
-import { keywordList } from "./keywords.js";
+import { keywords } from "./keywords.js";
 
-export const card = ({ url, title, summary, keywords }) => `
+export const card = ({ url, title, summary, keywords: k }) => `
 			<article class="card">
 				<header>
 					<hgroup>
@@ -13,6 +13,6 @@ export const card = ({ url, title, summary, keywords }) => `
 				<p>
 					${summary}
 				</p>
-				${keywordList(keywords)}
+				${keywords(k)}
 			</article>
 		`;

@@ -2,9 +2,7 @@ import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import minificationLocalPlugin from "./config/minification.js";
 
-import { keywordList } from "./src/shortcodes/keywords.js";
-import { card } from "./src/shortcodes/card.js";
-import { emoji } from "./src/shortcodes/emoji.js";
+import shortcodes from "./src/shortcodes/index.js";
 
 export default async function (eleventyConfig) {
 	eleventyConfig.addCollection("published", (collection) => {
@@ -43,9 +41,9 @@ export default async function (eleventyConfig) {
 		},
 	});
 
-	eleventyConfig.addShortcode("emoji", emoji);
-	eleventyConfig.addShortcode("keywords", keywordList);
-	eleventyConfig.addShortcode("card", card);
+	Object.entries(shortcodes).forEach(([key, value]) => {
+		eleventyConfig.addShortcode(key, value);
+	});
 }
 
 export const config = {
