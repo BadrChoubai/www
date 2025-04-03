@@ -288,13 +288,16 @@ a {
 blockquote {
 	background: var(--app-background-color-contrast);
 	display: block;
-	font-family: "Alegreya Variable", "Times New Roman", sans-serif;
+	font-size: 125%;
 	margin: var(--app-typography-spacing-vertical) 0;
 	padding: var(--app-spacing);
 	border-right: none;
 	border-left: 0.25rem solid var(--app-accent-color);
 	border-inline-start: 0.25rem solid var(--app-accent-color);
 	border-inline-end: none;
+	cite {
+		font-weight: 700;
+	}
 }
 
 hgroup {

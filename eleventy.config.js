@@ -16,8 +16,6 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("resume.pdf");
 
 	eleventyConfig.addPassthroughCopy({
-		"node_modules/@fontsource-variable/alegreya/files/alegreya-latin-wght-normal.woff2":
-			"fonts/Alegreya.woff2",
 		"node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2":
 			"fonts/Inter.woff2",
 		"node_modules/@fontsource/material-icons/files/material-icons-latin-400-normal.woff2":
@@ -27,11 +25,11 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPlugin(minificationLocalPlugin);
 	eleventyConfig.addPlugin(syntaxHighlightPlugin);
 	eleventyConfig.addPlugin(feedPlugin, {
-		type: "atom", // or "rss", "json"
+		type: "atom",
 		outputPath: "/feed.rss",
 		collection: {
-			name: "posts", // iterate over `collections.posts`
-			limit: 10, // 0 means no limit
+			name: "posts",
+			limit: 10,
 		},
 		metadata: {
 			language: "en",
@@ -61,7 +59,7 @@ export default async function (eleventyConfig) {
 					</hgroup>
 				</header>
 				<p>${post.data.premise}</p>
-				<span class="keyword">${post.data.keyword}</span>
+				${keywordList(post.data.keywords)}
 			</article>
 			`;
 	});
@@ -72,7 +70,7 @@ export default async function (eleventyConfig) {
 				<header>
 					<hgroup>
 						<h2>
-							<a target="_blank" href="${project.url}">${project.name}</a>
+							<a rel="noopener noreferrer" target="_blank" href="${project.url}">${project.name}</a>
 							<span class="icon">open_in_new</span>
 						</h2>
 					</hgroup>
