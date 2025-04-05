@@ -15,10 +15,8 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("favicon.ico");
 	eleventyConfig.addPassthroughCopy("resume.pdf");
 	eleventyConfig.addPassthroughCopy({
-		"node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2":
-			"fonts/Inter.woff2",
-		"node_modules/@fontsource/material-icons/files/material-icons-latin-400-normal.woff2":
-			"fonts/MaterialIcons.woff2",
+		"node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2": "fonts/Inter.woff2",
+		"node_modules/@fontsource/material-icons/files/material-icons-latin-400-normal.woff2": "fonts/MaterialIcons.woff2",
 	});
 
 	eleventyConfig.addPlugin(minificationLocalPlugin);

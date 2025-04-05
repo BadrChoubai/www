@@ -5,10 +5,10 @@
 
 <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ede7e5" />
+<meta name="color-scheme" content="only dark" />
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#221f22" />
-{%- include './marketing.njk' -%} {%- set css -%} {% include './font-face.css' %} {% include
-'index.css' %} {% include './prism-theme.css' %} {%- endset -%}
+{%- set css -%} {% include './font-face.css' %} {% include 'index.css' %} {% include './prism-theme.css' %} {%- endset
+-%}
 
 <style>
 	{{ css | cssmin | safe }}

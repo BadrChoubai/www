@@ -8,7 +8,7 @@ layout: layouts/main.njk
 		<header>
 			<hgroup>
 				<h2>Blog Posts</h2>
-				<p>What I Think.</p>
+				<h3>What I Think.</h3>
 			</hgroup>
 		</header>
 		<p>Eventually, I will start to build the habit of writing here more frequently.</p>
@@ -27,13 +27,11 @@ layout: layouts/main.njk
 
 <article>
 	<header>
-		<h3>All Posts</h3>
+		<h2>All Posts</h2>
 	</header>
 	<section id="all-posts">
 		{% if collections.published.length !== 0 %}
-		<div class="container">
-			{% for post in collections.published %} {% card post.data %} {% endfor %}
-		</div>
+		<div class="container">{% for post in collections.published %} {% card post.data %} {% endfor %}</div>
 		{% else %}
 		<p>No posts to display...</p>
 		{% endif %}

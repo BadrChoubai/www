@@ -1,7 +1,7 @@
 :root {
 	/* Font Base Values */
-	--app-font-family: "Inter Variable", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	--app-font-family: "Inter Variable", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol";
 	--app-icon-font: "Material Icons", sans-serif;
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
@@ -28,18 +28,22 @@
 
 	--app-color: #fcfcfa;
 
-	--app-accent-color: #fc9867;
+	--app-accent-color--primary: #fc9867;
+	--app-accent-color--secondary: #ffd866;
 
 	--app-code-background-color: var(--app-color);
 	--app-code-color: var(--app-background-color);
 
 	--app-code-kbd-background-color: var(--app-color);
 	--app-code-kbd-color: var(--app-background-color);
+
+	color-scheme: light dark;
 }
 
 .icon {
 	font-size: 50%;
 	font-family: var(--app-icon-font), sans-serif;
+	color: var(--app-accent-color--secondary);
 }
 
 .emoji {
@@ -236,8 +240,7 @@ h6 {
 }
 
 /*noinspection CssMissingComma*/
-:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul)
-	~ :is(h1, h2, h3, h4, h5, h6) {
+:where(article, address, blockquote, dl, figure, form, ol, p, pre, table, ul) ~ :is(h1, h2, h3, h4, h5, h6) {
 	margin-top: var(--app-typography-spacing-top);
 }
 
@@ -292,8 +295,8 @@ blockquote {
 	margin: var(--app-typography-spacing-vertical) 0;
 	padding: var(--app-spacing);
 	border-right: none;
-	border-left: 0.25rem solid var(--app-accent-color);
-	border-inline-start: 0.25rem solid var(--app-accent-color);
+	border-left: 0.25rem solid var(--app-accent-color--primary);
+	border-inline-start: 0.25rem solid var(--app-accent-color--primary);
 	border-inline-end: none;
 	cite {
 		font-weight: 700;
@@ -311,10 +314,8 @@ hgroup > * {
 
 hgroup > *:not(:first-child):last-child {
 	--app-font-weight: unset;
-}
-
-hgroup > p {
-	color: #ffd866;
+	--app-font-size: unset;
+	color: var(--app-accent-color--secondary);
 }
 
 :where(ol, ul) li {
@@ -364,7 +365,7 @@ article > footer,
 }
 
 article.card {
-	border: 2px solid var(--app-accent-color); /* For the orange border */
+	border: 2px solid var(--app-accent-color--primary); /* For the orange border */
 	background: var(--app-background-color-contrast);
 	display: flex;
 	flex-direction: column;
@@ -435,12 +436,12 @@ hr {
 	height: 0;
 	margin: var(--app-typography-spacing-vertical) 0;
 	border: 0;
-	border-top: 1px solid var(--app-accent-color);
+	border-top: 1px solid var(--app-accent-color--primary);
 	color: inherit;
 }
 
 .accent {
-	background: var(--app-accent-color);
+	background: var(--app-accent-color--primary);
 	height: var(--app-block-spacing-vertical);
 }
 
