@@ -1,0 +1,11 @@
+<footer webc:root="override" class="Footer">
+	<div class="container flex">
+		<nav>
+			<ul>
+				<li>
+					<span style="opacity: 50%">Copyright &copy; 2025 <a href="/">Badr Choubai</a></span>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</footer>

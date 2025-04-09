@@ -1,0 +1,124 @@
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+:root {
+	/**
+	 * Because I dislike Monokai Pro's transition to a subscription model (in JetBrains), an not being
+	 * able to use my existing VS Code License Key for it...
+	 */
+	--token-color-primary--light: #e14775;
+	--token-color-secondary--light: #7058be;
+	--token-color-tertiary--light: #269d69;
+	--token-color-quaternary--light: #cc7a0a;
+	--token-color-quinary--light: #e16032;
+
+	--token-color-primary--dark: #ff6d7e;
+	--token-color-secondary--dark: #baa0f8;
+	--token-color-tertiary--dark: #a2e57b;
+	--token-color-quaternary--dark: #ffed72;
+	--token-color-quinary--dark: #ffb270;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: var(--app-color);
+	text-shadow: 0px 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, "Andale Mono", monospace;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: var(--app-background-color);
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--app-color);
+	opacity: 50%;
+}
+
+.token.punctuation {
+	color: var(--app-color);
+}
+
+.namespace {
+	opacity: 0.7;
+}
+
+.token.property,
+.token.tag {
+	color: light-dark(var(--token-color-primary--light), var(--token-color-primary--dark));
+}
+
+.token.boolean,
+.token.number {
+	color: light-dark(var(--token-color-secondary--light), var(--token-color-secondary--dark));
+}
+
+.token.selector,
+.token.attr-name,
+.token.function,
+.token.string {
+	color: light-dark(var(--token-color-tertiary--light), var(--token-color-tertiary--dark));
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: var(--app-color);
+}
+
+.token.atrule,
+.token.attr-value {
+	color: light-dark(var(--token-color-quaternary--light), var(--token-color-quaternary--dark));
+}
+
+.token.keyword {
+	color: light-dark(var(--token-color-primary--light), var(--token-color-primary--dark));
+}
+
+.token.regex,
+.token.important {
+	color: light-dark(var(--token-color-quinary--light), var(--token-color-quinary--dark));
+}
+
+.token.important {
+	font-weight: bold;
+}
+
+.token.entity {
+	cursor: help;
+}

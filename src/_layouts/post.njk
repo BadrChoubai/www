@@ -1,0 +1,28 @@
+---
+layout: main
+---
+
+<article class="post">
+	<header>
+		<hgroup>
+			<h1>{{ title }}</h1>
+			<p>{{ summary }}</p>
+		</hgroup>
+	</header>
+	<hr />
+	{{ content | safe }}
+	<hr />
+	<footer style="display: flex; align-items: center; justify-content: space-between">
+		<nav>
+			<ul>
+				<li>
+					<a href="/blog">Back to all posts</a>
+				</li>
+			</ul>
+		</nav>
+		<span style="opacity: 50%">
+			Code snippets are
+			<a href="https://opensource.org/license/MIT">MIT Licensed</a>
+		</span>
+	</footer>
+</article>

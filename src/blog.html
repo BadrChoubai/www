@@ -1,0 +1,38 @@
+---
+title: "Blog"
+---
+
+<article class="grid">
+	<section>
+		<header>
+			<hgroup>
+				<h2>Blog Posts</h2>
+				<h3>What I Think.</h3>
+			</hgroup>
+		</header>
+		<p>Eventually, I will start to build the habit of writing here more frequently.</p>
+	</section>
+	<section>
+		<blockquote>
+			"If you always do what you’ve always done, you’ll always get what you’ve always got."
+			<footer>
+				<cite>&mdash; Henry Ford</cite>
+			</footer>
+		</blockquote>
+	</section>
+</article>
+
+<hr />
+
+<article>
+	<header>
+		<h2>All Posts</h2>
+	</header>
+	<section id="all-posts">
+		{% if collections.published.length !== 0 %}
+		<div class="container">{% for post in collections.published %} {% postCard post.data %} {% endfor %}</div>
+		{% else %}
+		<p>No posts to display...</p>
+		{% endif %}
+	</section>
+</article>

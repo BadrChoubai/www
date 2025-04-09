@@ -1,0 +1,29 @@
+<script webc:setup>
+	function getTitle(data) {
+		if (isHomePage(data.page.url)) {
+			return data.author.name;
+		}
+
+		return `${data.title} - ${data.author.name}`;
+	}
+</script>
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+	<head>
+		<site-head></site-head>
+		<title @text="getTitle($data)"></title>
+	</head>
+
+	<body>
+	<div class="accent"></div>
+	<app-header></app-header>
+	<main class="container">
+		<template @raw="$data.content" webc:nokeep></template>
+		<slot></slot>
+	</main>
+	<app-footer></app-footer>
+
+	<script type="module" @raw="getBundle('js')" webc:keep></script>
+	</body>
+</html>

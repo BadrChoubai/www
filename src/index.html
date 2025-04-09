@@ -1,0 +1,62 @@
+---
+title: "Home"
+---
+
+<article class="grid">
+	<section>
+		<header>
+			<hgroup>
+				<h2>Hey {% emoji "👋" %} I'm Badr</h2>
+				<hr />
+			</hgroup>
+		</header>
+		<p>
+			I'm a Moroccan-American software engineer from Aurora, Colorado. My name—Badr (بدر)—means "The Full Moon" in
+			Arabic.
+		</p>
+		<p>
+			In becoming a professional engineer, I've found that I really enjoy learning new things and having to struggle
+			through a problem to solve it. Lately, I've been starting to learn Go, developing small applications with it.
+			Along with continuing to grow my knowledge of Docker and Kubernetes.
+		</p>
+		<p>
+			When I'm not writing code, I like to drink coffee, read a book, or hang out with friends. When I need to clear my
+			head, I go for a run or listen to music. In the past two years, I've started to run much more seriously and
+			started to sign up for more events. This year, I'll be running my first last-man standing run, in Ouray, Colorado.
+			And, when I can, I'd like to run the Marrakech Marathon.
+		</p>
+		<p>
+			One of the things I've struggled with as a professional is "knowing what I know." To help with this, I’ve decided
+			to use this website as a way to document and write about the things I’m learning. Currently, I’m focused on
+			preparing for my Certified Kubernetes Administrator certification.
+		</p>
+		<p>
+			I'm actively looking for a new role where I can continue developing my skills, particularly in Developer
+			Operations or Site Reliability. Ideally, I'm looking for a company with a mature remote working culture that
+			strikes the right balance between flexibility and productivity. As a young professional, I'm passionate about
+			continuous learning and growth, and I'm excited about the opportunity to apply my skills in a new, challenging
+			environment.
+		</p>
+	</section>
+</article>
+
+<article>
+	<section>
+		<header>
+			<nav>
+				<h2>Projects</h2>
+				<ul>
+					<li>
+						<a target="_blank" href="https://www.github.com/BadrChoubai">View on GitHub</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		{% if projects.length !== 0 %}
+		<div class="grid">{% for project in projects %} {% projectCard project %} {% endfor %}</div>
+		{% else %}
+		<p>No projects to display...</p>
+		{% endif %}
+	</section>
+</article>

@@ -1,0 +1,5 @@
+pages:
+  - url: /
+    name: Home
+  - url: /blog/
+    name: Blog
