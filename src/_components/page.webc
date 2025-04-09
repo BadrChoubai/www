@@ -1,3 +1,36 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<meta name="description" content="Badr Choubai's place on the internet" />
+	<meta name="theme-color" id="meta-theme-color" content="#221f22" />
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="preload" href="fonts/Inter.woff2" as="font" type="font/woff2" crossorigin="">
+	<link rel="preload" href="/fonts/MaterialIcons.woff2" as="font" type="font/woff2" crossorigin="">
+
+	<link rel="stylesheet" href="../css/font-face.css" />
+	<link rel="stylesheet" href="../css/index.css" />
+	<link rel="stylesheet" href="../css/prism-theme.css" />
+	<link rel="stylesheet" :href="getBundleFileUrl('css')" webc:keep />
+	<title @text="getTitle($data)"></title>
+</head>
+
+<body>
+	<div class="accent"></div>
+	<app-header></app-header>
+		<main class="container">
+			<template @raw="$data.content" webc:nokeep></template>
+			<slot></slot>
+		</main>
+	<app-footer></app-footer>
+
+	<script type="module" @raw="getBundle('js')" webc:keep></script>
+</body>
+</html>
+
 <script webc:setup>
 	function getTitle(data) {
 		if (isHomePage(data.page.url)) {
@@ -8,22 +41,3 @@
 	}
 </script>
 
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
-	<head>
-		<site-head></site-head>
-		<title @text="getTitle($data)"></title>
-	</head>
-
-	<body>
-	<div class="accent"></div>
-	<app-header></app-header>
-	<main class="container">
-		<template @raw="$data.content" webc:nokeep></template>
-		<slot></slot>
-	</main>
-	<app-footer></app-footer>
-
-	<script type="module" @raw="getBundle('js')" webc:keep></script>
-	</body>
-</html>
