@@ -2,7 +2,6 @@ import syntaxHighlightPlugin from "@11ty/eleventy-plugin-syntaxhighlight";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginWebc from "@11ty/eleventy-plugin-webc";
 import { EleventyRenderPlugin } from "@11ty/eleventy";
-import { InputPathToUrlTransformPlugin as pluginInputPathToURL } from "@11ty/eleventy";
 import yaml from "js-yaml";
 
 import minificationLocalPlugin from "./eleventy/config/minification.js";
