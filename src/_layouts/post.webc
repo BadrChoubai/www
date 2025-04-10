@@ -1,19 +1,22 @@
 ---
 layout: main
+includeCssFiles:
+  - file: "prism-theme.css"
+  - file: "post.css"
 ---
 
 <article class="post">
 	<header>
 		<hgroup>
-			<h1>{{ title }}</h1>
-			<p>{{ summary }}</p>
-			<p>{{ dateString }}</p>
+			<h1 @text="title"></h1>
+			<p @text="summary"></p>
+			<p @text="dateString"></p>
 		</hgroup>
 	</header>
 	<hr />
-	{{ content | safe }}
+	<template @raw="$data.content" webc:nokeep></template>
 	<hr />
-	<footer style="display: flex; align-items: center; justify-content: space-between">
+	<footer class="flex">
 		<nav>
 			<ul>
 				<li>
