@@ -32,3 +32,13 @@ export const projectCard = ({ url, title, summary, keywords: k }) => `
 				${keywords(k)}
 			</article>
 		`;
+
+export const raceInfoCard = ({ name, date, description, distance, format }) => `
+			<article class="card">
+			<h3>
+				${name}
+			</h3>
+			<p>Distance: ${distance} / Format: ${format}</p>
+			<p>${date}</p>
+			</article>
+`;

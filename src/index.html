@@ -39,24 +39,3 @@ title: "Home"
 		</p>
 	</section>
 </article>
-
-<article>
-	<section>
-		<header>
-			<nav>
-				<h2>Projects</h2>
-				<ul>
-					<li>
-						<a target="_blank" href="https://www.github.com/BadrChoubai">View on GitHub</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-
-		{% if projects.length !== 0 %}
-		<div class="grid">{% for project in projects %} {% projectCard project %} {% endfor %}</div>
-		{% else %}
-		<p>No projects to display...</p>
-		{% endif %}
-	</section>
-</article>

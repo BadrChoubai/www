@@ -24,11 +24,14 @@
 
 <header webc:root="override" class="Header">
 	<div class="container flex">
-		<a href="/" class="Header__Title">Badr Choubai</a>
+		<h1 class="Header__Title">
+			Badr Choubai
+		</h1>
 		<nav>
 			<ul>
 				<li webc:for="page of $data.navigation.pages">
 					<a
+						class="item"
 						:class="getActiveClass($data, page)"
 						:aria-current="getCurrentValue($data, page)"
 						:aria-label="page.name"
@@ -48,7 +51,6 @@
 
 <style>
 	.Header__Title {
-		font-size: 2rem;
 		font-weight: 900;
 		text-decoration: none;
 
@@ -62,6 +64,11 @@
 
 	.active {
 		opacity: 50%;
+	}
+
+	.item {
+		font-weight: 700;
+		text-decoration: none;
 	}
 
 	.icons {

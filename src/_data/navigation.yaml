@@ -1,5 +1,9 @@
 pages:
   - url: /
-    name: Home
-  - url: /blog/
+    name: About
+  - url: /races
+    name: Races
+  - url: /blog
     name: Blog
+  - url: /projects
+    name: Projects

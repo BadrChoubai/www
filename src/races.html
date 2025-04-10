@@ -1,0 +1,47 @@
+---
+title: Races
+---
+
+<article>
+	<section>
+		<header>
+			<hgroup>
+				<h2>Time on Feet.</h2>
+				<h3>Clearing My Head, Hurting My Knees.</h3>
+			</hgroup>
+			<p>
+				Running has become one of the many ways I can prove to myself that I can do hard things, and that I enjoy doing
+				them. It's become a wonderful way for me to make friends and meet people in Denver and Boulder, build my
+				confidence, and tune in to my competitive spirit. My goal this year is to focus on quality over quantity, so
+				I've been much better focused on supporting my running by doing more, focused strength training and resting on
+				rest days.
+			</p>
+		</header>
+	</section>
+
+	<section>
+		{% for year, races in races %}
+		<h2>{{ year }}</h2>
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Date</th>
+					<th>Distance (mi)</th>
+					<th>Format</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for race in races %}
+				<tr>
+					<td>{{ race.name }}</td>
+					<td>{{ race.date }}</td>
+					<td>{% if race.distance%} {{ race.distance }} {% else %} &mdash; {% endif %}</td>
+					<td>{{ race.format }}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		{% endfor %}
+	</section>
+</article>

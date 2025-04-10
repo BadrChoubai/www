@@ -1,0 +1,24 @@
+---
+title: Projects
+---
+
+<article>
+	<section>
+		<header>
+			<hgroup>
+				<h2>Projects</h2>
+				<h3>Learning by Doing.</h3>
+			</hgroup>
+		</header>
+	</section>
+
+	<hr/>
+
+	<section>
+		{% if projects.length !== 0 %}
+		<div class="grid">{% for project in projects %} {% projectCard project %} {% endfor %}</div>
+		{% else %}
+		<p>No projects to display...</p>
+		{% endif %}
+	</section>
+</article>

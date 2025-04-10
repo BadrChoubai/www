@@ -1,0 +1,75 @@
+{
+	"2022": [
+		{
+			"name": "Pumpkin Pie 5k",
+			"date": "2022-11-19",
+			"distance": 3.1,
+			"format": "Race"
+		}
+	],
+	"2023": [
+		{
+			"name": "Bolder Boulder 10k",
+			"date": "2023-05-29",
+			"distance": 6.2,
+			"format": "Race"
+		},
+		{
+			"name": "Pumpkin Pie 5k",
+			"date": "2023-11-18",
+			"distance": 3.1,
+			"format": "Race"
+		}
+	],
+	"2024": [
+		{
+			"name": "Bolder Boulder 10k",
+			"date": "2024-05-29",
+			"distance": 6.2,
+			"format": "Race"
+		},
+		{
+			"name": "Ragnar Trail: Snow Mass",
+			"date": "2024-06-7",
+			"distance": 15,
+			"format": "Relay"
+		},
+		{
+			"name": "Human Potential Running Series: Silver Heels 30k",
+			"date": "2024-07-13",
+			"distance": 18,
+			"format": "Race"
+		},
+		{
+			"name": "Run the Rockies: Trail Half-Marathon",
+			"date": "2024-08-10",
+			"distance": 13.1,
+			"format": "Race"
+		},
+		{
+			"name": "Boulderthon: Half-Marathon",
+			"date": "2024-09-29",
+			"distance": 13.1,
+			"format": "Race"
+		}
+	],
+	"2025": [
+		{
+			"name": "Sky Pilots: Backyard Ultra",
+			"date": "2025-05-17",
+			"format": "Last-Person Standing"
+		},
+		{
+			"name": "Bolder Boulder",
+			"date": "2025-05-26",
+			"distance": 6.2,
+			"format": "10k"
+		},
+		{
+			"name": "Ragnar Trail: Snow Mass",
+			"date": "2025-06-05",
+			"distance": 30,
+			"format": "Relay"
+		}
+	]
+}

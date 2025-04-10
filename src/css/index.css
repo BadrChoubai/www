@@ -484,6 +484,47 @@ button {
 	appearance: none;
 }
 
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: var(--app-typography-spacing-vertical);
+	background-color: var(--app-background-color-contrast);
+	border-radius: var(--app-border-radius);
+	overflow: hidden;
+	box-shadow: 0 0 0 1px var(--app-accent-color--primary);
+}
+
+thead {
+	background-color: var(--app-background-color-contrast);
+	color: var(--app-color);
+	text-align: left;
+}
+
+th,
+td {
+	padding: calc(var(--app-spacing) * 0.75);
+	text-align: left;
+	border-bottom: 1px solid var(--app-accent-color--primary);
+	font-size: var(--app-font-size);
+	line-height: var(--app-line-height);
+}
+
+th {
+	font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+	background-color: var(--app-background-color);
+}
+
+tbody tr:hover {
+	background-color: var(--app-accent-color--secondary);
+	color: var(--app-background-color);
+	transition:
+		background-color var(--app-transition),
+		color var(--app-transition);
+}
+
 hr {
 	height: 0;
 	margin: var(--app-typography-spacing-vertical) 0;
