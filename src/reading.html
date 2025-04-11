@@ -1,0 +1,51 @@
+---
+title: Reading
+---
+
+<article>
+	<section>
+		<header>
+			<hgroup>
+				<h1>Reading List</h1>
+				<h2>
+					{% emoji "☕" %}
+					{% emoji "📚" %}
+					{% emoji "🛋️" %}
+				</h2>
+			</hgroup>
+			<p>
+				Reading is another one of my favorite pastimes, it's given me a way to learn about so much. Some years I'm more voracious
+				than others, but I've learned that not all books are worth finishing, and not every subject needs my attention or opinion on it.
+			</p>
+		</header>
+	</section>
+
+	<section>
+		<table>
+			<thead>
+				<tr>
+					{% set total = 0 %}
+					<th>Year</th>
+					<th>Title</th>
+					<th>Author</th>
+				</tr>
+			</thead>
+			{% for year, books in bookshelf %}
+			 {% for book in books %}
+			{% set total = total + 1 %}
+			<tbody>
+				<tr>
+					<td><strong>{{ year}}</strong></td>
+					<td>{{ book.title }}</td>
+					<td>{{ book.author }}</td>
+				</tr>
+			</tbody>
+			{% endfor %} {% endfor %}
+			<tfoot>
+				<tr>
+					<td colspan="3"><strong>Books Read: {{ total }}</strong></td>
+				</tr>
+			</tfoot>
+		</table>
+	</section>
+</article>

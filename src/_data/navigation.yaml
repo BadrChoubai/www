@@ -1,9 +1,11 @@
 pages:
   - url: /
     name: About
-  - url: /races
-    name: Races
   - url: /blog
     name: Blog
+  - url: /reading
+    name: Reading
+  - url: /running
+    name: Running
   - url: /projects
     name: Projects
