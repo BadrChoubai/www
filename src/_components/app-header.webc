@@ -23,11 +23,8 @@
 	</script>
 
 <header webc:root="override" class="Header">
-	<div class="container flex">
-		<h1 class="Header__Title">
-			Badr Choubai
-		</h1>
-		<nav>
+	<div class="container">
+		<nav style="justify-content: start;">
 			<ul>
 				<li webc:for="page of $data.navigation.pages">
 					<a
@@ -51,7 +48,6 @@
 
 <style>
 	.Header__Title {
-		--app-font-size: 1rem;
 		font-weight: 900;
 		text-decoration: none;
 

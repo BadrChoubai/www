@@ -15,7 +15,7 @@
 	--app-block-spacing-horizontal: var(--app-spacing);
 	--app-grid-column-gap: var(--app-spacing);
 	--app-grid-row-gap: var(--app-spacing);
-	--app-border-radius: 0.25rem;
+	--app-border-radius: 0;
 	--app-border-width: 0.0625rem;
 
 	--app-nav-element-spacing-vertical: 1rem;
@@ -37,8 +37,8 @@
 	--app-accent-color--dark-primary: #fc9867;
 	--app-accent-color--dark-secondary: #ffd866;
 
-	--app-accent-color--light-primary: #1c8ca8;
-	--app-accent-color--light-secondary: #e14775;
+	--app-accent-color--light-primary: #7058be;
+	--app-accent-color--light-secondary: #cc7a0a;
 }
 
 :root {
@@ -404,7 +404,7 @@ article > footer,
 }
 
 article.card {
-	border: 2px solid var(--app-accent-color--primary); /* For the orange border */
+	border: var(--app-border-width) solid var(--app-accent-color--primary); /* For the orange border */
 	background: var(--app-background-color-contrast);
 	display: flex;
 	flex-direction: column;
@@ -489,6 +489,7 @@ table {
 	border-collapse: collapse;
 	margin-bottom: var(--app-typography-spacing-vertical);
 	background-color: var(--app-background-color-contrast);
+	border-width: var(--app-border-width);
 	border-radius: var(--app-border-radius);
 	overflow: hidden;
 	box-shadow: 0 0 0 1px var(--app-accent-color--primary);
@@ -528,8 +529,8 @@ tbody tr:hover {
 hr {
 	height: 0;
 	margin: var(--app-typography-spacing-vertical) 0;
-	border: 0;
-	border-top: 1px solid var(--app-accent-color--primary);
+	border: none;
+	border-top: var(--app-border-width) solid var(--app-accent-color--primary);
 	color: inherit;
 }
 
