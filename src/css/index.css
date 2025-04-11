@@ -444,7 +444,7 @@ nav ul {
 
 nav {
 	justify-content: space-between;
-	overflow: visible;
+	overflow: scroll;
 }
 
 nav ol,
