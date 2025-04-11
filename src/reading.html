@@ -7,15 +7,12 @@ title: Reading
 		<header>
 			<hgroup>
 				<h1>Reading List</h1>
-				<h2>
-					{% emoji "☕" %}
-					{% emoji "📚" %}
-					{% emoji "🛋️" %}
-				</h2>
+				<h2>{% emoji "☕" %} {% emoji "📚" %} {% emoji "🛋️" %}</h2>
 			</hgroup>
 			<p>
-				Reading is another one of my favorite pastimes, it's given me a way to learn about so much. Some years I'm more voracious
-				than others, but I've learned that not all books are worth finishing, and not every subject needs my attention or opinion on it.
+				Reading is another one of my favorite pastimes, it's given me a way to learn about so much. Some years I'm more
+				voracious than others, but I've learned that not all books are worth finishing, and not every subject needs my
+				attention or opinion on it.
 			</p>
 		</header>
 	</section>
@@ -30,9 +27,7 @@ title: Reading
 					<th>Author</th>
 				</tr>
 			</thead>
-			{% for year, books in bookshelf %}
-			 {% for book in books %}
-			{% set total = total + 1 %}
+			{% for year, books in bookshelf %} {% for book in books %} {% set total = total + 1 %}
 			<tbody>
 				<tr>
 					<td><strong>{{ year}}</strong></td>
