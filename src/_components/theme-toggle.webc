@@ -32,7 +32,7 @@
 			}
 
 			if (meta) {
-				meta.setAttribute('content', theme === 'dark' ? '#fc9867' : '#1c8ca8');
+				meta.setAttribute('content', theme === 'dark' ? '#fc9867' : '#006341');
 			}
 
 			html.dispatchEvent(new CustomEvent("themechange", { detail: { theme } }));

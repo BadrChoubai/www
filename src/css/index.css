@@ -75,7 +75,7 @@ html[data-theme="dark"] {
 }
 
 .icon {
-	font-size: 50%;
+	font-size: var(--app-font-size);
 	font-family: var(--app-icon-font), sans-serif;
 	color: var(--app-accent-color--secondary);
 }
