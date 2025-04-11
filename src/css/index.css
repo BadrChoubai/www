@@ -5,7 +5,7 @@
 	--app-icon-font: "Material Icons", sans-serif;
 	--app-line-height: 1.5;
 	--app-font-weight: 400;
-	--app-font-size: 12px;
+	--app-font-size: 100%;
 	--app-text-underline-offset: 0.1rem;
 
 	/* Spacing */
@@ -37,8 +37,8 @@
 	--app-accent-color--dark-primary: #fc9867;
 	--app-accent-color--dark-secondary: #ffd866;
 
-	--app-accent-color--light-primary: #7058be;
-	--app-accent-color--light-secondary: #cc7a0a;
+	--app-accent-color--light-primary: #006341;
+	--app-accent-color--light-secondary: #B7312C;
 }
 
 :root {
