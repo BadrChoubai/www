@@ -34,6 +34,7 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"./public": "/",
 		"node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2": "fonts/Inter.woff2",
+		"node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2": "fonts/JetbrainsMono.woff2",
 		"node_modules/@fontsource/material-icons/files/material-icons-latin-400-normal.woff2": "fonts/MaterialIcons.woff2",
 	});
 
