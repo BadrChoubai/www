@@ -12,12 +12,6 @@
 		"url": "https://github.com/BadrChoubai/CS-Resources"
 	},
 	{
-		"title": "Services",
-		"keywords": ["API Development", "Docker"],
-		"summary": "This repository contains source code for multiple API projects written in different programming languages. They serve me as a single source of truth to showcase patterns I've learned with a particular language or related tooling.",
-		"url": "https://github.com/BadrChoubai/Services"
-	},
-	{
 		"title": "buddy.config",
 		"keywords": ["Systems Administration"],
 		"summary": "The setup script I use to easily commission myself a computer to write code with.",
