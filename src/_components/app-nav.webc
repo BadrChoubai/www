@@ -1,0 +1,64 @@
+<script webc:setup>
+	function getActiveClass($data, item) {
+		const current = $data.page.url;
+		const url = item.url;
+
+		if (isActivePage({ current, url })) {
+			return "active";
+		}
+
+		return "";
+	}
+
+	function getCurrentValue($data, item) {
+		const current = $data.page.url;
+		const url = item.url;
+
+		if (isCurrentPage({ current, url })) {
+			return "page";
+		}
+
+		return null;
+	}
+</script>
+
+	<nav style="justify-content: start;">
+		<ul>
+			<li webc:for="page of $data.navigation.pages">
+				<a
+					class="item"
+					:class="getActiveClass($data, page)"
+					:aria-current="getCurrentValue($data, page)"
+					:aria-label="page.name"
+					:href="page.url">
+					<template @text="page.name" webc:nokeep></template>
+				</a>
+			</li>
+		</ul>
+		<ul class="icons">
+			<li>
+				<theme-toggle></theme-toggle>
+			</li>
+		</ul>
+	</nav>
+
+<style>
+	.active {
+		opacity: 50%;
+	}
+
+	.item {
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.icons {
+		&::before {
+			display: block;
+			height: 2rem;
+			margin-inline: var(--app-nav-element-spacing-horizontal);
+			border-left: var(--app-border-width) solid var(--app-accent-color--primary);
+			content: "";
+		}
+	}
+</style>
