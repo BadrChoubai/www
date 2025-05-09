@@ -9,9 +9,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-services:
-  googleAnalytics:
-    id: G-LR4ZN1LSPS
+enableEmoji: true
 
 disableKinds:
   - "taxonomy"
@@ -84,11 +82,11 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Badr Choubai"
+    Title: "Hello :wave:"
     Content: >
-      - I'm a Moroccan-American software engineer from Aurora, Colorado.
-
       - My name—Badr (بدر)—means "The Full Moon" in Arabic. 
+
+      - I'm a Moroccan-American software engineer from Aurora, Colorado.
 
       -  I'm actively looking for a new role where I can continue developing my skills, particularly in Developer Operations and Platform Engineering.
 
