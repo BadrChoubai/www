@@ -66,64 +66,39 @@ params:
   #   iconHeight: 20
 
   # profile-mode
-  # profileMode:
-  #   enabled: false # needs to be explicitly set
-  #   title: ExampleSite
-  #   subtitle: "This is subtitle"
-  #   imageUrl: "<img location>"
-  #   imageWidth: 120
-  #   imageHeight: 120
-  #   imageTitle: my image
-  #   buttons:
-  #     - name: Posts
-  #       url: posts
-  #     - name: Tags
-  #       url: tags
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: >
+      Hello :wave:
+    buttons:
+      - name: About
+        url: /about
+      - name: Posts
+        url: /posts
 
   # home-info mode
   homeInfoParams:
     Title: "Hello :wave:"
     Content: >
-      - My name—Badr (بدر)—means "The Full Moon" in Arabic. 
+      I'm a Moroccan-American software engineer from Aurora, Colorado. My name—Badr (بدر)—means "The Full Moon" in Arabic.
 
-      - I'm a Moroccan-American software engineer from Aurora, Colorado.
+      In the last year, I started learning Go, developing small applications with it and continuing to grow my knowledge
+      of Docker and Kubernetes, making the effort to study to pass the Certified Kubernetes Administrator exam.
 
-      -  I'm actively looking for a new role where I can continue developing my skills, particularly in Developer Operations and Platform Engineering.
+      I'm  actively looking for a new role where I can continue developing my skills, particularly in Developer Operations
+      or Platform Engineering. Ideally, I'm looking for a company with a mature remote working culture that strikes the right
+      balance between flexibility and productivity. As a young professional, I'm passionate about continuous learning and
+      growth, and I'm excited about the opportunity to apply my skills in a new, challenging environment.
 
   socialIcons:
     - name: github
       url: "https://github.com/BadrChoubai"
     - name: linkedin
       url: "https://linkedin.com/in/BadrChoubai"
-
-  # analytics:
-  #   google:
-  #     SiteVerificationTag: "XYZabc"
-  #   bing:
-  #     SiteVerificationTag: "XYZabc"
-  #   yandex:
-  #     SiteVerificationTag: "XYZabc"
-
   cover:
     hidden: true # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
     hiddenInSingle: true # hide on single page
-
-  # editPost:
-  #   URL: "https://github.com/<path_to_repo>/content"
-  #   Text: "Suggest Changes" # edit text
-  #   appendFilePath: true # to append file path to Edit link
-
-  # for search
-  # https://fusejs.io/api/options.html
-  # fuseOpts:
-  #   isCaseSensitive: false
-  #   shouldSort: true
-  #   location: 0
-  #   distance: 1000
-  #   threshold: 0.4
-  #   minMatchCharLength: 0
-  #   keys: ["title", "permalink", "summary", "content"]
 
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
@@ -140,9 +115,12 @@ menu:
     - name: Home
       url: /
       weight: 10
+    - name: About
+      url: /about
+      weight: 20
     - name: Posts
       url: /posts/
-      weight: 20
+      weight: 30
 
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
