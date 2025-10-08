@@ -27,8 +27,8 @@ params:
   author: Badr Choubai
   # author: ["Me", "You"] # multiple authors
   DateFormat: "January 2, 2006"
-  defaultTheme: dark # dark, light
-  disableThemeToggle: true
+  defaultTheme: light # dark, light
+  disableThemeToggle: false 
 
   ShowReadingTime: false
   ShowShareButtons: false
@@ -60,22 +60,7 @@ params:
     # apple_touch_icon: "<link / abs url>"
     # safari_pinned_tab: "<link / abs url>"
 
-  # label:
-  #   text: "" # use a space to pretend not to show text
-  #   icon: ""
-  #   iconHeight: 20
-
   # profile-mode
-  profileMode:
-    enabled: false # needs to be explicitly set
-    title: >
-      Hello :wave:
-    buttons:
-      - name: About
-        url: /about
-      - name: Posts
-        url: /posts
-
   # home-info mode
   homeInfoParams:
     Title: "Hello :wave:"
@@ -116,7 +101,7 @@ menu:
       url: /
       weight: 10
     - name: About
-      url: /about
+      url: /about/
       weight: 20
     - name: Posts
       url: /posts/

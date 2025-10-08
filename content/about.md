@@ -6,7 +6,7 @@ hideMeta: true
 
 # About Me
 
-I'm a Moroccan-American software engineer from Aurora, Colorado. My name—Badr (بدر)—means "The Full Moon" in Arabic.
+I'm a Moroccan-American software engineer from Aurora, Colorado. My name—Badr (بدر)—means "Full Moon" in Arabic.
 
 In becoming a professional engineer, I've found that I really enjoy learning new things and having to struggle through a
 problem to solve it. I've been starting to learn Go, developing small applications with it. I've been continuing to grow my knowledge
