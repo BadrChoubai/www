@@ -142,6 +142,7 @@ h6,
   --app-color--contrast: #1f2024;
   --app-color-border: #3c3e43;
   --app-color-surface: #25272c;
+  --app-color-surface--rgb: 37, 39, 44;
 
   /* Accents inspired by the orange containers */
   --app-color-accent: #e47a1e;
