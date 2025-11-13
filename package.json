@@ -1,0 +1,23 @@
+{
+  "name": "astro-boilerplate",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "deploy:preview": "npx astro build && npx wrangler dev",
+    "deploy": "npx astro build && npx wrangler deploy"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^12.6.10",
+    "@astrojs/mdx": "^4.3.10",
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/playfair-display": "^5.2.8",
+    "astro": "^5.15.4"
+  },
+  "devDependencies": {
+    "wrangler": "^4.46.0"
+  }
+}

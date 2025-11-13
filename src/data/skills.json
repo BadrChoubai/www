@@ -1,0 +1,72 @@
+[
+    {
+        "name": "C#",
+        "category": "Language",
+        "level": "high"
+    },
+    {
+        "name": "JavaScript",
+        "category": "Language",
+        "level": "high" 
+    },
+    {
+        "name": "Go",
+        "category": "Language",
+        "level": "medium"
+    },
+    {
+        "name": "TypeScript",
+        "category": "Frontend",
+        "level": "high"
+    },
+    {
+        "name": "Vue 3",
+        "category": "Frontend",
+        "level": "high"
+    },
+    {
+        "name": "ASP.NET Core",
+        "category": "Backend",
+        "level": "high"
+    },
+    {
+        "name": "GraphQL",
+        "category": "Backend",
+        "level": "medium" 
+    },
+    {
+        "name": "Azure",
+        "category": "Cloud",
+        "level": "high"
+    },
+    {
+        "name": "Kubernetes",
+        "category": "DevOps",
+        "level": "medium"
+    },
+    {
+        "name": "Docker",
+        "category": "DevOps",
+        "level": "medium"
+    },
+    {
+        "name": "Terraform",
+        "category": "IaC",
+        "level": "medium"
+    },
+    {
+        "name": "Git",
+        "category": "Tools",
+        "level": "high"
+    },
+    {
+        "name": "Azure DevOps",
+        "category": "Tools",
+        "level": "high"
+    },
+    {
+        "name": "Prometheus",
+        "category": "Monitoring",
+        "level": "medium"
+    }
+]

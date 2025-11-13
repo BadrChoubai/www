@@ -1,0 +1,344 @@
+/* =========================================================
+   BASE VARIABLES
+   ========================================================= */
+
+/* inter-latin-wght-normal */
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(@fontsource-variable/inter/files/inter-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* playfair-display-latin-wght-normal */
+@font-face {
+  font-family: 'Playfair Display Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 900;
+  src: url(@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2) format('woff2-variations');
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+:root,
+:host {
+
+  /* Typography */
+  --app-font-family-emoji: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --app-font-family-sans-serif: system-ui, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+    Helvetica, Arial, "Helvetica Neue", sans-serif, var(--app-font-family-emoji);
+  --app-font-family-serif: 'Playfair Display Variable', Georgia, 'Times New Roman', Times, serif, var(--app-font-family-emoji);
+  --app-font-family-monospace: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace, var(--app-font-family-emoji);
+  --app-font-family: var(--app-font-family-sans-serif);
+  --app-font-size: 15px;
+
+  --app-line-height: 1.5;
+  --app-line-height--tight: clamp(1.1, calc(var(--app-line-height) - 0.25vw), var(--app-line-height));
+
+  --app-font-weight: 400;
+
+  --text-heading--font-family: "Inter Variable", "Inter", var(--app-font-family);
+
+  /* Spacing & layout */
+  --app-spacing: 1rem;
+  --app-border-radius: 0.375rem;
+  --app-border-width: 2px;
+  --app-outline-width: 0.125rem;
+  --app-transition: 0.2s ease-in-out;
+  --app-typography-spacing-vertical: 1rem;
+  --app-block-spacing-vertical: var(--app-spacing);
+  --app-block-spacing-horizontal: var(--app-spacing);
+  --app-grid-column-gap: var(--app-spacing);
+  --app-grid-row-gap: var(--app-spacing);
+
+  /* Container width */
+  --app-container-max: 1200px;
+  --app-container-width: 100%;
+
+  --section-height-three-fourths: 75svh;
+  --section-height-full: 100svh;
+
+  color-scheme: light dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --app-font-weight: 700;
+}
+
+h1,
+.h1 {
+  --app-font-weight: 900;
+  --app-font-size: 2rem;
+}
+
+h2,
+.h2 {
+  --app-font-weight: 500;
+  --app-font-size: 1.75rem;
+}
+
+h3,
+.h3 {
+  --app-font-weight: 500;
+  --app-font-size: 1.5rem;
+}
+
+h4,
+.h4 {
+  --app-font-weight: 300;
+  --app-font-size: 1.25rem;
+}
+
+h5,
+.h5 {
+  --app-font-weight: 300;
+  --app-font-size: 1.125rem;
+}
+
+h6,
+.h6 {
+  --app-font-weight: 100;
+  --app-font-size: 1rem;
+}
+
+:where(article, p) ~ :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: var(--app-typography-spacing-top);
+}
+
+
+@media screen and (max-width: 749px) {
+  [mobile\:hidden] {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  [desktop\:hidden] {
+    /* stylelint-disable-next-line declaration-no-important */
+    display: none !important;
+  }
+}
+
+/* =========================================================
+   THEME: DARK
+   ========================================================= */
+[data-theme="dark"],
+:root:not([data-theme="light"]),
+:host(:not([data-theme="light"])) {
+  color-scheme: dark;
+
+  --app-background-color: #2b2c31;
+  --app-background-color--contrast: #1f2024;
+  --app-color: #ffffff;
+  --app-color--muted: #b9bbbe;
+  --app-color--contrast: #1f2024;
+  --app-color-border: #3c3e43;
+  --app-color-surface: #25272c;
+
+  /* Accents inspired by the orange containers */
+  --app-color-accent: #e47a1e;
+  --app-color-accent-hover: #ff9b2d;
+
+  /* Optional highlights */
+  --app-color-warning: #f7c948;
+  --app-color-neutral: #d6d8db;
+}
+
+/* =========================================================
+   Document 
+   ========================================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+:where(:root),
+:where(:host) {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  background-color: var(--app-background-color);
+  color: var(--app-color);
+  font-weight: var(--app-font-weight);
+  font-size: var(--app-font-size);
+  line-height: var(--app-line-height);
+  font-family: var(--app-font-family);
+  text-underline-offset: var(--app-text-underline-offset);
+  text-rendering: optimizeLegibility;
+  overflow-wrap: break-word;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+}
+/* =========================================================
+   Document Landmarks
+   ========================================================= */
+body {
+  width: 100%;
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+body>header,
+body>footer {
+  padding-top: var(--app-block-spacing-vertical);
+}
+
+header.group {
+  margin-bottom: var(--app-typography-spacing-vertical);
+}
+
+header.group > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+header.group > *:not(:first-child):last-child {
+    --app-color: var(--app-muted-color);
+    --app-font-weight: unset;
+  font-size: 1rem;
+}
+
+section.section--height-3\/4 {
+  --section-min-height: var(--section-height-three-fourths);
+}
+
+section.section--height-full {
+  --section-min-height: var(--section-height-full);
+}
+
+section {
+  padding: var(--app-spacing);
+  border-bottom: var(--app-border-width) solid var(--app-color-border);
+  background-color: var(--app-background-color);
+  color: var(--app-color);
+
+  display: grid;
+  align-items: center;
+  min-height: var(--section-min-height, 'auto');
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+section > * {
+  grid-column: 2;
+}
+
+
+p {
+    margin-bottom: var(--app-typography-spacing-vertical);
+}
+
+/* Links */
+a {
+  color: var(--app-color);
+  text-decoration: none;
+  transition: color var(--app-transition);
+}
+
+a:hover {
+  color: var(--app-color-accent);
+}
+
+/* =========================================================
+   LAYOUT: Container + Frame alignment
+   ========================================================= */
+.container {
+  width: var(--app-container-width);
+  margin-inline: auto;
+  padding-inline: auto;
+}
+
+@media (min-width: 750px) {
+  .container {
+    max-width: var(--app-container-max);
+    border-inline: var(--app-border-width) solid var(--app-color-border);
+  }
+}
+
+/* ============================================================
+   Grid
+   ============================================================ */
+.grid {
+  grid-column-gap: var(--app-grid-column-gap);
+  grid-row-gap: var(--app-grid-row-gap);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  }
+}
+
+.grid>* {
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: var(--app-typography-spacing-vertical);
+  color: var(--app-color);
+  font-weight: var(--app-font-weight);
+  font-size: var(--app-font-size);
+  line-height: var(--app-line-height);
+  font-family: var(--text-heading--font-family);
+}
+
+:is(h1, h2, h3, h4, h5, h6).contrast, 
+:is(.h1, .h2, .h3, .h4, .h5, .h6).contrast {
+  color: var(--app-color--contrast);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--app-spacing) var(--app-spacing);
+  border-radius: var(--app-border-radius);
+  background-color: var(--app-color-accent);
+  color: #fff;
+  font-weight: 500;
+  transition:
+    color var(--app-transition),
+    background-color var(--app-transition);
+}
+
+.btn:hover {
+  color: var(--app-background-color--contrast);
+  background-color: var(--app-color-accent-hover);
+}
+
+.centered {
+  text-align: center;
+}
+
+.tight {
+  line-height: clamp;
+}

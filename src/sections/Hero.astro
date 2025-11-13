@@ -1,0 +1,65 @@
+---
+import SquareIcon from "../components/Icons/SquareIcon.astro";
+import DotIcon from "../components/Icons/DotIcon.astro";
+import DiamondIcon from "../components/Icons/DiamondIcon.astro";
+import Section from "../components/Section.astro";
+
+const imageUrl = "/images/SCM.jpg"
+---
+
+<Section 
+  coverImage={imageUrl}
+  class="section--height-full" 
+  id="hero">
+  <div>
+    <h1 class="h1">
+      <span>
+        Develop <SquareIcon />
+      </span>
+      <span>
+        Build <DotIcon />
+      </span>
+      <span>
+        Deploy <DiamondIcon />
+      </span>
+    </h1>
+    <h2 class="text-serif">
+      It's what I <i>do</i>.
+    </h2>
+    <h3 class="h4">
+      Currently Focusing on Platform Engineering
+    </h3>
+  </div>
+</Section>
+
+<style>
+  h1 {
+    font-size: 4.5rem;
+    line-height: 1;
+    span {
+      display: inline-block;
+    }
+  }
+
+  .text-serif {
+    font-family: var(--app-font-family-serif);
+    font-weight: 700;
+  }
+
+  div {
+    align-self: center;
+    opacity: 90%;
+    justify-self: left;
+    background-color: var(--app-color-surface);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: var(--app-spacing);
+  }
+
+  @media screen and (min-width: 750px) {
+    div {
+      width: 66%;
+    }
+  }
+</style>

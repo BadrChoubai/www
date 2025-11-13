@@ -1,0 +1,29 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/base.css";
+---
+
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Badr Choubai</title>
+  </head>
+
+  <body>
+    <Header />
+    <main class="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .main {
+    border-top: var(--app-border-width) solid var(--app-color-border);
+    border-bottom: var(--app-border-width) solid var(--app-color-border);
+  }
+</style>
