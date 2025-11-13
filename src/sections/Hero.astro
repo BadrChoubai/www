@@ -9,7 +9,7 @@ const imageUrl = "/images/SCM.jpg"
 
 <Section 
   coverImage={imageUrl}
-  class="section--height-full" 
+    class="section--height-full" 
   id="hero">
   <div>
     <h1 class="h1">
@@ -51,6 +51,7 @@ const imageUrl = "/images/SCM.jpg"
     justify-self: left;
     background-color: rgba(var(--app-color-surface--rgb), 0.8);
     width: 100%;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     padding: var(--app-spacing);
@@ -58,7 +59,7 @@ const imageUrl = "/images/SCM.jpg"
 
   @media screen and (min-width: 750px) {
     div {
-      width: 66%;
+      width: fit-content;
     }
   }
 </style>

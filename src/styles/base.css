@@ -57,7 +57,9 @@
   --app-container-max: 1200px;
   --app-container-width: 100%;
 
-  --section-height-three-fourths: 75svh;
+  --section-height-one-quarter: 25svh;
+  --section-height-half: 50svh;
+  --section-height-three-quarters: 75svh;
   --section-height-full: 100svh;
 
   color-scheme: light dark;
@@ -192,8 +194,10 @@ h6,
    Document Landmarks
    ========================================================= */
 body {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
   margin: 0;
+  min-height: 100svh;
 }
 
 main {
@@ -220,8 +224,16 @@ header.group > *:not(:first-child):last-child {
   font-size: 1rem;
 }
 
+section.section--height-1\/4 {
+  --section-min-height: var(--section-height-one-quarter);
+}
+
+section.section--height-1\/2 {
+  --section-min-height: var(--section-height-half);
+}
+
 section.section--height-3\/4 {
-  --section-min-height: var(--section-height-three-fourths);
+  --section-min-height: var(--section-height-three-quarters);
 }
 
 section.section--height-full {
@@ -234,8 +246,10 @@ section {
   background-color: var(--app-background-color);
   color: var(--app-color);
 
+  position: relative;
   display: grid;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+  width: 100%;
   min-height: var(--section-min-height, 'auto');
 }
 
@@ -246,7 +260,6 @@ section:last-child {
 section > * {
   grid-column: 2;
 }
-
 
 p {
     margin-bottom: var(--app-typography-spacing-vertical);
