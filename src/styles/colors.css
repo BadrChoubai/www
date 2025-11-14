@@ -1,0 +1,35 @@
+:root,
+:host {
+  /* Colors */
+  --gray-800: #222222;
+  --gray-700: #333333;
+  --gray-600: #444444;
+  --gray-500: #555555;
+
+  --white: #ffffff;
+  --red: #a03c46;
+  --orange: #D45A01;
+  --orange--lighten: #e77322;
+  --yellow: #ccaa11;
+  --green: #64a03c;
+  --blue: #3c70a0;
+
+  --app-background-color: var(--gray-800);
+  --app-color: var(--white);
+  --app-surface-color: var(--gray-600);
+  --app-border-color: var(--gray-500);
+
+  /* Modifiers */ 
+  --app-background-color--contrast: var(--gray-700);
+  
+  --app-surface-color--rgb: 50, 50, 50;
+  --app-surface-color--opaque: rgba(var(--app-surface-color--rgb), 0.8);
+
+  --app-accent-color: var(--orange);
+  --app-accent-color--hover: var(--orange--lighten);
+
+  --danger: var(--red);
+  --success: var(--green);
+  --warning: var(--yellow);
+  --info: var(--blue);
+}
