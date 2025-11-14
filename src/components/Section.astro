@@ -26,15 +26,13 @@ const style = [coverImageStyle].filter(Boolean).join(" ")
 </section>
 
 <style>
-  section {
-    padding: var(--app-spacing);
-    background-color: var(--app-background-color);
-    color: var(--app-color);
-  }
+section.contrast {
+  background-color: var(--app-background-color--contrast);
+}
 
-  section.section--with-cover-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+section.section--with-cover-image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 </style>

@@ -4,14 +4,11 @@ import DotIcon from "../components/Icons/DotIcon.astro";
 import DiamondIcon from "../components/Icons/DiamondIcon.astro";
 import Section from "../components/Section.astro";
 
-const imageUrl = "/images/SCM.jpg"
+const imageUrl = "/images/SCM.jpg";
 ---
 
-<Section 
-  coverImage={imageUrl}
-    class="section--height-full" 
-  id="hero">
-  <div>
+<Section coverImage={imageUrl} class="section--height-3/4" id="hero">
+  <div class="hook">
     <h1 class="h1">
       <span>
         Develop <SquareIcon />
@@ -26,9 +23,7 @@ const imageUrl = "/images/SCM.jpg"
     <h2 class="text-serif">
       It's what I <i>do</i>.
     </h2>
-    <h3 class="h4">
-      Currently Focusing on Platform Engineering
-    </h3>
+    <h3 class="h4">Currently Focusing on Platform Engineering</h3>
   </div>
 </Section>
 
@@ -46,10 +41,11 @@ const imageUrl = "/images/SCM.jpg"
     font-weight: 700;
   }
 
-  div {
+  .hook {
     align-self: center;
     justify-self: left;
-    background-color: rgba(var(--app-color-surface--rgb), 0.8);
+    background-color: var(--app-surface-color--opaque);
+    border-bottom: var(--app-border-width) solid var(--app-accent-color);
     width: 100%;
     height: fit-content;
     display: flex;
@@ -58,7 +54,7 @@ const imageUrl = "/images/SCM.jpg"
   }
 
   @media screen and (min-width: 750px) {
-    div {
+    .hook {
       width: fit-content;
     }
   }
