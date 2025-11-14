@@ -109,6 +109,10 @@ section {
   position: relative;
   width: 100%;
   min-height: var(--section-min-height, 'auto');
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-spacing);
 }
 
 section:last-child {
@@ -153,7 +157,7 @@ a:hover {
   grid-column-gap: var(--app-grid-column-gap);
   grid-row-gap: var(--app-grid-row-gap);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0%, 1fr)); 
+  grid-template-columns: 1fr; 
 }
 
 @media (min-width: 750px) {
