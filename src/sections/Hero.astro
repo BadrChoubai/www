@@ -28,12 +28,6 @@ const imageUrl = "/images/SCM.jpg";
 </Section>
 
 <style>
-  h1 {
-    line-height: 1;
-    span {
-      display: inline-block;
-    }
-  }
 
   .text-serif {
     font-family: var(--app-font-family-serif);
@@ -50,14 +44,18 @@ const imageUrl = "/images/SCM.jpg";
     display: flex;
     flex-direction: column;
     padding: var(--app-spacing);
+
+    h1 {
+      font-size: 4.5rem;
+      span {
+        display: inline-block;
+      }
+    }
   }
 
   @media screen and (min-width: 750px) {
     .hook {
       width: fit-content;
-      h1 {
-        font-size: 3.5rem;
-      }
     }
   }
 </style>
