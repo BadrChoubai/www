@@ -1,0 +1,38 @@
+---
+interface Props {
+  tags: Array<string>;
+}
+
+const { tags } = Astro.props;
+---
+
+<nav class="blog-navbar" role="navigation">
+  <header class="blog-navbar__header">
+    <h1>Technically Writing</h1>
+    <span>About whatever I'm interested in, at the moment.</span>
+  </header>
+  <ul class="blog-navbar__selection-menu">
+    {
+      tags.map((tag) => (
+        <li class="blog-navbar__selection-menu__item btn btn--small">
+          <a href={`/blog/?tag=${tag}`}>{tag}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+nav>ul {
+    list-style-type: none;
+}
+
+.blog-navbar {
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap: var(--app-spacing);
+    padding-left: 0;
+  }
+}
+</style>

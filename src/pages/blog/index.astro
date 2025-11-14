@@ -1,0 +1,64 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import Section from "../../components/Section.astro";
+import BlogNavbar from "../../components/BlogNavbar.astro";
+
+const posts = await getCollection("blog");
+const requestedTag = Astro.url.searchParams.get("tag");
+
+// Get unique tags
+const tags = [...new Set(posts.map(post => post.data.tags).flat())];
+
+// Only use the tag if it actually exists in your posts
+const selectedTag = requestedTag && tags.includes(requestedTag) ? requestedTag : "";
+
+// Filter posts by selected tag
+const filteredPosts = selectedTag 
+  ? posts.filter(post => post.data.tags.includes(selectedTag))
+  : posts;
+
+export const prerender = false;
+---
+
+<Layout>
+  <Section id="blog-page-header-section" class="container">
+    <BlogNavbar tags={tags} />
+  </Section>
+  <Section class="grid section--height-full contrast" id="blog-page-section">
+    <div>
+      <ul style="list-style-type: none;">
+        {
+          filteredPosts.map((post: any) => (
+            <li class="post-card">
+              <div>
+                <header>
+                  <h2 class="h3">
+                    <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                  </h2>
+                </header>
+                <p>{post.data.description}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </Section>
+</Layout>
+
+<style>
+  .post-card {
+    width: 50%;
+    background-color: var(--app-surface-color--opaque);
+    padding: 1rem;
+    border: var(--info) var(--app-border-width) solid;
+
+    box-shadow: var(--app-box-shadow);
+    transition: box-shadow var(--app-transition);
+  }
+
+  .post-card:hover {
+    box-shadow: var(--app-box-shadow--hover);
+  }
+</style>

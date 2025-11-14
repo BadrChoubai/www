@@ -175,11 +175,22 @@ a:hover {
   padding: var(--app-spacing) var(--app-spacing);
   border-radius: var(--app-border-radius);
   background-color: var(--app-accent-color);
-  color: #fff;
   font-weight: 500;
   transition:
     color var(--app-transition),
     background-color var(--app-transition);
+  width: fit-content;
+  font-family: "Inter Variable", system-ui, sans-serif;
+}
+
+.btn--small {
+  --app-spacing--half: calc(var(--app-spacing)*.5);
+  padding: var(--app-spacing--half);
+}
+
+.btn--large {
+  --app-spacing--double: calc(var(--app-spacing)*2);
+  padding: var(--app-spacing--double);
 }
 
 .btn:hover {
