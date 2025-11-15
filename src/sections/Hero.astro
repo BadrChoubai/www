@@ -24,7 +24,6 @@ const imageUrl = "/images/SCM.jpg";
       It's what I <i class="text-serif">do</i>.
     </h2>
     <h3 class="h4">Currently Focusing on Platform Engineering</h3>
-    <a class="btn" href="/blog">Read My Blog</a>
   </div>
 </Section>
 
@@ -43,18 +42,21 @@ const imageUrl = "/images/SCM.jpg";
     display: flex;
     flex-direction: column;
     padding: var(--app-spacing);
-
     h1 {
-      font-size: 4.5rem;
+      font-size: 2.8rem;
       span {
         display: inline-block;
       }
     }
+
   }
 
   @media screen and (min-width: 750px) {
     .hook {
       width: fit-content;
+      h1 {
+        font-size: 4.5rem;
+      }
     }
   }
 </style>

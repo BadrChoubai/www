@@ -21,7 +21,6 @@ const { tags, selectedTag } = Astro.props;
             href={tag === selectedTag ? "/blog" : `/blog/?tag=${tag}`}
             class:list={[
               "btn",
-              "btn--small",
               { active: tag === selectedTag }
             ]}
           >
