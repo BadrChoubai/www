@@ -20,6 +20,10 @@
   --app-block-spacing-horizontal: var(--app-spacing);
   --app-grid-column-gap: var(--app-spacing);
   --app-grid-row-gap: var(--app-spacing);
+  --app-nav-element-spacing-vertical: 1rem;
+  --app-nav-element-spacing-horizontal: 0.5rem;
+  --app-nav-link-spacing-vertical: 0.5rem;
+  --app-nav-link-spacing-horizontal: 0.5rem;
 
   /* Container width */
   --app-container-max: 1400px;
@@ -84,6 +88,25 @@ header.group>*:not(:first-child):last-child {
   font-size: 1rem;
 }
 
+
+:where(ol, ul) li {
+  margin-bottom: calc(var(--app-typography-spacing-vertical) * 0.25);
+}
+
+:where(dl, ol, ul) :where(dl, ol, ul) {
+  margin: 0;
+  margin-top: calc(var(--app-typography-spacing-vertical) * 0.25);
+}
+
+ul li {
+  list-style: square;
+}
+
+/* TODO: adjust this so it's less band-aid like */
+li[data-icon] {
+  line-height: 0;
+}
+
 section.section--height-1\/4 {
   --section-min-height: var(--section-height-one-quarter);
 }
@@ -130,10 +153,6 @@ a {
   transition: color var(--app-transition);
 }
 
-a:hover {
-  color: var(--app-accent-color);
-}
-
 /* =========================================================
    LAYOUT: Container + Frame alignment
    ========================================================= */
@@ -170,17 +189,79 @@ a:hover {
   min-width: 0;
 }
 
+:where(nav li)::before {
+  float: left;
+  content: "​";
+}
+
+nav,
+nav ul {
+  display: flex;
+}
+
+nav {
+  justify-content: space-between;
+  overflow: visible;
+}
+nav ol,
+nav ul {
+  align-items: center;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ol:first-of-type,
+nav ul:first-of-type {
+  margin-left: calc(var(--app-nav-element-spacing-horizontal) * -1);
+}
+nav ol:last-of-type,
+nav ul:last-of-type {
+  margin-right: calc(var(--app-nav-element-spacing-horizontal) * -1);
+}
+nav li {
+  display: inline-block;
+  margin: 0;
+  padding: var(--app-nav-element-spacing-vertical) var(--app-nav-element-spacing-horizontal);
+}
+nav li :where(a, [role=link]) {
+  display: inline-block;
+  margin: calc(var(--app-nav-link-spacing-vertical) * -1) calc(var(--app-nav-link-spacing-horizontal) * -1);
+  padding: var(--app-nav-link-spacing-vertical) var(--app-nav-link-spacing-horizontal);
+  border-radius: var(--app-border-radius);
+}
+nav li :where(a, [role=link]):not(:hover) {
+  text-decoration: none;
+}
+nav li button,
+nav li [role=button],
+nav li [type=button],
+nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
+nav li select {
+  height: auto;
+  margin-right: inherit;
+  margin-bottom: 0;
+  margin-left: inherit;
+  padding: calc(var(--app-nav-link-spacing-vertical) - var(--app-border-width) * 2) var(--app-nav-link-spacing-horizontal);
+}
+
 .btn {
+  color: var(--app-color);
   display: inline-block;
   padding: var(--app-spacing) var(--app-spacing);
-  border-radius: var(--app-border-radius);
   background-color: var(--app-accent-color);
+  box-shadow: var(--app-box-shadow);
   font-weight: 500;
   transition:
-    color var(--app-transition),
-    background-color var(--app-transition);
+    box-shadow var(--app-transition);
   width: fit-content;
-  font-family: "Inter Variable", system-ui, sans-serif;
+}
+
+.btn.primary {
+  background-color: var(--info);
+}
+
+.btn.secondary {
+  background-color: var(--danger);
 }
 
 .btn--small {
@@ -194,6 +275,5 @@ a:hover {
 }
 
 .btn:hover {
-  color: var(--app-color);
-  background-color: var(--app-accent-color--hover);
+  box-shadow: var(--app-box-shadow--hover);
 }

@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import BlogNavbar from "../../components/BlogNavbar.astro";
+import { fade } from "astro:transitions";
 
 const posts = await getCollection("blog");
 const requestedTag = Astro.url.searchParams.get("tag");
@@ -23,11 +24,11 @@ export const prerender = false;
 
 <Layout>
   <Section id="blog-page-header-section" class="container">
-    <BlogNavbar tags={tags} />
+    <BlogNavbar tags={tags} selectedTag={selectedTag} />
   </Section>
-  <Section class="grid section--height-full contrast" id="blog-page-section">
+  <Section class="section--height-full contrast" id="blog-page-section">
     <div>
-      <ul style="list-style-type: none;">
+      <ul class="grid" transition:animate={fade({duration: '0.4s'})}>
         {
           filteredPosts.map((post: any) => (
             <li class="post-card">
@@ -48,8 +49,12 @@ export const prerender = false;
 </Layout>
 
 <style>
+
+  ul {
+    padding: 0;
+  }
   .post-card {
-    width: 50%;
+    list-style: none;
     background-color: var(--app-surface-color--opaque);
     padding: 1rem;
     border: var(--info) var(--app-border-width) solid;

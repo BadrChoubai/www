@@ -1,38 +1,53 @@
 ---
 interface Props {
   tags: Array<string>;
+  selectedTag: string;
 }
 
-const { tags } = Astro.props;
+const { tags, selectedTag } = Astro.props;
 ---
 
+<header class="blog-navbar__header">
+  <h1>Technically Writing</h1>
+  <span>About whatever I'm interested in, at the moment.</span>
+</header>
 <nav class="blog-navbar" role="navigation">
-  <header class="blog-navbar__header">
-    <h1>Technically Writing</h1>
-    <span>About whatever I'm interested in, at the moment.</span>
-  </header>
   <ul class="blog-navbar__selection-menu">
     {
       tags.map((tag) => (
-        <li class="blog-navbar__selection-menu__item btn btn--small">
+        <li class={tag == selectedTag ? 'active' : ''} class="blog-navbar__selection-menu__item btn secondary">
           <a href={`/blog/?tag=${tag}`}>{tag}</a>
         </li>
       ))
+    }
+    {
+      selectedTag && (
+        <li data-icon>
+          <a href="/blog">
+            <span class="material-symbols-outlined">
+              close
+            </span>
+          </a>
+        </li>
+      )
     }
   </ul>
 </nav>
 
 <style>
-nav>ul {
-    list-style-type: none;
-}
-
 .blog-navbar {
-  ul {
-    display: flex;
-    flex-direction: row;
-    gap: var(--app-spacing);
-    padding-left: 0;
+  li {
+    font-weight: 500;
+    letter-spacing: 2;
+    align-items: center;
+    font-family: "Inter Variable", sans-serif;
+    background-color: transparent;
+    transition: 
+      background-color var(--app-transition);
+  }
+
+  .active {
+    background-color: var(--info);
   }
 }
 </style>
