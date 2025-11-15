@@ -3,6 +3,7 @@ title: "Approaches to Configuring Kubernetes"
 description: "An introduction to the two approaches a developer may use to configure kubernetes"
 published: 2024-10-14
 slug: configuring-kubernetes
+image: "/images/shipping-containers.jpg"
 tags:
   - kubernetes
   - tutorial

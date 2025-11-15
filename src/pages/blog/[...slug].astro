@@ -16,12 +16,12 @@ const { Content } = await render(post);
 ---
 
 <Layout>
-  <Section id="content-header-section">
+  <Section coverImage={post.data.image} id="content-header-section">
     <header>
       <nav>
         <ul>
           <li>
-            <a href="/blog">back to all posts</a>
+            <a class="btn" href="/blog">back to all posts</a>
           </li>
         </ul>
       </nav>

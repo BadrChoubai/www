@@ -2,7 +2,7 @@
 import { defineCollection, z } from "astro:content";
 
 // 2. Import loader(s)
-import { glob, file } from "astro/loaders";
+import { glob } from "astro/loaders";
 
 // 3. Define your collection(s)
 const blog = defineCollection({
@@ -10,6 +10,7 @@ const blog = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    image: z.string().optional(),
     published: z.coerce.date(),
     updated: z.coerce.date().optional(),
     tags: z.array(z.string()),
