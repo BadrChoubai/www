@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 import BlogNavbar from "../../components/BlogNavbar.astro";
-import { fade } from "astro:transitions";
 
 const posts = await getCollection("blog");
 const requestedTag = Astro.url.searchParams.get("tag");
@@ -28,7 +27,7 @@ export const prerender = false;
   </Section>
   <Section class="section--height-full contrast" id="blog-page-section">
     <div>
-      <ul class="grid">
+      <ul class="grid" style="padding-left: 0;">
         {
           filteredPosts.map((post: any) => (
             <li class="post-card">
@@ -49,10 +48,6 @@ export const prerender = false;
 </Layout>
 
 <style>
-
-  ul {
-    padding: 0;
-  }
   .post-card {
     list-style: none;
     background-color: var(--app-surface-color--opaque);

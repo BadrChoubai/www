@@ -141,10 +141,10 @@ p {
   margin-bottom: var(--app-typography-spacing-vertical);
 }
 
-/* Links */
 a {
   color: var(--app-color);
   text-decoration: none;
+  font-weight: 500;
   transition: color var(--app-transition);
 }
 
@@ -184,11 +184,6 @@ a {
   min-width: 0;
 }
 
-:where(nav li)::before {
-  float: left;
-  content: "​";
-}
-
 nav,
 nav ul {
   display: flex;
@@ -198,6 +193,7 @@ nav {
   justify-content: space-between;
   overflow: visible;
 }
+
 nav ol,
 nav ul {
   align-items: center;
@@ -205,43 +201,16 @@ nav ul {
   padding: 0;
   list-style: none;
 }
-nav ol:first-of-type,
-nav ul:first-of-type {
-  margin-left: calc(var(--app-nav-element-spacing-horizontal) * -1);
-}
-nav ol:last-of-type,
-nav ul:last-of-type {
-  margin-right: calc(var(--app-nav-element-spacing-horizontal) * -1);
-}
+
 nav li {
   display: inline-block;
   margin: 0;
   padding: var(--app-nav-element-spacing-vertical) var(--app-nav-element-spacing-horizontal);
 }
-nav li :where(a, [role=link]) {
-  display: inline-block;
-  margin: calc(var(--app-nav-link-spacing-vertical) * -1) calc(var(--app-nav-link-spacing-horizontal) * -1);
-  padding: var(--app-nav-link-spacing-vertical) var(--app-nav-link-spacing-horizontal);
-  border-radius: var(--app-border-radius);
-}
-nav li :where(a, [role=link]):not(:hover) {
-  text-decoration: none;
-}
-nav li button,
-nav li [role=button],
-nav li [type=button],
-nav li input:not([type=checkbox], [type=radio], [type=range], [type=file]),
-nav li select {
-  height: auto;
-  margin-right: inherit;
-  margin-bottom: 0;
-  margin-left: inherit;
-  padding: calc(var(--app-nav-link-spacing-vertical) - var(--app-border-width) * 2) var(--app-nav-link-spacing-horizontal);
-}
 
 .btn {
   color: var(--app-color);
-  display: inline-block;
+  display: block;
   padding: var(--app-spacing) var(--app-spacing);
   background-color: var(--app-accent-color);
   box-shadow: var(--app-box-shadow);
@@ -261,7 +230,7 @@ nav li select {
 
 .btn--small {
   --app-spacing--half: calc(var(--app-spacing)*.5);
-  padding: var(--app-spacing--half);
+  padding: 0 var(--app-spacing--half);
 }
 
 .btn--large {
