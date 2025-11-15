@@ -28,7 +28,7 @@ export const prerender = false;
   </Section>
   <Section class="section--height-full contrast" id="blog-page-section">
     <div>
-      <ul class="grid" transition:animate={fade({duration: '0.4s'})}>
+      <ul class="grid">
         {
           filteredPosts.map((post: any) => (
             <li class="post-card">
@@ -57,7 +57,7 @@ export const prerender = false;
     list-style: none;
     background-color: var(--app-surface-color--opaque);
     padding: 1rem;
-    border: var(--info) var(--app-border-width) solid;
+    border: var(--app-border-color) var(--app-border-width) solid;
 
     box-shadow: var(--app-box-shadow);
     transition: box-shadow var(--app-transition);

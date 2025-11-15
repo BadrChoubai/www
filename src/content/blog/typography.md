@@ -2,7 +2,7 @@
 title: Typography Testing Page
 description: A simple document to verify **headings**, *text styles*, lists, links, and more.
 published: 2025-11-14
-slug: /typography
+slug: typography
 tags:
   - testing
 ---
