@@ -68,15 +68,6 @@ main {
   display: block;
 }
 
-header,
-footer {
-  padding-inline-start: var(--app-spacing);
-}
-
-footer {
-  padding-block: var(--app-spacing);
-}
-
 header.group {
   margin-bottom: var(--app-typography-spacing-vertical);
 }
