@@ -14,6 +14,9 @@ const { tags, selectedTag } = Astro.props;
 
 <nav class="blog-navbar" role="navigation">
   <ul class="blog-navbar__selection-menu">
+    <li>
+      Filter By Tag:
+    </li>
     {
       tags.map((tag) => (
         <li>
@@ -35,13 +38,6 @@ const { tags, selectedTag } = Astro.props;
 <style>
   .blog-navbar {
     padding-inline: 0;
-    ul {
-      margin-left: 0;
-      li {
-        margin: 0;
-      }
-    }
-
     a.btn {
       padding: calc(var(--app-spacing)*.5);
     }
