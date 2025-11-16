@@ -8,14 +8,15 @@ const posts = await getCollection("blog");
 const requestedTag = Astro.url.searchParams.get("tag");
 
 // Get unique tags
-const tags = [...new Set(posts.map(post => post.data.tags).flat())];
+const tags = [...new Set(posts.map((post) => post.data.tags).flat())].sort();
 
 // Only use the tag if it actually exists in your posts
-const selectedTag = requestedTag && tags.includes(requestedTag) ? requestedTag : "";
+const selectedTag =
+  requestedTag && tags.includes(requestedTag) ? requestedTag : "";
 
 // Filter posts by selected tag
-const filteredPosts = selectedTag 
-  ? posts.filter(post => post.data.tags.includes(selectedTag))
+const filteredPosts = selectedTag
+  ? posts.filter((post) => post.data.tags.includes(selectedTag))
   : posts;
 
 export const prerender = false;
@@ -32,10 +33,17 @@ export const prerender = false;
           filteredPosts.map((post: any) => (
             <li class="post-card">
               <div>
-                <header>
+                <header class="group">
                   <h2 class="h3">
                     <a href={`/blog/${post.id}`}>{post.data.title}</a>
                   </h2>
+                  <p
+                    class="tag"
+                  >
+                    <i>
+                      {post.data.tags.join(", ")}
+                    </i>
+                  </p>
                 </header>
                 <p>{post.data.description}</p>
               </div>
@@ -56,6 +64,18 @@ export const prerender = false;
 
     box-shadow: var(--app-box-shadow);
     transition: box-shadow var(--app-transition);
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
+      .tag {
+        font-weight: 600;
+        color: var(--warning);
+      }
+    }
+
   }
 
   .post-card:hover {
