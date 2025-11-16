@@ -64,6 +64,11 @@ body {
   min-height: 100svh;
 }
 
+body>header,
+body>footer {
+  padding-inline: var(--app-block-spacing-horizontal);
+}
+
 main {
   display: block;
 }
