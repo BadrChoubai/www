@@ -3,16 +3,19 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/base.css";
 import { ClientRouter } from 'astro:transitions';
+
+import Head from "../components/Head.astro";
+const { title, description, image, noindex } = Astro.props;
+
 ---
 
 <!doctype html>
 <html lang="en" data-theme="dark">
-  <head>
+  <Head {title} {description} {image} {noindex}>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Badr Choubai</title>
     <ClientRouter />
-  </head>
+  </Head>
 
   <body>
     <Header />

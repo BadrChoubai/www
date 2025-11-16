@@ -15,7 +15,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout>
+<Layout image={post.data.image} title={`Badr Choubai - ` + post.data.title}>
   <Section coverImage={post.data.image} id="blog-content-header-section">
     <header>
       <nav>
