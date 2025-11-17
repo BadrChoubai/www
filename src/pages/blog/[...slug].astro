@@ -2,16 +2,18 @@
 import { getCollection, render } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
+import CodeBlock from "../../components/CodeBlock.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map(post => ({
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
+
 const { Content } = await render(post);
 ---
 
@@ -37,18 +39,18 @@ const { Content } = await render(post);
 <style>
   a.btn {
     background-color: var(--app-accent-color);
-    padding: calc(var(--app-spacing)*.5);
+    padding: calc(var(--app-spacing) * 0.5);
   }
 
-.content-wrapper {
-  width: 100%;
-}
-
-@media screen and (min-width: 750px) {
   .content-wrapper {
-    margin: auto;
-    padding: 1rem;
-    width: 90%;
+    width: 100%;
   }
-}
+
+  @media screen and (min-width: 750px) {
+    .content-wrapper {
+      margin: auto;
+      padding: 1rem;
+      width: 90%;
+    }
+  }
 </style>
