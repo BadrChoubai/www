@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "badrchoubai-www",
+	"name": "www",
   "compatibility_date": "2025-11-11",
   "compatibility_flags": [
     "nodejs_compat",
