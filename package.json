@@ -11,10 +11,12 @@
     "deploy": "npx astro build && npx wrangler deploy"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.10",
-    "@astrojs/mdx": "^4.3.10",
+    "@astrojs/check": "^0.9.7",
+    "@astrojs/cloudflare": "^13.1.0",
+    "@astrojs/mdx": "^5.0.0",
     "@fontsource-variable/inter": "^5.2.8",
-    "astro": "^5.15.4"
+    "astro": "^6.0.3",
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "wrangler": "^4.46.0"
