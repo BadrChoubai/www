@@ -7,7 +7,7 @@
     "directory": "./dist",
   },
   "images": {
-    "binding": "IMAGES"
+    "binding": "IMAGES",
   },
   "observability": {
     "enabled": true,

@@ -7,8 +7,8 @@
 
 :root,
 :host {
-  --app-box-shadow: 0 .3rem .8rem rgba(0, 0, 0, .12);
-  --app-box-shadow--hover: 0 .3rem 1.2rem rgba(0, 0, 0, .2);
+  --app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
+  --app-box-shadow--hover: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.2);
 
   /* Spacing & layout */
   --app-spacing: 1rem;
@@ -37,7 +37,6 @@
   color-scheme: dark;
 }
 
-
 @media screen and (max-width: 749px) {
   [mobile\:hidden] {
     /* stylelint-disable-next-line declaration-no-important */
@@ -64,8 +63,8 @@ body {
   min-height: 100svh;
 }
 
-body>header,
-body>footer {
+body > header,
+body > footer {
   padding-inline: var(--app-block-spacing-horizontal);
 }
 
@@ -77,16 +76,15 @@ header.group {
   margin-bottom: var(--app-typography-spacing-vertical);
 }
 
-header.group>* {
+header.group > * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-header.group>*:not(:first-child):last-child {
+header.group > *:not(:first-child):last-child {
   --app-font-weight: unset;
   font-size: 1rem;
 }
-
 
 :where(ol, ul) li {
   margin-bottom: calc(var(--app-typography-spacing-vertical) * 0.25);
@@ -125,7 +123,7 @@ section {
 
   position: relative;
   width: 100%;
-  min-height: var(--section-min-height, 'auto');
+  min-height: var(--section-min-height, "auto");
 
   display: flex;
   flex-direction: column;
@@ -179,7 +177,7 @@ a {
   }
 }
 
-.grid>* {
+.grid > * {
   min-width: 0;
 }
 
@@ -205,7 +203,8 @@ nav ul {
 nav li {
   display: inline-block;
   margin: 0;
-  padding: var(--app-nav-element-spacing-vertical) var(--app-nav-element-spacing-horizontal);
+  padding: var(--app-nav-element-spacing-vertical)
+    var(--app-nav-element-spacing-horizontal);
 }
 
 button {
@@ -216,19 +215,19 @@ button {
 }
 
 button,
-[type=submit],
-[type=reset],
-[type=button] {
+[type="submit"],
+[type="reset"],
+[type="button"] {
   appearance: button;
   -webkit-appearance: button;
 }
 
 button,
-[type=submit],
-[type=reset],
-[type=button],
-[type=file]::file-selector-button,
-[role=button] {
+[type="submit"],
+[type="reset"],
+[type="button"],
+[type="file"]::file-selector-button,
+[role="button"] {
   border: var(--app-border-width) solid transparent;
   border-radius: var(--app-border-radius);
   outline: none;
@@ -245,5 +244,9 @@ button,
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-  transition: background-color var(--app-transition), border-color var(--app-transition), color var(--app-transition), box-shadow var(--app-transition);
+  transition:
+    background-color var(--app-transition),
+    border-color var(--app-transition),
+    color var(--app-transition),
+    box-shadow var(--app-transition);
 }
