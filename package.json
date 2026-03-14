@@ -1,5 +1,6 @@
 {
-  "name": "astro-boilerplate",
+  "name": "badrchoubai-dev",
+  "description": "Source code for my personal website."
   "type": "module",
   "version": "0.0.1",
   "scripts": {
