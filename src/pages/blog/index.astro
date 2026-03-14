@@ -37,9 +37,9 @@ const filteredPosts = selectedTag
             <li class="post-card">
               <div>
                 <header class="group">
-                  <h2 class="h3">
+                  <h3>
                     <a href={`/blog/${post.id}`}>{post.data.title}</a>
-                  </h2>
+                  </h3>
                   <div class="tags-container">
                     {post.data.tags.map((tag) => (
                       <i class="tag">{tag}</i>
@@ -58,31 +58,34 @@ const filteredPosts = selectedTag
       <header class="group">
         <h2>
           Allez, Allez, Allez! <small
-            style="font-size: 50%; color: var(--orange)">series</small>
+            style="font-size: 50%; color: var(--orange)">series</small
+          >
         </h2>
         <p>Learning the Go programming language.</p>
       </header>
       <ul class="grid" style="padding-left: 0;">
         {
-          seriesPosts.filter((post) => !post.data.draft).length > 0
-            ? seriesPosts.map((post) => (
-                <li class="post-card">
-                  <div>
-                    <header class="group">
-                      <h2 class="h3">
-                        <a href={`/blog/${post.id}`}>{post.data.title}</a>
-                      </h2>
-                      <div class="tags-container">
-                        {post.data.tags.map((tag) => (
-                          <i class="tag">{tag}</i>
-                        ))}
-                      </div>
-                    </header>
-                    <p>{post.data.description}</p>
-                  </div>
-                </li>
-              ))
-            : "Coming Soon!"
+          seriesPosts.filter((post) => !post.data.draft).length > 0 ? (
+            seriesPosts.map((post) => (
+              <li class="post-card">
+                <div>
+                  <header class="group">
+                    <h3>
+                      <a href={`/blog/${post.id}`}>{post.data.title}</a>
+                    </h3>
+                    <div class="tags-container">
+                      {post.data.tags.map((tag) => (
+                        <i class="tag">{tag}</i>
+                      ))}
+                    </div>
+                  </header>
+                  <p>{post.data.description}</p>
+                </div>
+              </li>
+            ))
+          ) : (
+            <h3>Coming Soon!</h3>
+          )
         }
       </ul>
     </div>
