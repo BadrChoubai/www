@@ -4,7 +4,10 @@ import Layout from "../../layouts/Layout.astro";
 import Section from "../../components/Section.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = [
+    ...(await getCollection("blog")),
+    ...(await getCollection("series")),
+  ];
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { post },

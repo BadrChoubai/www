@@ -7,9 +7,9 @@ interface Props {
 
 const { class: className, coverImage, id } = Astro.props;
 
-const coverImageStyle = coverImage && `background-image: url(${coverImage});`
+const coverImageStyle = coverImage && `background-image: url(${coverImage});`;
 
-const style = [coverImageStyle].filter(Boolean).join(" ")
+const style = [coverImageStyle].filter(Boolean).join(" ");
 ---
 
 <section
@@ -26,13 +26,13 @@ const style = [coverImageStyle].filter(Boolean).join(" ")
 </section>
 
 <style>
-section.contrast {
-  background-color: var(--app-background-color--contrast);
-}
+  section.contrast {
+    background-color: var(--app-background-color--contrast);
+  }
 
-section.section--with-cover-image {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+  section.section--with-cover-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 </style>

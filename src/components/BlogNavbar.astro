@@ -14,18 +14,13 @@ const { tags, selectedTag } = Astro.props;
 
 <nav class="blog-navbar" role="navigation">
   <ul class="blog-navbar__selection-menu">
-    <li>
-      Filter By Tag:
-    </li>
+    <li>Filter By Tag:</li>
     {
       tags.map((tag) => (
         <li>
           <a
             href={tag === selectedTag ? "/blog" : `/blog/?tag=${tag}`}
-            class:list={[
-              "btn",
-              { active: tag === selectedTag }
-            ]}
+            class:list={["btn", { active: tag === selectedTag }]}
           >
             {tag}
           </a>
@@ -39,7 +34,7 @@ const { tags, selectedTag } = Astro.props;
   .blog-navbar {
     padding-inline: 0;
     a.btn {
-      padding: calc(var(--app-spacing)*.5);
+      padding: calc(var(--app-spacing) * 0.5);
     }
     .active {
       background-color: var(--app-accent-color);
