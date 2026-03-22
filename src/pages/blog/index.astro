@@ -30,10 +30,10 @@ const filteredPosts = selectedTag
     <Section class="contrast section--height-1/4" id="blog-page-section">
         <div>
             <header>
-                <h2>Posts</h2>
+                <h2 id="all-posts">Posts</h2>
             </header>
             <ul class="grid" style="padding-left: 0;">
-                {filteredPosts.map((post) => <PostCard post={post} />)}
+                {filteredPosts.map((post) => <PostCard {post} />)}
             </ul>
         </div>
 
@@ -51,7 +51,7 @@ const filteredPosts = selectedTag
                 {
                     seriesPosts.filter((post) => !post.data.draft).length >
                     0 ? (
-                        seriesPosts.map((post) => <PostCard post="post" />)
+                        seriesPosts.map((post) => <PostCard {post} />)
                     ) : (
                         <h3>Coming Soon!</h3>
                     )
