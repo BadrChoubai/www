@@ -1,8 +1,8 @@
 ---
 interface Props {
-  class?: string;
-  coverImage?: string;
-  id: string;
+    class?: string;
+    coverImage?: string;
+    id: string;
 }
 
 const { class: className, coverImage, id } = Astro.props;
@@ -13,26 +13,26 @@ const style = [coverImageStyle].filter(Boolean).join(" ");
 ---
 
 <section
-  class:list={[
-    `section--${id}`,
-    { "section--with-cover-image": !!coverImage },
-    "container",
-    className,
-  ]}
-  id={id}
-  style={style}
+    class:list={[
+        `section--${id}`,
+        { "section--with-cover-image": !!coverImage },
+        "container",
+        className,
+    ]}
+    id={id}
+    style={style}
 >
-  <slot />
+    <slot />
 </section>
 
 <style>
-  section.contrast {
-    background-color: var(--app-background-color--contrast);
-  }
+    section.contrast {
+        background-color: var(--app-background-color--contrast);
+    }
 
-  section.section--with-cover-image {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
+    section.section--with-cover-image {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
 </style>
