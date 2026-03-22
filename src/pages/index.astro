@@ -80,7 +80,7 @@ import PostCard from "../components/PostCard.astro";
             <h2>Recent Posts</h2>
         </header>
         <ul class="grid" style="padding-left: 0;">
-            {allPosts.map((post) => <PostCard post={post} />)}
+            {allPosts.map((post) => <PostCard {post} />)}
         </ul>
     </Section>
 
