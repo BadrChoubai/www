@@ -13,48 +13,50 @@ allPosts = allPosts.filter((post) => !post.data.draft);
 
 const requestedTag = Astro.url.searchParams.get("tag");
 const tags = [
-  ...new Set(allPosts.flatMap((post) => post.data.tags ?? [])),
+    ...new Set(allPosts.flatMap((post) => post.data.tags ?? [])),
 ].sort();
 const selectedTag =
-  requestedTag && tags.includes(requestedTag) ? requestedTag : "";
+    requestedTag && tags.includes(requestedTag) ? requestedTag : "";
 
 const filteredPosts = selectedTag
-  ? allPosts.filter((post) => post.data.tags.includes(selectedTag))
-  : allPosts;
+    ? allPosts.filter((post) => post.data.tags.includes(selectedTag))
+    : allPosts;
 ---
 
-<Layout>
-  <Section id="blog-page-header-section" class="container">
-    <BlogNavbar tags={tags} selectedTag={selectedTag} />
-  </Section>
-  <Section class="contrast section--height-1/4" id="blog-page-section">
-    <div>
-      <header>
-        <h2>Posts</h2>
-      </header>
-      <ul class="grid" style="padding-left: 0;">
-        {filteredPosts.map((post) => <PostCard post={post} />)}
-      </ul>
-    </div>
+<Layout description="How I Do.">
+    <Section id="blog-page-header-section" class="container">
+        <BlogNavbar tags={tags} selectedTag={selectedTag} />
+    </Section>
+    <Section class="contrast section--height-1/4" id="blog-page-section">
+        <div>
+            <header>
+                <h2>Posts</h2>
+            </header>
+            <ul class="grid" style="padding-left: 0;">
+                {filteredPosts.map((post) => <PostCard post={post} />)}
+            </ul>
+        </div>
 
-    <div>
-      <header class="group">
-        <h2>
-          Allez, Allez, Allez! <small
-            style="font-size: 50%; color: var(--orange)">series</small
-          >
-        </h2>
-        <p>Learning the Go programming language.</p>
-      </header>
-      <ul class="grid" style="padding-left: 0;">
-        {
-          seriesPosts.filter((post) => !post.data.draft).length > 0 ? (
-            seriesPosts.map((post) => <PostCard post="post" />)
-          ) : (
-            <h3>Coming Soon!</h3>
-          )
-        }
-      </ul>
-    </div>
-  </Section>
+        <div>
+            <header class="group">
+                <h2>
+                    Allez, Allez, Allez! <small
+                        style="font-size: 50%; color: var(--orange)"
+                        >series</small
+                    >
+                </h2>
+                <p>Learning the Go programming language.</p>
+            </header>
+            <ul class="grid" style="padding-left: 0;">
+                {
+                    seriesPosts.filter((post) => !post.data.draft).length >
+                    0 ? (
+                        seriesPosts.map((post) => <PostCard post="post" />)
+                    ) : (
+                        <h3>Coming Soon!</h3>
+                    )
+                }
+            </ul>
+        </div>
+    </Section>
 </Layout>
