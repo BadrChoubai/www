@@ -30,6 +30,7 @@
   --app-container-width: 100%;
 
   --section-height-one-quarter: 25svh;
+  --section-height-third: calc(100svh / 3);
   --section-height-half: 50svh;
   --section-height-three-quarters: 75svh;
   --section-height-full: 100svh;
@@ -97,6 +98,10 @@ header.group > *:not(:first-child):last-child {
 
 ul li {
   list-style: square;
+}
+
+section.section--height-1\/3 {
+  --section-min-height: var(--section-height-one-third);
 }
 
 section.section--height-1\/4 {

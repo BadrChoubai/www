@@ -1,0 +1,48 @@
+---
+const { post } = Astro.props;
+---
+
+<li class="post-card">
+  <div>
+    <header class="group">
+      <h3>
+        <a href={`/blog/${post.id}`}>{post.data.title}</a>
+      </h3>
+      <div class="tags-container">
+        {post.data.tags.map((tag) => <i class="tag">{tag}</i>)}
+      </div>
+    </header>
+    <p>{post.data.description}</p>
+  </div>
+</li>
+
+<style>
+  .post-card {
+    list-style: none;
+    background-color: var(--app-surface-color--opaque);
+    padding: 1rem;
+    border: var(--app-border-color) var(--app-border-width) solid;
+
+    box-shadow: var(--app-box-shadow);
+    transition: box-shadow var(--app-transition);
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      .tags-container {
+        display: flex;
+        gap: var(--app-spacing);
+        flex-direction: row;
+      }
+      .tag {
+        font-weight: 600;
+        color: var(--orange);
+      }
+    }
+  }
+
+  .post-card:hover {
+    box-shadow: var(--app-box-shadow--hover);
+  }
+</style>

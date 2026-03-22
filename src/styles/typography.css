@@ -180,6 +180,7 @@ pre {
   margin-bottom: var(--app-spacing);
   overflow-x: auto;
 }
+
 pre > code,
 pre > samp {
   display: block;
