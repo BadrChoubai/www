@@ -8,153 +8,155 @@ const imageUrl = "/images/SCM.jpg";
 ---
 
 <Section coverImage={imageUrl} class="" id="hero">
-  <div class="hero-overlay"></div>
-  <div class="hook">
-    <p class="hero-eyebrow">// Software Engineer. Cloud and Backend.</p>
-    <h1>
-      <span class="hero-word">Develop<SquareIcon /></span>
-      <span class="hero-word">Build<DotIcon /></span>
-      <span class="hero-word">Deploy<DiamondIcon /></span>
-    </h1>
-    <blockquote class="hero-sub">
-      <p class="hero-tagline">
-        It's what I <i class="text-serif">do</i>.
-      </p>
-      <p class="hero-desc">
-        Completing my Bachelor's degree—building things that interest me along
-        the way.
-      </p>
-    </blockquote>
-    <div class="hero-ctas">
-      <a href="/blog" class="btn-primary">Read the blog</a>
-      <a href="https://www.github.com/BadrChoubai" class="btn-ghost">GitHub</a>
+    <div class="hero-overlay"></div>
+    <div class="hook">
+        <p class="hero-eyebrow">// Software Engineer. Cloud and Backend.</p>
+        <h1>
+            <span class="hero-word">Develop<SquareIcon /></span>
+            <span class="hero-word">Build<DotIcon /></span>
+            <span class="hero-word">Deploy<DiamondIcon /></span>
+        </h1>
+        <blockquote class="hero-sub">
+            <p class="hero-tagline">
+                It's what I <i class="text-serif">do</i>.
+            </p>
+            <p class="hero-desc">
+                Completing my Bachelor's degree—building things that interest me
+                along the way.
+            </p>
+        </blockquote>
+        <div class="hero-ctas">
+            <a href="/blog" class="btn-primary">Read my blog</a>
+            <a href="https://www.github.com/BadrChoubai" class="btn-ghost"
+                >GitHub</a
+            >
+        </div>
     </div>
-  </div>
 </Section>
 
 <style>
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-  }
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+    }
 
-  .hook {
-    background-color: rgba(0, 0, 0, 0.33);
-    position: relative;
-    z-index: 2;
-    align-self: flex-end;
-    justify-self: start;
-    padding: 3rem 2rem 3.5rem;
-    max-width: 680px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
+    .hook {
+        background-color: rgba(0, 0, 0, 0.33);
+        position: relative;
+        z-index: 2;
+        align-self: flex-end;
+        justify-self: start;
+        padding: 3rem 2rem 3.5rem;
+        max-width: 680px;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
 
-  .hero-eyebrow {
-    font-family: var(--app-font-family-monospace);
-    font-size: 100%;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
+    .hero-eyebrow {
+        font-family: var(--app-font-family-monospace);
+        font-size: 100%;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
 
-  h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    gap: 0.05em;
-  }
+    h1 {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        gap: 0.05em;
+    }
 
-  .hero-word {
-    text-shaodw: var();
-    display: block;
-  }
+    .hero-word {
+        text-shaodw: var();
+        display: block;
+    }
 
-  .hero-word :global(svg) {
-    display: inline-block;
-    vertical-align: bottom;
-    position: relative;
-    margin-bottom: 0.1em;
-    margin-left: 0.1em;
-  }
+    .hero-word :global(svg) {
+        display: inline-block;
+        vertical-align: bottom;
+        position: relative;
+        margin-bottom: 0.1em;
+        margin-left: 0.1em;
+    }
 
-  .hero-sub {
-    background-color: var(--app-background-color--contrast);
-    margin-bottom: 2rem;
-    border-left: var(--app-border-width) solid var(--app-accent-color);
-    padding: var(--app-spacing);
-  }
+    .hero-sub {
+        background-color: var(--app-background-color--contrast);
+        margin-bottom: 2rem;
+        border-left: var(--app-border-width) solid var(--app-accent-color);
+        padding: var(--app-spacing);
+    }
 
-  .hero-tagline {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 0.3rem;
-  }
+    .hero-tagline {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 0.3rem;
+    }
 
-  .hero-desc {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.55);
-    font-family: var(--app-font-family-monospace);
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
+    .hero-desc {
+        font-size: 0.875rem;
+        color: rgba(255, 255, 255, 0.55);
+        font-family: var(--app-font-family-monospace);
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
 
-  .text-serif {
-    font-family: var(--app-font-family-serif);
-    font-style: italic;
-  }
+    .text-serif {
+        font-family: var(--app-font-family-serif);
+        font-style: italic;
+    }
 
-  .hero-ctas {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-  }
+    .hero-ctas {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
 
-  .btn-primary {
-    background-color: var(--app-accent-color);
-    color: var(--white);
-    padding: 0.65rem 1.4rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    border: 2px solid var(--app-accent-color);
-    transition:
-      background-color var(--app-transition),
-      color var(--app-transition);
-  }
+    .btn-primary {
+        background-color: var(--app-accent-color);
+        color: var(--white);
+        padding: 0.65rem 1.4rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: 2px solid var(--app-accent-color);
+        transition:
+            background-color var(--app-transition),
+            color var(--app-transition);
+    }
 
-  .btn-primary:hover {
-    background-color: var(--app-accent-color--hover);
-    border-color: var(--app-accent-color--hover);
-    color: var(--white);
-  }
+    .btn-primary:hover {
+        background-color: var(--app-accent-color--hover);
+        border-color: var(--app-accent-color--hover);
+        color: var(--white);
+    }
 
-  .btn-ghost {
-    background-color: transparent;
-    color: var(--white);
-    padding: 0.65rem 1.4rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    border: 2px solid rgba(255, 255, 255, 0.25);
-    transition:
-      border-color var(--app-transition),
-      color var(--app-transition);
-  }
+    .btn-ghost {
+        background-color: transparent;
+        color: var(--white);
+        padding: 0.65rem 1.4rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        border: 2px solid rgba(255, 255, 255, 0.25);
+        transition:
+            border-color var(--app-transition),
+            color var(--app-transition);
+    }
 
-  .btn-ghost:hover {
-    border-color: rgba(255, 255, 255, 0.7);
-    color: var(--white);
-  }
+    .btn-ghost:hover {
+        border-color: rgba(255, 255, 255, 0.7);
+        color: var(--white);
+    }
 </style>
