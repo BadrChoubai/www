@@ -12,173 +12,174 @@ import PostCard from "../components/PostCard.astro";
 ---
 
 <Layout>
-  <Hero />
+    <Hero />
 
-  <Section class="section--height-1/3" id="about-me">
-    <div class="about-inner">
-      <div class="about-left">
+    <Section class="section--height-1/3" id="about-me">
+        <div class="about-inner">
+            <div class="about-left">
+                <header class="group">
+                    <h2>Software Engineer.</h2>
+                    <h3>Mostly Outdoors.</h3>
+                </header>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-value">B.Sc.</span>
+                        <span class="stat-label">In progress</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value">4+</span>
+                        <span class="stat-label">Years Coding</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-right">
+                <blockquote class="about-lead">
+                    <p>
+                        I write code for a living—but ask me what I'm actually
+                        excited about and it's rarely work.
+                    </p>
+                </blockquote>
+                <p>
+                    My relationship with technology started long before I wrote
+                    a line of code. I took an interest in programming in high
+                    school but always assumed it was for smarter students. A few
+                    months at a call center convinced me otherwise—so I started
+                    teaching myself. Community college first, then ouTube,
+                    channels like Traversy Media and Academind, until it stuck.
+                    I'm most at home building things people actually use,
+                    getting into the infrastructure underneath them, and picking
+                    up new tools whenever something interesting crosses my path.
+                </p>
+
+                <p>
+                    Some of the most valuable lines of code I've experienced
+                    were ones I never thought about—iOS on my first iPod, the
+                    ones keeping YouTube running through countless hours of
+                    watching everything from tutorials to nonsense. Written by
+                    people I'll never meet, they shaped more of who I am than I
+                    realized at the time. That's still true today—the ones on my
+                    Ubuntu installation that let me tinker with my development
+                    environment, and the ones Strava's engineering team wrote
+                    that gave me an outlet through fitness and introduced me to
+                    some of the best people in my life. That's the bar I hold
+                    myself to.
+                </p>
+
+                <p>
+                    Based in Denver, I spend my free time running, cycling, and
+                    hunting down good coffee shops neighborhood by neighborhood.
+                    I think the way I work and the way I move through the world
+                    are the same thing: figure out how it works, put in the
+                    miles, and stay curious.
+                </p>
+            </div>
+        </div>
+    </Section>
+    <Section class="contrast" id="recent-posts">
         <header class="group">
-          <h2>Software Engineer.</h2>
-          <h3>Mostly Outdoors.</h3>
+            <h2>Recent Posts</h2>
         </header>
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-value">B.Sc.</span>
-            <span class="stat-label">In progress</span>
-          </div>
-          <div class="stat">
-            <span class="stat-value">4+</span>
-            <span class="stat-label">Years Coding</span>
-          </div>
-        </div>
-      </div>
-      <div class="about-right">
-        <blockquote class="about-lead">
-          <p>
-            I write code for a living—but ask me what I'm actually excited about
-            and it's rarely work.
-          </p>
-        </blockquote>
-        <p>
-          My relationship with technology started long before I wrote a line of
-          code. I took an interest in programming in high school but always
-          assumed it was for smarter students. A few months at a call center
-          convinced me otherwise—so I started teaching myself. Community college
-          first, then ouTube, channels like Traversy Media and Academind, until
-          it stuck. I'm most at home building things people actually use,
-          getting into the infrastructure underneath them, and picking up new
-          tools whenever something interesting crosses my path.
-        </p>
+        <ul class="grid" style="padding-left: 0;">
+            {allPosts.map((post) => <PostCard post={post} />)}
+        </ul>
+    </Section>
 
-        <p>
-          Some of the most valuable lines of code I've experienced were ones I
-          never thought about—iOS on my first iPod, the ones keeping YouTube
-          running through countless hours of watching everything from tutorials
-          to nonsense. Written by people I'll never meet, they shaped more of
-          who I am than I realized at the time. That's still true today—the ones
-          on my Ubuntu installation that let me tinker with my development
-          environment, and the ones Strava's engineering team wrote that gave me
-          an outlet through fitness and introduced me to some of the best people
-          in my life. That's the bar I hold myself to.
-        </p>
+    <style>
+        .about-inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            padding: 1rem 0;
+        }
 
-        <p>
-          Based in Denver, I spend my free time running, cycling, and hunting
-          down good coffee shops neighborhood by neighborhood. I think the way I
-          work and the way I move through the world are the same thing: figure
-          out how it works, put in the miles, and stay curious.
-        </p>
-        <div class="about-cta">
-          <a href="/blog" class="btn-accent">Read the blog</a>
-        </div>
-      </div>
-    </div>
-  </Section>
-  <Section class="contrast" id="recent-posts">
-    <header class="group">
-      <h2>Recent Posts</h2>
-    </header>
-    <ul class="grid" style="padding-left: 0;">
-      {allPosts.map((post) => <PostCard post={post} />)}
-    </ul>
-  </Section>
+        @media (min-width: 750px) {
+            .about-inner {
+                grid-template-columns: 1fr 1.4fr;
+                gap: 4rem;
+                align-items: start;
+            }
+        }
 
-  <style>
-    .about-inner {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      padding: 1rem 0;
-    }
+        /* Left column */
+        .about-left {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
 
-    @media (min-width: 750px) {
-      .about-inner {
-        grid-template-columns: 1fr 1.4fr;
-        gap: 4rem;
-        align-items: start;
-      }
-    }
+        .about-heading {
+            font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--white);
+            margin-bottom: 0;
+        }
 
-    /* Left column */
-    .about-left {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+        .about-stats {
+            display: flex;
+            gap: 2rem;
+            border-top: var(--app-border-width) solid var(--app-border-color);
+            padding-top: 1.5rem;
+        }
 
-    .about-heading {
-      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -0.03em;
-      color: var(--white);
-      margin-bottom: 0;
-    }
+        .stat {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
 
-    .about-stats {
-      display: flex;
-      gap: 2rem;
-      border-top: var(--app-border-width) solid var(--app-border-color);
-      padding-top: 1.5rem;
-    }
+        .stat-value {
+            font-size: 1.8rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--orange--lighten);
+            font-family: var(--app-font-family-monospace);
+        }
 
-    .stat {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-    }
+        .stat-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: var(--app-font-family-monospace);
+        }
 
-    .stat-value {
-      font-size: 1.8rem;
-      font-weight: 900;
-      line-height: 1;
-      color: var(--orange--lighten);
-      font-family: var(--app-font-family-monospace);
-    }
+        /* Right column */
+        .about-right {
+            display: flex;
+            flex-direction: column;
+        }
 
-    .stat-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(255, 255, 255, 0.4);
-      font-family: var(--app-font-family-monospace);
-    }
+        .about-lead {
+            background-color: var(--app-background-color--contrast);
+            border-left: var(--app-border-width) solid var(--app-accent-color);
+        }
 
-    /* Right column */
-    .about-right {
-      display: flex;
-      flex-direction: column;
-    }
+        .about-lead p {
+            margin: 0 0;
+        }
 
-    .about-lead {
-      background-color: var(--app-background-color--contrast);
-      border-left: var(--app-border-width) solid var(--app-accent-color);
-    }
+        .about-cta {
+            margin-top: 0.5rem;
+        }
 
-    .about-lead p {
-      margin: 0 0;
-    }
-
-    .about-cta {
-      margin-top: 0.5rem;
-    }
-
-    .btn-accent {
-      font-family: var(--app-font-family-monospace);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--app-accent-color);
-      border-bottom: 1px solid var(--app-accent-color);
-      padding-bottom: 0.15rem;
-      transition:
-        color var(--app-transition),
-        border-color var(--app-transition);
-    }
-    .btn-accent:hover {
-      color: var(--app-accent-color--hover);
-      border-color: var(--app-accent-color--hover);
-    }
-  </style>
+        .btn-accent {
+            font-family: var(--app-font-family-monospace);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--app-accent-color);
+            border-bottom: 1px solid var(--app-accent-color);
+            padding-bottom: 0.15rem;
+            transition:
+                color var(--app-transition),
+                border-color var(--app-transition);
+        }
+        .btn-accent:hover {
+            color: var(--app-accent-color--hover);
+            border-color: var(--app-accent-color--hover);
+        }
+    </style>
 </Layout>
