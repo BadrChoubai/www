@@ -13,14 +13,14 @@ allPosts = allPosts.filter((post) => !post.data.draft);
 
 const requestedTag = Astro.url.searchParams.get("tag");
 const tags = [
-    ...new Set(allPosts.flatMap((post) => post.data.tags ?? [])),
+  ...new Set(allPosts.flatMap((post) => post.data.tags ?? [])),
 ].sort();
 const selectedTag =
-    requestedTag && tags.includes(requestedTag) ? requestedTag : "";
+  requestedTag && tags.includes(requestedTag) ? requestedTag : "";
 
 const filteredPosts = selectedTag
-    ? allPosts.filter((post) => post.data.tags.includes(selectedTag))
-    : allPosts;
+  ? allPosts.filter((post) => post.data.tags.includes(selectedTag))
+  : allPosts;
 ---
 
 <Layout description="How I Do.">

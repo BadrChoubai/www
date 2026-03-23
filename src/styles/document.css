@@ -46,3 +46,15 @@
         margin: 0;
     }
 }
+
+@media print {
+  #header,
+  #footer,
+  #blog-content-header-section {
+    display: none;
+  }
+
+  @page {
+    margin: 0;
+  }
+}

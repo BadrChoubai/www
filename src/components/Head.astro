@@ -7,20 +7,20 @@
  * - noindex?: boolean
  */
 interface Props {
-    title?: string;
-    description?: string;
-    image?: string;
-    noindex?: boolean;
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
 }
 let {
-    title = "Badr Choubai",
-    description,
-    image,
-    noindex = false,
+  title = "Badr Choubai",
+  description,
+  image,
+  noindex = false,
 } = Astro.props;
 
 if (description) {
-    title = `${title} | ${description}`;
+  title = `${title} | ${description}`;
 }
 ---
 
