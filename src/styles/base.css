@@ -139,6 +139,12 @@ section:last-child {
   border-bottom: none;
 }
 
+header.contrast,
+footer.contrast,
+section.contrast {
+  background-color: var(--app-background-color--contrast);
+}
+
 p {
   margin-bottom: var(--app-typography-spacing-vertical);
 }
@@ -232,7 +238,8 @@ button,
 [type="reset"],
 [type="button"],
 [type="file"]::file-selector-button,
-[role="button"] {
+[role="button"],
+.btn {
   border: var(--app-border-width) solid transparent;
   border-radius: var(--app-border-radius);
   outline: none;
@@ -240,6 +247,7 @@ button,
   box-shadow: var(--app-box-shadow);
   color: var(--app-color);
   padding: var(--app-spacing);
+  font-family: var(--app-font-family-monospace);
   font-weight: var(--app-font-weight);
   font-size: 1rem;
   line-height: var(--app-line-height);
@@ -254,4 +262,33 @@ button,
     border-color var(--app-transition),
     color var(--app-transition),
     box-shadow var(--app-transition);
+}
+
+.btn.primary {
+  background-color: var(--app-accent-color);
+  border-color: var(--app-accent-color);
+  color: var(--white);
+  font-weight: 700;
+}
+
+.btn.primary:hover {
+  background-color: var(--app-accent-color--hover);
+  border-color: var(--app-accent-color--hover);
+}
+
+.btn.ghost {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+}
+
+.btn.ghost:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn.sm {
+  padding: 0.65rem 1.4rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
