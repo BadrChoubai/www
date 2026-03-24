@@ -9,7 +9,7 @@
 
   --white: #ffffff;
   --red: #a03c46;
-  --orange: #D45A01;
+  --orange: #d45a01;
   --orange--lighten: #e77322;
   --yellow: #ccaa11;
   --green: #64a03c;
@@ -20,9 +20,9 @@
   --app-surface-color: var(--gray-600);
   --app-border-color: var(--gray-500);
 
-  /* Modifiers */ 
+  /* Modifiers */
   --app-background-color--contrast: var(--gray-700);
-  
+
   --app-surface-color--rgb: 50, 50, 50;
   --app-surface-color--opaque: rgba(var(--app-surface-color--rgb), 0.8);
 

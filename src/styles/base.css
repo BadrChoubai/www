@@ -7,243 +7,309 @@
 
 :root,
 :host {
-  --app-box-shadow: 0 .3rem .8rem rgba(0, 0, 0, .12);
-  --app-box-shadow--hover: 0 .3rem 1.2rem rgba(0, 0, 0, .2);
+    --app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
+    --app-box-shadow--hover: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.2);
 
-  /* Spacing & layout */
-  --app-spacing: 1rem;
-  --app-border-radius: 0;
-  --app-border-width: 2px;
-  --app-outline-width: 0.125rem;
-  --app-transition: 0.2s ease-in-out;
-  --app-block-spacing-vertical: var(--app-spacing);
-  --app-block-spacing-horizontal: var(--app-spacing);
-  --app-grid-column-gap: var(--app-spacing);
-  --app-grid-row-gap: var(--app-spacing);
-  --app-nav-element-spacing-vertical: 1rem;
-  --app-nav-element-spacing-horizontal: 0.5rem;
-  --app-nav-link-spacing-vertical: 0.5rem;
-  --app-nav-link-spacing-horizontal: 0.5rem;
+    /* Spacing & layout */
+    --app-spacing: 1rem;
+    --app-border-radius: 0;
+    --app-border-width: 2px;
+    --app-outline-width: 0.125rem;
+    --app-transition: 0.2s ease-in-out;
+    --app-block-spacing-vertical: var(--app-spacing);
+    --app-block-spacing-horizontal: var(--app-spacing);
+    --app-grid-column-gap: var(--app-spacing);
+    --app-grid-row-gap: var(--app-spacing);
+    --app-nav-element-spacing-vertical: 1rem;
+    --app-nav-element-spacing-horizontal: 0.5rem;
+    --app-nav-link-spacing-vertical: 0.5rem;
+    --app-nav-link-spacing-horizontal: 0.5rem;
 
-  /* Container width */
-  --app-container-max: 1400px;
-  --app-container-width: 100%;
+    /* Container width */
+    --app-container-max: 1400px;
+    --app-container-width: 100%;
 
-  --section-height-one-quarter: 25svh;
-  --section-height-half: 50svh;
-  --section-height-three-quarters: 75svh;
-  --section-height-full: 100svh;
+    --section-height-one-quarter: 25svh;
+    --section-height-third: calc(100svh / 3);
+    --section-height-half: 50svh;
+    --section-height-three-quarters: 75svh;
+    --section-height-full: 100svh;
 
-  color-scheme: dark;
+    color-scheme: dark;
 }
 
-
 @media screen and (max-width: 749px) {
-  [mobile\:hidden] {
-    /* stylelint-disable-next-line declaration-no-important */
-    display: none !important;
-  }
+    [mobile\:hidden] {
+        /* stylelint-disable-next-line declaration-no-important */
+        display: none !important;
+    }
 }
 
 @media screen and (min-width: 750px) {
-  [desktop\:hidden] {
-    /* stylelint-disable-next-line declaration-no-important */
-    display: none !important;
-  }
+    [desktop\:hidden] {
+        /* stylelint-disable-next-line declaration-no-important */
+        display: none !important;
+    }
 }
 
 /* =========================================================
    Document Landmarks
    ========================================================= */
 body {
-  color: var(--app-color);
-  background: var(--app-background-color);
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  min-height: 100svh;
+    color: var(--app-color);
+    background: var(--app-background-color);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100svh;
 }
 
 body>header,
 body>footer {
-  padding-inline: var(--app-block-spacing-horizontal);
+    padding-inline: var(--app-block-spacing-horizontal);
 }
 
 main {
-  display: block;
+    display: block;
 }
 
 header.group {
-  margin-bottom: var(--app-typography-spacing-vertical);
+    margin-bottom: var(--app-typography-spacing-vertical);
 }
 
 header.group>* {
-  margin-top: 0;
-  margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 header.group>*:not(:first-child):last-child {
-  --app-font-weight: unset;
-  font-size: 1rem;
+    --app-font-weight: unset;
+    font-size: 1rem;
 }
 
-
 :where(ol, ul) li {
-  margin-bottom: calc(var(--app-typography-spacing-vertical) * 0.25);
+    margin-bottom: calc(var(--app-typography-spacing-vertical) * 0.25);
 }
 
 :where(dl, ol, ul) :where(dl, ol, ul) {
-  margin: 0;
-  margin-top: calc(var(--app-typography-spacing-vertical) * 0.25);
+    margin: 0;
+    margin-top: calc(var(--app-typography-spacing-vertical) * 0.25);
 }
 
 ul li {
-  list-style: square;
+    list-style: square;
+}
+
+section.section--height-1\/3 {
+    --section-min-height: var(--section-height-one-third);
 }
 
 section.section--height-1\/4 {
-  --section-min-height: var(--section-height-one-quarter);
+    --section-min-height: var(--section-height-one-quarter);
 }
 
 section.section--height-1\/2 {
-  --section-min-height: var(--section-height-half);
+    --section-min-height: var(--section-height-half);
 }
 
 section.section--height-3\/4 {
-  --section-min-height: var(--section-height-three-quarters);
+    --section-min-height: var(--section-height-three-quarters);
 }
 
 section.section--height-full {
-  --section-min-height: var(--section-height-full);
+    --section-min-height: var(--section-height-full);
 }
 
 section {
-  padding: var(--app-spacing);
-  border-bottom: var(--app-border-width) solid var(--app-border-color);
-  background-color: var(--app-background-color);
-  color: var(--app-color);
+    padding: var(--app-spacing);
+    border-bottom: var(--app-border-width) solid var(--app-border-color);
+    background-color: var(--app-background-color);
+    color: var(--app-color);
 
-  position: relative;
-  width: 100%;
-  min-height: var(--section-min-height, 'auto');
+    position: relative;
+    width: 100%;
+    min-height: var(--section-min-height, "auto");
 
-  display: flex;
-  flex-direction: column;
-  gap: var(--app-spacing);
+    display: flex;
+    flex-direction: column;
+    gap: var(--app-spacing);
 }
 
 section:last-child {
-  border-bottom: none;
+    border-bottom: none;
+}
+
+header.contrast,
+footer.contrast,
+section.contrast {
+    background-color: var(--app-background-color--contrast);
 }
 
 p {
-  margin-bottom: var(--app-typography-spacing-vertical);
+    margin-bottom: var(--app-typography-spacing-vertical);
 }
 
 a {
-  color: var(--app-color);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color var(--app-transition);
+    color: var(--app-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--app-transition);
 }
 
 /* =========================================================
    LAYOUT: Container + Frame alignment
    ========================================================= */
 .container {
-  width: var(--app-container-width);
-  margin-inline: auto;
-  padding-inline: auto;
+    width: var(--app-container-width);
+    margin-inline: auto;
+    padding-inline: auto;
 }
 
 @media (min-width: 750px) {
-  .container {
-    max-width: var(--app-container-max);
-    border-inline: var(--app-border-width) solid var(--app-border-color);
-  }
+    .container {
+        max-width: var(--app-container-max);
+        border-inline: var(--app-border-width) solid var(--app-border-color);
+    }
 }
 
 /* ============================================================
    Grid
    ============================================================ */
 .grid {
-  grid-column-gap: var(--app-grid-column-gap);
-  grid-row-gap: var(--app-grid-row-gap);
-  display: grid;
-  grid-template-columns: 1fr;
+    grid-column-gap: var(--app-grid-column-gap);
+    grid-row-gap: var(--app-grid-row-gap);
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 @media (min-width: 750px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
-  }
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+    }
 }
 
 .grid>* {
-  min-width: 0;
+    min-width: 0;
 }
 
 nav,
 nav ul {
-  display: flex;
-  padding-inline: 1rem;
+    display: flex;
+    padding-inline: 1rem;
 }
 
 nav {
-  justify-content: space-between;
-  overflow: visible;
+    justify-content: space-between;
+    overflow: visible;
 }
 
 nav ol,
 nav ul {
-  align-items: center;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
+    align-items: center;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav li {
-  display: inline-block;
-  margin: 0;
-  padding: var(--app-nav-element-spacing-vertical) var(--app-nav-element-spacing-horizontal);
+    display: inline-block;
+    margin: 0;
+    padding: var(--app-nav-element-spacing-vertical) var(--app-nav-element-spacing-horizontal);
 }
 
 button {
-  margin: 0;
-  overflow: visible;
-  font-family: inherit;
-  text-transform: none;
+    margin: 0;
+    overflow: visible;
+    font-family: inherit;
+    text-transform: none;
 }
 
 button,
-[type=submit],
-[type=reset],
-[type=button] {
-  appearance: button;
-  -webkit-appearance: button;
+[type="submit"],
+[type="reset"],
+[type="button"] {
+    appearance: button;
+    -webkit-appearance: button;
 }
 
 button,
-[type=submit],
-[type=reset],
-[type=button],
-[type=file]::file-selector-button,
-[role=button] {
-  border: var(--app-border-width) solid transparent;
-  border-radius: var(--app-border-radius);
-  outline: none;
-  background-color: var(--app-accent-color);
-  box-shadow: var(--app-box-shadow);
-  color: var(--app-color);
-  padding: var(--app-spacing);
-  font-weight: var(--app-font-weight);
-  font-size: 1rem;
-  line-height: var(--app-line-height);
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
-  transition: background-color var(--app-transition), border-color var(--app-transition), color var(--app-transition), box-shadow var(--app-transition);
+[type="submit"],
+[type="reset"],
+[type="button"],
+[type="file"]::file-selector-button,
+[role="button"],
+.btn {
+    border: var(--app-border-width) solid transparent;
+    border-radius: var(--app-border-radius);
+    outline: none;
+    background-color: var(--app-accent-color);
+    box-shadow: var(--app-box-shadow);
+    color: var(--app-color);
+    padding: var(--app-spacing);
+    font-family: var(--app-font-family-monospace);
+    font-weight: var(--app-font-weight);
+    font-size: 1rem;
+    line-height: var(--app-line-height);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    transition:
+        background-color var(--app-transition),
+        border-color var(--app-transition),
+        color var(--app-transition),
+        box-shadow var(--app-transition);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+.btn.primary {
+    background-color: var(--app-accent-color);
+    border-color: var(--app-accent-color);
+    color: var(--white);
+    font-weight: 700;
+}
+
+.btn.primary:hover {
+    background-color: var(--app-accent-color--hover);
+    border-color: var(--app-accent-color--hover);
+}
+
+.btn.ghost {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: none;
+}
+
+.btn.ghost:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.btn.sm {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
