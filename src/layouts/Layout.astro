@@ -10,24 +10,25 @@ const { title, description, image, noindex } = Astro.props;
 
 <!doctype html>
 <html lang="en" data-theme="dark">
-  <Head {title} {description} {image} {noindex}>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <ClientRouter />
-  </Head>
+    <Head {title} {description} {image} {noindex}>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <ClientRouter />
+    </Head>
 
-  <body>
-    <Header />
-    <main class="main">
-      <slot />
-    </main>
-    <Footer />
-  </body>
+    <body>
+        <a href="#content" class="btn sm sr-only">Skip to main content</a>
+        <Header />
+        <main class="main" id="content">
+            <slot />
+        </main>
+        <Footer />
+    </body>
 </html>
 
 <style>
-  .main {
-    border-top: var(--app-border-width) solid var(--app-border-color);
-    border-bottom: var(--app-border-width) solid var(--app-border-color);
-  }
+    .main {
+        border-top: var(--app-border-width) solid var(--app-border-color);
+        border-bottom: var(--app-border-width) solid var(--app-border-color);
+    }
 </style>
