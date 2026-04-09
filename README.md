@@ -69,8 +69,8 @@ title: "Post title"
 description: "Short description shown in the post card."
 published: 2024-10-14
 tags: [kubernetes, tutorial]
-draft: false          # set to true to hide the post from listings
-image: /images/cover.jpg  # optional cover image
+draft: false # set to true to hide the post from listings
+image: /images/cover.jpg # optional cover image
 ---
 ```
 

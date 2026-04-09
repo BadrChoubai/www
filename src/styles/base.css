@@ -73,15 +73,18 @@ main {
     display: block;
 }
 
+div.group,
 header.group {
     margin-bottom: var(--app-typography-spacing-vertical);
 }
 
+div.group>*,
 header.group>* {
     margin-top: 0;
     margin-bottom: 0;
 }
 
+div.group>*:not(:first-child):last-child,
 header.group>*:not(:first-child):last-child {
     --app-font-weight: unset;
     font-size: 1rem;
