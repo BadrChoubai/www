@@ -8,103 +8,87 @@ const imageUrl = "/images/SCM.jpg";
 ---
 
 <Section coverImage={imageUrl} id="hero">
-  <div class="hook">
-    <p class="hero-eyebrow">// Software Engineer. Cloud and Backend.</p>
-    <h1>
-      <span class="hero-word">Develop<SquareIcon /></span>
-      <span class="hero-word">Build<DotIcon /></span>
-      <span class="hero-word">Deploy<DiamondIcon /></span>
-    </h1>
-    <blockquote class="hero-sub">
-      <p class="hero-tagline">
-        It's what I <i class="text-serif">do</i>.
-      </p>
-      <p class="hero-desc">
-        Completing my Bachelor's degree—building things that interest me along
-        the way.
-      </p>
-    </blockquote>
-    <div class="hero-ctas">
-      <a class="btn primary sm" href="#about-me">About Me</a>
-      <a class="btn ghost sm" href="https://www.github.com/BadrChoubai">
-        GitHub
-      </a>
+    <div class="hook">
+        <h1>
+            <span class="hero-word">Develop<SquareIcon /></span>
+            <span class="hero-word">Build<DotIcon /></span>
+            <span class="hero-word">Deploy<DiamondIcon /></span>
+        </h1>
+        <div class="group hero-desc">
+            <h2>
+                It's what I <i class="text-serif">do</i>.
+            </h2>
+            <p>
+                Right now, I'm finishing my Bachelor's degree. Building things
+                that interest me as I go.
+            </p>
+        </div>
+        <div class="hero-ctas">
+            <a class="btn primary sm" href="#about-me">About Me</a>
+            <a class="btn ghost sm" href="https://www.github.com/BadrChoubai">
+                GitHub
+            </a>
+        </div>
     </div>
-  </div>
+
+    <style>
+        .hook {
+            background-color: rgba(0, 0, 0, 0.66);
+            position: relative;
+            z-index: 2;
+            align-self: flex-end;
+            justify-self: start;
+            padding: 1rem 2rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .hero-eyebrow {
+            font-family: var(--app-font-family-monospace);
+            font-size: 100%;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            margin-bottom: 2rem;
+            color: var(--white);
+            display: flex;
+            flex-direction: column;
+            gap: 0.05em;
+        }
+
+        .hero-word {
+            display: block;
+        }
+
+        .hero-word :global(svg) {
+            display: inline-block;
+            vertical-align: bottom;
+            position: relative;
+            margin-bottom: 0.1em;
+            margin-left: 0.1em;
+        }
+
+        .text-serif {
+            font-family: var(--app-font-family-serif);
+            font-style: italic;
+        }
+
+        .hero-desc {
+            max-width: 400px;
+        }
+
+        .hero-ctas {
+            margin-top: var(--app-spacing);
+            display: flex;
+            gap: var(--app-spacing);
+        }
+    </style>
 </Section>
-
-<style>
-  .hook {
-    background-color: rgba(0, 0, 0, 0.33);
-    position: relative;
-    z-index: 2;
-    align-self: flex-end;
-    justify-self: start;
-    padding: 1rem 2rem 1rem;
-    max-width: 780px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-
-  .hero-eyebrow {
-    font-family: var(--app-font-family-monospace);
-    font-size: 100%;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
-  h1 {
-    font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
-    color: var(--white);
-    display: flex;
-    flex-direction: column;
-    gap: 0.05em;
-  }
-
-  .hero-word {
-    display: block;
-  }
-
-  .hero-word :global(svg) {
-    display: inline-block;
-    vertical-align: bottom;
-    position: relative;
-    margin-bottom: 0.1em;
-    margin-left: 0.1em;
-  }
-
-  .hero-sub {
-    background-color: var(--app-background-color--contrast);
-    margin-bottom: var(--app-spacing);
-    border-left: var(--app-border-width) var(--app-accent-color) solid;
-    padding: var(--app-spacing);
-  }
-
-  .hero-tagline {
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--white);
-  }
-
-  .hero-desc {
-    color: rgba(255, 255, 255, 0.55);
-    font-family: var(--app-font-family-monospace);
-    margin-bottom: 0;
-  }
-
-  .text-serif {
-    font-family: var(--app-font-family-serif);
-    font-style: italic;
-  }
-
-  .hero-ctas {
-    display: flex;
-    gap: var(--app-spacing);
-  }
-</style>
