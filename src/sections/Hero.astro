@@ -7,7 +7,7 @@ import Section from "../components/Section.astro";
 const imageUrl = "/images/SCM.jpg";
 ---
 
-<Section class="section--height-1/2" coverImage={imageUrl} id="hero">
+<Section class="section" coverImage={imageUrl} id="hero">
     <div class="hook">
         <h1>
             <span class="hero-word">Develop<SquareIcon /></span>
@@ -25,70 +25,67 @@ const imageUrl = "/images/SCM.jpg";
         </div>
         <div class="hero-ctas">
             <a class="btn primary sm" href="#about-me">About Me</a>
-            <a class="btn ghost sm" href="https://www.github.com/BadrChoubai">
-                GitHub
-            </a>
+            <a class="btn ghost sm" href="https://www.github.com/BadrChoubai"
+                >GitHub</a
+            >
         </div>
     </div>
-
-    <style>
-        .hook {
-            background-color: rgba(0, 0, 0, 0.66);
-            position: relative;
-            z-index: 2;
-            align-self: flex-end;
-            justify-self: start;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .hero-eyebrow {
-            font-family: var(--app-font-family-monospace);
-            font-size: 100%;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 900;
-            line-height: 0.95;
-            letter-spacing: -0.03em;
-            margin-bottom: 2rem;
-            color: var(--white);
-            display: flex;
-            flex-direction: column;
-            gap: 0.05em;
-        }
-
-        .hero-word {
-            display: block;
-        }
-
-        .hero-word :global(svg) {
-            display: inline-block;
-            vertical-align: bottom;
-            position: relative;
-            margin-bottom: 0.1em;
-            margin-left: 0.1em;
-        }
-
-        .text-serif {
-            font-family: var(--app-font-family-serif);
-            font-style: italic;
-        }
-
-        .hero-desc {
-            max-width: 400px;
-        }
-
-        .hero-ctas {
-            margin-top: var(--app-spacing);
-            display: flex;
-            gap: var(--app-spacing);
-        }
-    </style>
 </Section>
+
+<style>
+    .hook {
+        background-color: rgba(0, 0, 0, 0.66);
+        position: relative;
+        z-index: 2;
+        align-self: flex-end;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: var(--app-spacing);
+    }
+
+    .hook h1 {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 900;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        margin-bottom: 2rem;
+        color: var(--white);
+        display: flex;
+        flex-direction: column;
+        gap: 0.05em;
+    }
+
+    .hero-word {
+        display: block;
+    }
+
+    .hero-word :global(svg) {
+        display: inline-block;
+        vertical-align: bottom;
+        position: relative;
+        margin-bottom: 0.1em;
+        margin-left: 0.1em;
+    }
+
+    .text-serif {
+        font-family: var(--app-font-family-serif);
+        font-style: italic;
+    }
+
+    .hero-desc {
+        max-width: 400px;
+    }
+
+    .hero-ctas {
+        margin-top: var(--app-spacing);
+        display: flex;
+        gap: var(--app-spacing);
+    }
+
+    @media screen and (max-width: 750px) {
+        .hook {
+            padding: 1rem;
+        }
+    }
+</style>
