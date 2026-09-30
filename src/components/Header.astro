@@ -6,9 +6,15 @@
   <nav aria-label="Site navigation">
     <ul>
       <li><a href="/">home</a></li>
-      <li><a href="/blog">blog</a></li>
     </ul>
   </nav>
+  <div class="blocks">
+    <div id="block" class="block-1"></div>
+    <div id="block" class="block-2"></div>
+    <div id="block" class="block-3"></div>
+    <div id="block" class="block-4"></div>
+    <div id="block" class="block-5"></div>
+  </div>
 </header>
 
 <style>
@@ -39,5 +45,25 @@
   nav {
     background-color: transparent;
     padding-inline: 0;
+  }
+
+  #block {
+    height: 10px;
+    width: 10px;
+  }
+  .block-1 {
+    background-color: var(--red);
+  }
+  .block-2 {
+    background-color: var(--orange);
+  }
+  .block-3 {
+    background-color: var(--yellow);
+  }
+  .block-4 {
+    background-color: var(--green);
+  }
+  .block-5 {
+    background-color: var(--blue);
   }
 </style>
