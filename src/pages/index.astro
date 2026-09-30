@@ -12,95 +12,92 @@ import PostCard from "../components/PostCard.astro";
 ---
 
 <Layout description="What I Do.">
-    <Hero />
+  <Hero />
 
-    <Section id="about-me">
-        <div class="about-content">
-            <header class="about-header">
-                <h2 class="h1">About Me</h2>
-            </header>
-            <div class="about-stats">
-                <div class="stat">
-                    <span class="stat-value">B.Sc.</span>
-                    <span class="stat-label">In progress</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-value">2+</span>
-                    <span class="stat-label">Years in industry</span>
-                </div>
-            </div>
-            <p>
-                My relationship with technology started long before I wrote a
-                line of code. I took an interest in programming in high school.
-                But, wasn't serious about it until after my first class at
-                community college, then YouTube, channels like Traversy Media
-                and Academind, until it stuck. I'm most at home building things
-                people actually use, getting into the infrastructure underneath
-                them, and picking up new tools whenever something interesting
-                crosses my path.
-            </p>
-            <p>
-                Some of the most valuable lines of code I've experienced were
-                ones I never thought about—iOS on my first iPod, the ones
-                keeping YouTube running through countless hours of watching
-                everything from tutorials to nonsense. Written by people I'll
-                never meet, they shaped more of who I am than I realized at the
-                time. That's still true today—the ones on my Linux installation
-                that let me tinker with my development environment, and the ones
-                Strava's engineering team wrote that gave me an outlet through
-                fitness and introduced me to some of the best people in my life.
-                That's the bar I aim to hold myself to.
-            </p>
-
-            <p>
-                Based in Denver, I spend my free time running, cycling, and
-                hunting down good coffee shops neighborhood by neighborhood. I
-                think the way I work and the way I move through the world are
-                the same thing: figure out how it works, put in the miles, and
-                stay curious.
-            </p>
+  <Section id="about-me">
+    <div class="about-content">
+      <header class="about-header">
+        <h2 class="h1">About Me</h2>
+      </header>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-value">B.Sc.</span>
+          <span class="stat-label">In progress</span>
         </div>
-    </Section>
-    <Section class="contrast" id="recent-posts">
-        <header class="group">
-            <h2>Recent Posts</h2>
-        </header>
-        <ul class="grid" style="padding-left: 0;">
-            {allPosts.map((post) => <PostCard {post} />)}
-        </ul>
-    </Section>
+        <div class="stat">
+          <span class="stat-value">2+</span>
+          <span class="stat-label">Years in industry</span>
+        </div>
+      </div>
+      <p>
+        My relationship with technology started long before I wrote a line of
+        code. I took an interest in programming in high school. But, wasn't
+        serious about it until after my first class at community college, then
+        YouTube, channels like Traversy Media and Academind, until it stuck. I'm
+        most at home building things people actually use, getting into the
+        infrastructure underneath them, and picking up new tools whenever
+        something interesting crosses my path.
+      </p>
+      <p>
+        Some of the most valuable lines of code I've experienced were ones I
+        never thought about—iOS on my first iPod, the ones keeping YouTube
+        running through countless hours of watching everything from tutorials to
+        nonsense. Written by people I'll never meet, they shaped more of who I
+        am than I realized at the time. That's still true today—the ones on my
+        Linux installation that let me tinker with my development environment,
+        and the ones Strava's engineering team wrote that gave me an outlet
+        through fitness and introduced me to some of the best people in my life.
+        That's the bar I aim to hold myself to.
+      </p>
+
+      <p>
+        Based in Denver, I spend my free time running, cycling, and hunting down
+        good coffee shops neighborhood by neighborhood. I think the way I work
+        and the way I move through the world are the same thing: figure out how
+        it works, put in the miles, and stay curious.
+      </p>
+    </div>
+  </Section>
+  <Section class="contrast" id="recent-posts">
+    <header class="group">
+      <h2>Recent Posts</h2>
+    </header>
+    <ul class="grid" style="padding-left: 0;">
+      {allPosts.map((post) => <PostCard {post} />)}
+    </ul>
+  </Section>
 </Layout>
 
 <style>
-    .about-content {
-        display: flex;
-        padding: 1rem 0;
-        flex-direction: column;
-        gap: var(--app-spacing);
-    }
-    .about-stats {
-        display: flex;
-        gap: var(--app-spacing);
-        border-top: var(--app-border-width) solid var(--app-border-color);
-        padding-top: 0.2rem;
-    }
+  .about-content {
+    display: flex;
+    padding: 1rem 0;
+    flex-direction: column;
+    gap: var(--app-spacing);
+  }
+  .about-stats {
+    display: flex;
+    gap: var(--app-spacing);
+    border-top: var(--app-border-width) solid var(--app-border-color);
+    padding-top: 0.2rem;
+  }
 
-    .stat {
-        display: flex;
-        flex-direction: column;
-        font-family: "Host Grotesk Variable", sans-serif;
-        font-weight: 800;
-        letter-spacing: 0.1em;
-    }
+  .stat {
+    display: flex;
+    flex-direction: column;
+    font-family: "Host Grotesk Variable", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
 
-    .stat-value {
-        font-size: 2rem;
-        color: var(--orange--lighten);
-    }
+  .stat-value {
+    font-size: 2rem;
+    color: var(--orange--lighten);
+  }
 
-    .stat-label {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        color: var(--gray-200);
-    }
+  .stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--gray-200);
+  }
 </style>

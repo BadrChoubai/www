@@ -13,28 +13,28 @@ allPosts = allPosts.filter((post) => !post.data.draft);
 
 const requestedTag = Astro.url.searchParams.get("tag");
 const tags = [
-    ...new Set(allPosts.flatMap((post) => post.data.tags ?? [])),
+  ...new Set(allPosts.flatMap((post) => post.data.tags ?? [])),
 ].sort();
 const selectedTag =
-    requestedTag && tags.includes(requestedTag) ? requestedTag : "";
+  requestedTag && tags.includes(requestedTag) ? requestedTag : "";
 
 const filteredPosts = selectedTag
-    ? allPosts.filter((post) => post.data.tags.includes(selectedTag))
-    : allPosts;
+  ? allPosts.filter((post) => post.data.tags.includes(selectedTag))
+  : allPosts;
 ---
 
 <Layout description="How I Do.">
-    <Section id="blog-page-header-section" class="container">
-        <BlogNavbar tags={tags} selectedTag={selectedTag} />
-    </Section>
-    <Section class="contrast" id="blog-page-section">
-        <div>
-            <header>
-                <h2 id="all-posts">Posts</h2>
-            </header>
-            <ul class="grid" style="padding-left: 0;">
-                {filteredPosts.map((post) => <PostCard {post} />)}
-            </ul>
-        </div>
-    </Section>
+  <Section id="blog-page-header-section" class="container">
+    <BlogNavbar tags={tags} selectedTag={selectedTag} />
+  </Section>
+  <Section class="contrast" id="blog-page-section">
+    <div>
+      <header>
+        <h2 id="all-posts">Posts</h2>
+      </header>
+      <ul class="grid" style="padding-left: 0;">
+        {filteredPosts.map((post) => <PostCard {post} />)}
+      </ul>
+    </div>
+  </Section>
 </Layout>
