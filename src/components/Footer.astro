@@ -1,81 +1,85 @@
 <footer class="site-footer" id="footer">
-  <div class="container">
-    <div class="site-footer__inner">
-      <div class="site-footer__column">
-        <h3>Site</h3>
-        <nav>
-          <ul>
-            <li><a href="/">home</a></li>
-            <li><a href="/blog">blog</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="site-footer__column">
-        <h3>Disconnect with Me</h3>
-        <nav>
-          <ul>
-            <li>
-              <a target="_blank" href="https://www.github.com/BadrChoubai"
-                >github</a
-              >
-            </li>
-            <li>
-              <a target="_blank" href="https://www.linkedin.com/in/BadrChoubai"
-                >linkedin</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="site-footer__column">
-        <h3>Connect With Me</h3>
-        <nav>
-          <ul>
-            <li>
-              <a target="_blank" href="https://www.strava.com/BadrChoubai"
-                >strava</a
-              >
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href="https://open.spotify.com/user/qvo0hw19xy5khwaoanfo27fu7"
-                >spotify</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
+    <div class="container">
+        <div class="site-footer__inner">
+            <div class="site-footer__column">
+                <h3>Site</h3>
+                <nav>
+                    <ul>
+                        <li><a href="/">home</a></li>
+                        <li><a href="/blog">blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="site-footer__column">
+                <h3>Disconnect with Me</h3>
+                <nav>
+                    <ul>
+                        <li>
+                            <a
+                                target="_blank"
+                                href="https://www.github.com/BadrChoubai"
+                                >github</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                href="https://www.linkedin.com/in/BadrChoubai"
+                                >linkedin</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="site-footer__column">
+                <h3>Connect With Me</h3>
+                <nav>
+                    <ul>
+                        <li>
+                            <a
+                                target="_blank"
+                                href="https://www.strava.com/athletes/101721008"
+                                >strava</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                target="_blank"
+                                href="https://open.spotify.com/user/qvo0hw19xy5khwaoanfo27fu7"
+                                >spotify</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
 
 <style>
-  ul {
-    flex-direction: column;
-    border: hotpink dotted 2px;
-    padding: 0;
-    li {
-      border: hotpink dotted 2px;
-      padding: 0;
+    ul {
+        flex-direction: column;
+        padding: 0;
+        li {
+            padding: 0;
+        }
     }
-  }
 
-  .site-footer__inner {
-    display: flex;
-    flex-direction: row;
-    gap: var(--app-gap);
-  }
-
-  .site-footer__column {
-    margin: 1rem 0;
-    width: 100%;
-    padding-inline: var(--app-block-spacing-horizontal);
-  }
-
-  @media screen and (max-width: 749px) {
     .site-footer__inner {
-      flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        gap: var(--app-gap);
     }
-  }
+
+    .site-footer__column {
+        margin: 1rem 0;
+        width: 100%;
+        padding-inline: var(--app-block-spacing-horizontal);
+    }
+
+    @media screen and (max-width: 749px) {
+        .site-footer__inner {
+            flex-direction: column;
+        }
+    }
 </style>
