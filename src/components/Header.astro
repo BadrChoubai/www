@@ -1,20 +1,22 @@
 <header id="header" class="container">
   <a href="/" class="logo" aria-label="Badr Choubai — home">
-    <span class="logo__first">Badr</span>
-    <span class="logo__last">Choubai</span>
+    <div class="blocks">
+      <div id="block" class="block-1"></div>
+      <div id="block" class="block-2"></div>
+      <div id="block" class="block-3"></div>
+      <div id="block" class="block-4"></div>
+      <div id="block" class="block-5"></div>
+    </div>
+    <div class="logo__title">
+      <span class="logo__title__first">Badr</span>
+      <span class="logo__title__last">Choubai</span>
+    </div>
   </a>
   <nav aria-label="Site navigation">
     <ul>
       <li><a href="/">home</a></li>
     </ul>
   </nav>
-  <div class="blocks">
-    <div id="block" class="block-1"></div>
-    <div id="block" class="block-2"></div>
-    <div id="block" class="block-3"></div>
-    <div id="block" class="block-4"></div>
-    <div id="block" class="block-5"></div>
-  </div>
 </header>
 
 <style>
@@ -32,19 +34,19 @@
     font-weight: 700;
     text-decoration: none;
     line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: var(--app-spacing);
   }
 
-  .logo__first {
-    color: var(--app-accent-color);
-  }
+  .logo__title {
+    .logo__title__first {
+      color: var(--app-accent-color);
+    }
 
-  .logo__last {
-    color: var(--app-color);
-  }
-
-  nav {
-    background-color: transparent;
-    padding-inline: 0;
+    .logo__title__last {
+      color: var(--app-color);
+    }
   }
 
   #block {

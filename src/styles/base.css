@@ -29,9 +29,6 @@
   --app-container-max: 1400px;
   --app-container-width: 100%;
 
-  /* Section heights */
-  --section-height-full: 100svh;
-
   color-scheme: dark;
 }
 
@@ -93,10 +90,6 @@ ul li {
 /* =========================================================
    Sections
    ========================================================= */
-section.section--height-full {
-  --section-min-height: var(--section-height-full);
-}
-
 section {
   padding: var(--app-spacing);
   border-bottom: var(--app-border-width) solid var(--app-border-color);
@@ -104,7 +97,6 @@ section {
   color: var(--app-color);
   position: relative;
   width: 100%;
-  min-height: var(--section-min-height, auto);
   display: flex;
   flex-direction: column;
   gap: var(--app-spacing);
