@@ -3,8 +3,16 @@ import SquareIcon from "../components/Icons/SquareIcon.astro";
 import DotIcon from "../components/Icons/DotIcon.astro";
 import DiamondIcon from "../components/Icons/DiamondIcon.astro";
 import Section from "../components/Section.astro";
+import { getImage } from "astro:assets";
+import heroImage from "../assets/images/SCM.jpg";
 
-const imageUrl = "/images/SCM.jpg";
+const optimizedHero = await getImage({
+  src: heroImage,
+  width: 1920,
+  format: "webp",
+  quality: 75,
+});
+const imageUrl = optimizedHero.src;
 ---
 
 <Section class="section" coverImage={imageUrl} id="hero">
@@ -25,7 +33,12 @@ const imageUrl = "/images/SCM.jpg";
       </div>
 
       <div class="hero__ctas">
-        <a class="btn primary sm" href="#about-me">About Me</a>
+        <a
+          class="btn primary sm"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/BadrChoubai">About Me</a
+        >
         <a
           class="btn ghost sm"
           target="_blank"
