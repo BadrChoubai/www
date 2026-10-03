@@ -3,46 +3,8 @@ export const prerender = false;
 
 import Layout from "../layouts/Layout.astro";
 import Hero from "../sections/Hero.astro";
-import Section from "../components/Section.astro";
-import PostCard from "../components/PostCard.astro";
-
-import { Content as AboutMeCopy } from "../content/copy/about-me.md";
 ---
 
 <Layout description="What I Do.">
   <Hero />
 </Layout>
-
-<style>
-  .about-content {
-    display: flex;
-    padding: 1rem 0;
-    flex-direction: column;
-    gap: var(--app-spacing);
-  }
-  .about-stats {
-    display: flex;
-    gap: var(--app-spacing);
-    border-top: var(--app-border-width) solid var(--app-border-color);
-    padding-top: 0.2rem;
-  }
-
-  .stat {
-    display: flex;
-    flex-direction: column;
-    font-family: "Host Grotesk Variable", sans-serif;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-  }
-
-  .stat-value {
-    font-size: 2rem;
-    color: var(--orange--lighten);
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    color: var(--gray-200);
-  }
-</style>

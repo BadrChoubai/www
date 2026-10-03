@@ -36,8 +36,7 @@
 
 @media print {
   #header,
-  #footer,
-  #blog-content-header-section {
+  #footer {
     display: none;
   }
 

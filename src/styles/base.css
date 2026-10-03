@@ -9,60 +9,30 @@
 :host {
   /* Spacing */
   --app-spacing: 1rem;
-  --app-block-spacing-vertical: var(--app-spacing);
   --app-block-spacing-horizontal: var(--app-spacing);
-
-  /* Grid */
-  --app-grid-column-gap: var(--app-spacing);
-  --app-grid-row-gap: var(--app-spacing);
 
   /* Nav */
   --app-nav-element-spacing-vertical: 1rem;
   --app-nav-element-spacing-horizontal: 0.5rem;
-  --app-nav-link-spacing-vertical: 0.5rem;
-  --app-nav-link-spacing-horizontal: 0.5rem;
 
   /* Borders & shape */
   --app-border-radius: 0;
   --app-border-width: 2px;
-  --app-outline-width: 0.125rem;
 
   /* Motion */
   --app-transition: 0.2s ease-in-out;
 
   /* Elevation */
   --app-box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.12);
-  --app-box-shadow--hover: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.2);
 
   /* Container */
   --app-container-max: 1400px;
   --app-container-width: 100%;
 
   /* Section heights */
-  --section-height-one-quarter: 25svh;
-  --section-height-one-third: calc(100svh / 3);
-  --section-height-half: 50svh;
-  --section-height-three-quarters: 75svh;
   --section-height-full: 100svh;
 
   color-scheme: dark;
-}
-
-/* =========================================================
-   Responsive visibility helpers
-   ========================================================= */
-@media screen and (max-width: 749px) {
-  [mobile\:hidden] {
-    /* stylelint-disable-next-line declaration-no-important */
-    display: none !important;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  [desktop\:hidden] {
-    /* stylelint-disable-next-line declaration-no-important */
-    display: none !important;
-  }
 }
 
 /* =========================================================
@@ -89,20 +59,17 @@ main {
 /* =========================================================
    Grouped headings (label + eyebrow patterns)
    ========================================================= */
-div.group,
-header.group {
+div.group {
   margin-bottom: var(--app-typography-spacing-vertical);
 }
 
-div.group > *,
-header.group > * {
+div.group > * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
 /* Trailing sibling in a group acts as a subtitle/eyebrow */
-div.group > *:not(:first-child):last-child,
-header.group > *:not(:first-child):last-child {
+div.group > *:not(:first-child):last-child {
   --app-font-weight: unset;
   font-size: 1rem;
 }
@@ -126,22 +93,6 @@ ul li {
 /* =========================================================
    Sections
    ========================================================= */
-section.section--height-1\/4 {
-  --section-min-height: var(--section-height-one-quarter);
-}
-
-section.section--height-1\/3 {
-  --section-min-height: var(--section-height-one-third);
-}
-
-section.section--height-1\/2 {
-  --section-min-height: var(--section-height-half);
-}
-
-section.section--height-3\/4 {
-  --section-min-height: var(--section-height-three-quarters);
-}
-
 section.section--height-full {
   --section-min-height: var(--section-height-full);
 }
@@ -161,12 +112,6 @@ section {
 
 section:last-child {
   border-bottom: none;
-}
-
-header.contrast,
-footer.contrast,
-section.contrast {
-  background-color: var(--app-background-color--contrast);
 }
 
 /* =========================================================
@@ -196,26 +141,6 @@ a {
     max-width: var(--app-container-max);
     border-inline: var(--app-border-width) solid var(--app-border-color);
   }
-}
-
-/* =========================================================
-   Grid
-   ========================================================= */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: var(--app-grid-column-gap);
-  grid-row-gap: var(--app-grid-row-gap);
-}
-
-@media (min-width: 750px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
-  }
-}
-
-.grid > * {
-  min-width: 0;
 }
 
 /* =========================================================
@@ -323,10 +248,6 @@ button,
   background-color: var(--green);
   border-color: rgba(255, 255, 255, 0.25);
   box-shadow: none;
-}
-
-.btn.ghost:hover {
-  border-color: rgba(255, 255, 255, 0.7);
 }
 
 .btn.sm {

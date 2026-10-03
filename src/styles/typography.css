@@ -97,8 +97,7 @@ h6 {
   margin-top: var(--app-typography-spacing-top);
 }
 
-h1,
-.h1 {
+h1 {
   --app-font-size: 2rem;
   --app-font-weight: 900;
   --app-line-height: 1.125;
@@ -108,8 +107,7 @@ h1,
   line-height: var(--app-line-height);
 }
 
-h2,
-.h2 {
+h2 {
   --app-font-size: 1.75rem;
   --app-font-weight: 700;
   --app-line-height: 1.15;
@@ -119,8 +117,7 @@ h2,
   line-height: var(--app-line-height);
 }
 
-h3,
-.h3 {
+h3 {
   --app-font-size: 1.5rem;
   --app-font-weight: 500;
   --app-line-height: 1.175;
@@ -130,8 +127,7 @@ h3,
   line-height: var(--app-line-height);
 }
 
-h4,
-.h4 {
+h4 {
   --app-font-size: 1.25rem;
   --app-font-weight: 400;
   --app-line-height: 1.2;
@@ -141,8 +137,7 @@ h4,
   line-height: var(--app-line-height);
 }
 
-h5,
-.h5 {
+h5 {
   --app-font-size: 1.125rem;
   --app-font-weight: 300;
   --app-line-height: 1.225;
@@ -152,8 +147,7 @@ h5,
   line-height: var(--app-line-height);
 }
 
-h6,
-.h6 {
+h6 {
   --app-font-size: 1rem;
   --app-font-weight: 300;
   --app-line-height: 1.25;
