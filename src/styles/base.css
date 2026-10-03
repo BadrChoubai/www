@@ -192,7 +192,7 @@ button,
   border: var(--app-border-width) solid transparent;
   border-radius: var(--app-border-radius);
   outline: none;
-  background-color: var(--app-accent-color);
+  background-color: var(--app-accent-background);
   box-shadow: var(--app-box-shadow);
   color: var(--app-color);
   padding: var(--app-spacing);
@@ -215,15 +215,15 @@ button,
 
 /* Button variants */
 .btn.primary {
-  background-color: var(--app-accent-color);
-  border-color: var(--app-accent-color);
+  background-color: var(--app-accent-background);
+  border-color: var(--app-accent-background);
   color: var(--white);
   font-weight: 700;
 }
 
 .btn.primary:hover {
-  background-color: var(--app-accent-color--hover);
-  border-color: var(--app-accent-color--hover);
+  background-color: var(--app-accent-background--hover);
+  border-color: var(--app-accent-background--hover);
 }
 
 .btn.ghost {
@@ -237,7 +237,7 @@ button,
 }
 
 .btn.green {
-  background-color: var(--green);
+  background-color: var(--green--darken);
   border-color: rgba(255, 255, 255, 0.25);
   box-shadow: none;
 }
@@ -282,4 +282,13 @@ button:focus-visible,
   overflow: visible;
   clip: auto;
   white-space: normal;
+}
+
+/* Skip link: float over the header when focused instead of collapsing */
+.skip-link:focus {
+  position: fixed;
+  top: var(--app-spacing);
+  left: var(--app-spacing);
+  z-index: 100;
+  padding: var(--app-spacing);
 }

@@ -17,7 +17,9 @@ const { title, description, image, noindex } = Astro.props;
   </Head>
 
   <body>
-    <a href="#content" class="btn sm sr-only">Skip to main content</a>
+    <a href="#content" class="btn primary sm sr-only skip-link"
+      >Skip to main content</a
+    >
     <Header />
     <main class="main" id="content">
       <slot />

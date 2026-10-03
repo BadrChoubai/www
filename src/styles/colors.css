@@ -12,8 +12,11 @@
   --red: #a03c46;
   --orange: #d45a01;
   --orange--lighten: #e77322;
+  --orange--darken: #b84e00;
+  --orange--darken-hover: #c25200;
   --yellow: #ccaa11;
   --green: #64a03c;
+  --green--darken: #467d27;
   --blue: #3c70a0;
 
   /* =========================================================
@@ -28,4 +31,8 @@
        ========================================================= */
   --app-accent-color: var(--orange);
   --app-accent-color--hover: var(--orange--lighten);
+
+  /* Button fills: darker so white text meets WCAG AA (4.5:1) */
+  --app-accent-background: var(--orange--darken);
+  --app-accent-background--hover: var(--orange--darken-hover);
 }
